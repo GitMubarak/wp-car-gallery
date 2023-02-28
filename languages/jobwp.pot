@@ -1,0 +1,615 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2023-01-08 03:39+0600\n"
+"PO-Revision-Date: 2021-12-27 04:06+0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.2.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: _e;esc_htm;esc_attr;esc_html_e;esc_html_;__(;__\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: admin/cls-cg-admin.php\n"
+
+#: admin/cls-cg-admin.php:78 admin/cls-cg-admin.php:79
+#: admin/view/general.php:16
+msgid "General Settings"
+msgstr ""
+
+#: admin/cls-cg-admin.php:87 admin/cls-cg-admin.php:88
+#: admin/view/listing.php:9
+msgid "Listing Page Settings"
+msgstr ""
+
+#: admin/cls-cg-admin.php:96 admin/cls-cg-admin.php:97
+#: admin/view/single.php:9
+msgid "Detail Page Settings"
+msgstr ""
+
+#: admin/cls-cg-admin.php:105 admin/cls-cg-admin.php:106
+msgid "Application List"
+msgstr ""
+
+#: admin/cls-cg-admin.php:205
+msgid "#"
+msgstr ""
+
+#: admin/cls-cg-admin.php:206
+msgid "Applied For"
+msgstr ""
+
+#: admin/cls-cg-admin.php:207
+msgid "Name"
+msgstr ""
+
+#: admin/cls-cg-admin.php:208 front/view/apply.php:22
+#: front/view/apply.php:23
+msgid "Email"
+msgstr ""
+
+#: admin/cls-cg-admin.php:209 front/view/apply.php:27
+#: front/view/apply.php:28
+msgid "Cover Letter"
+msgstr ""
+
+#: admin/cls-cg-admin.php:210
+msgid "Resume"
+msgstr ""
+
+#: admin/cls-cg-admin.php:211
+msgid "Date"
+msgstr ""
+
+#: admin/cls-cg-admin.php:222
+msgid "Application Lists"
+msgstr ""
+
+#: admin/cls-cg-admin.php:269 admin/cls-cg-admin.php:273
+msgid "All Jobs"
+msgstr ""
+
+#: admin/cls-cg-admin.php:270 admin/cls-cg-admin.php:271
+msgid "WP Jobs"
+msgstr ""
+
+#: admin/cls-cg-admin.php:272
+msgid "Parent Job"
+msgstr ""
+
+#: admin/cls-cg-admin.php:274
+msgid "View Job"
+msgstr ""
+
+#: admin/cls-cg-admin.php:275
+msgid "Add New Job"
+msgstr ""
+
+#: admin/cls-cg-admin.php:276
+msgid "Add New"
+msgstr ""
+
+#: admin/cls-cg-admin.php:277
+msgid "Edit Job"
+msgstr ""
+
+#: admin/cls-cg-admin.php:278
+msgid "Update Job"
+msgstr ""
+
+#: admin/cls-cg-admin.php:279 front/view/search.php:102
+msgid "Search Job"
+msgstr ""
+
+#: admin/cls-cg-admin.php:280
+msgid "Not Found"
+msgstr ""
+
+#: admin/cls-cg-admin.php:281
+msgid "Not found in Trash"
+msgstr ""
+
+#: admin/cls-cg-admin.php:284
+msgid "jobs"
+msgstr ""
+
+#: admin/cls-cg-admin.php:285
+msgid "Description For Job"
+msgstr ""
+
+#: admin/cls-cg-admin.php:313 admin/cls-cg-admin.php:323
+msgid "Job Categories"
+msgstr ""
+
+#: admin/cls-cg-admin.php:314
+msgid "Job Category"
+msgstr ""
+
+#: admin/cls-cg-admin.php:315
+msgid "Search Job Categories"
+msgstr ""
+
+#: admin/cls-cg-admin.php:316
+msgid "All Job Categories"
+msgstr ""
+
+#: admin/cls-cg-admin.php:317
+msgid "Parent Job Category"
+msgstr ""
+
+#: admin/cls-cg-admin.php:318
+msgid "Parent Job Category:"
+msgstr ""
+
+#: admin/cls-cg-admin.php:319
+msgid "Edit Job Category"
+msgstr ""
+
+#: admin/cls-cg-admin.php:320
+msgid "Update Job Category"
+msgstr ""
+
+#: admin/cls-cg-admin.php:321
+msgid "Add New Job Category"
+msgstr ""
+
+#: admin/cls-cg-admin.php:322
+msgid "New Job Category Name"
+msgstr ""
+
+#: admin/cls-cg-admin.php:342 admin/cls-cg-admin.php:343
+#: admin/cls-cg-admin.php:352
+msgid "Job Nature"
+msgstr ""
+
+#: admin/cls-cg-admin.php:344
+msgid "Search Job Nature"
+msgstr ""
+
+#: admin/cls-cg-admin.php:345
+msgid "All Job Nature"
+msgstr ""
+
+#: admin/cls-cg-admin.php:346
+msgid "Parent Job Nature"
+msgstr ""
+
+#: admin/cls-cg-admin.php:347
+msgid "Parent Job Nature:"
+msgstr ""
+
+#: admin/cls-cg-admin.php:348
+msgid "Edit Job Nature"
+msgstr ""
+
+#: admin/cls-cg-admin.php:349
+msgid "Update Job Nature"
+msgstr ""
+
+#: admin/cls-cg-admin.php:350
+msgid "Add New Job Nature"
+msgstr ""
+
+#: admin/cls-cg-admin.php:351
+msgid "New Job Nature Name"
+msgstr ""
+
+#: admin/cls-cg-admin.php:371 admin/cls-cg-admin.php:372
+#: admin/cls-cg-admin.php:381
+msgid "Job Level"
+msgstr ""
+
+#: admin/cls-cg-admin.php:373
+msgid "Search Job Level"
+msgstr ""
+
+#: admin/cls-cg-admin.php:374
+msgid "All Job Level"
+msgstr ""
+
+#: admin/cls-cg-admin.php:375
+msgid "Parent Job Level"
+msgstr ""
+
+#: admin/cls-cg-admin.php:376
+msgid "Parent Job Level:"
+msgstr ""
+
+#: admin/cls-cg-admin.php:377
+msgid "Edit Job Level"
+msgstr ""
+
+#: admin/cls-cg-admin.php:378
+msgid "Update Job Level"
+msgstr ""
+
+#: admin/cls-cg-admin.php:379
+msgid "Add New Job Level"
+msgstr ""
+
+#: admin/cls-cg-admin.php:380
+msgid "New Job Level Name"
+msgstr ""
+
+#: admin/cls-cg-admin.php:400 admin/cls-cg-admin.php:401
+#: admin/cls-cg-admin.php:410
+msgid "Job Location"
+msgstr ""
+
+#: admin/cls-cg-admin.php:402
+msgid "Search Job Location"
+msgstr ""
+
+#: admin/cls-cg-admin.php:403 front/view/search.php:90
+msgid "All Job Location"
+msgstr ""
+
+#: admin/cls-cg-admin.php:404
+msgid "Parent Job Location"
+msgstr ""
+
+#: admin/cls-cg-admin.php:405
+msgid "Parent Job Location:"
+msgstr ""
+
+#: admin/cls-cg-admin.php:406
+msgid "Edit Job Location"
+msgstr ""
+
+#: admin/cls-cg-admin.php:407
+msgid "Update Job Location"
+msgstr ""
+
+#: admin/cls-cg-admin.php:408
+msgid "Add New Job Location"
+msgstr ""
+
+#: admin/cls-cg-admin.php:409
+msgid "New Job Location Name"
+msgstr ""
+
+#: admin/cls-cg-admin.php:431
+msgid "Job Details:"
+msgstr ""
+
+#: admin/cls-cg-admin.php:440
+msgid "Responsibilities:"
+msgstr ""
+
+#: admin/cls-cg-admin.php:449
+msgid "Skills Required:"
+msgstr ""
+
+#: admin/cls-cg-admin.php:458
+msgid "Educational Requirements:"
+msgstr ""
+
+#: admin/cls-cg-admin.php:467
+msgid "Additional Requirements:"
+msgstr ""
+
+#: admin/cls-cg-admin.php:476
+msgid "Salary:"
+msgstr ""
+
+#: admin/cls-cg-admin.php:485
+msgid "Other Benefits:"
+msgstr ""
+
+#: admin/view/general.php:35
+msgid "Admin Notification Email"
+msgstr ""
+
+#: admin/view/general.php:40
+msgid "An email will sent to this email when a candidate submit an applicaiton."
+msgstr ""
+
+#: admin/view/general.php:45
+msgid "Job List Layout"
+msgstr ""
+
+#: admin/view/general.php:49
+msgid "List"
+msgstr ""
+
+#: admin/view/general.php:52
+msgid "Grid"
+msgstr ""
+
+#: admin/view/general.php:57
+msgid "Use External Apply Form"
+msgstr ""
+
+#: admin/view/general.php:66
+msgid "External Apply Form Shortcode"
+msgstr ""
+
+#: admin/view/general.php:71
+msgid "You can use external form instead of default application form. Like WPForms, Contact Form etc."
+msgstr ""
+
+#: admin/view/general.php:78 admin/view/partial/listing-content.php:94
+#: admin/view/partial/listing-style.php:65
+#: admin/view/partial/single-content.php:238
+#: admin/view/partial/single-style.php:84
+msgid "Save Settings"
+msgstr ""
+
+#: admin/view/listing.php:22 admin/view/single.php:22
+msgid "Content"
+msgstr ""
+
+#: admin/view/listing.php:25 admin/view/single.php:25
+msgid "Styles"
+msgstr ""
+
+#: admin/view/partial/job-info.php:9
+msgid "Year of Experience"
+msgstr ""
+
+#: admin/view/partial/job-info.php:17
+msgid "No. of Vacancies"
+msgstr ""
+
+#: admin/view/partial/job-info.php:25
+msgid "Deadline"
+msgstr ""
+
+#: admin/view/partial/job-info.php:33
+msgid "Status"
+msgstr ""
+
+#: admin/view/partial/job-info.php:37
+msgid "Active"
+msgstr ""
+
+#: admin/view/partial/job-info.php:40
+msgid "Inactive"
+msgstr ""
+
+#: admin/view/partial/listing-content.php:17
+#: admin/view/partial/single-content.php:17
+msgid "Hide Overview"
+msgstr ""
+
+#: admin/view/partial/listing-content.php:24
+msgid "Word Lengtht"
+msgstr ""
+
+#: admin/view/partial/listing-content.php:32
+msgid "Hide Experience"
+msgstr ""
+
+#: admin/view/partial/listing-content.php:39
+#: admin/view/partial/listing-content.php:54
+#: admin/view/partial/listing-content.php:69
+#: admin/view/partial/listing-content.php:84
+#: admin/view/partial/single-content.php:24
+#: admin/view/partial/single-content.php:39
+#: admin/view/partial/single-content.php:54
+#: admin/view/partial/single-content.php:69
+#: admin/view/partial/single-content.php:84
+#: admin/view/partial/single-content.php:99
+#: admin/view/partial/single-content.php:114
+#: admin/view/partial/single-content.php:129
+#: admin/view/partial/single-content.php:144
+#: admin/view/partial/single-content.php:159
+#: admin/view/partial/single-content.php:174
+#: admin/view/partial/single-content.php:189
+msgid "Label Text"
+msgstr ""
+
+#: admin/view/partial/listing-content.php:47
+msgid "Hide Deadline"
+msgstr ""
+
+#: admin/view/partial/listing-content.php:62
+msgid "Hide Location"
+msgstr ""
+
+#: admin/view/partial/listing-content.php:77
+msgid "Hide Job Type"
+msgstr ""
+
+#: admin/view/partial/listing-style.php:18
+#: admin/view/partial/single-style.php:33
+msgid "Job Title"
+msgstr ""
+
+#: admin/view/partial/listing-style.php:23
+#: admin/view/partial/listing-style.php:47
+#: admin/view/partial/single-style.php:38
+#: admin/view/partial/single-style.php:60
+msgid "Font Color"
+msgstr ""
+
+#: admin/view/partial/listing-style.php:32
+#: admin/view/partial/listing-style.php:56
+#: admin/view/partial/single-style.php:45
+msgid "Font Size"
+msgstr ""
+
+#: admin/view/partial/listing-style.php:42
+msgid "Job Overview"
+msgstr ""
+
+#: admin/view/partial/single-content.php:32
+msgid "Hide No. of Vacancies"
+msgstr ""
+
+#: admin/view/partial/single-content.php:47
+msgid "Hide Specific Skills"
+msgstr ""
+
+#: admin/view/partial/single-content.php:62
+msgid "Hide Responsible For"
+msgstr ""
+
+#: admin/view/partial/single-content.php:77
+msgid "Hide Additional Requirements"
+msgstr ""
+
+#: admin/view/partial/single-content.php:92
+msgid "Hide Job Nature"
+msgstr ""
+
+#: admin/view/partial/single-content.php:107
+msgid "Hide Educational Requirements"
+msgstr ""
+
+#: admin/view/partial/single-content.php:122
+msgid "Hide Experience Requirements"
+msgstr ""
+
+#: admin/view/partial/single-content.php:137
+msgid "Hide Job Location"
+msgstr ""
+
+#: admin/view/partial/single-content.php:152
+msgid "Hide Salary"
+msgstr ""
+
+#: admin/view/partial/single-content.php:167
+msgid "Hide Other Benefits"
+msgstr ""
+
+#: admin/view/partial/single-content.php:182
+msgid "Hide Job Level"
+msgstr ""
+
+#: admin/view/partial/single-content.php:198
+msgid "Hide Apply Procedure"
+msgstr ""
+
+#: admin/view/partial/single-content.php:205
+msgid "Apply Procedure Title"
+msgstr ""
+
+#: admin/view/partial/single-content.php:213
+msgid "Apply Procedure Content"
+msgstr ""
+
+#: admin/view/partial/single-content.php:221
+msgid "Hide Apply Button"
+msgstr ""
+
+#: admin/view/partial/single-content.php:228
+msgid "Apply Button Text"
+msgstr ""
+
+#: admin/view/partial/single-style.php:18
+msgid "Container"
+msgstr ""
+
+#: admin/view/partial/single-style.php:23
+msgid "Background Color"
+msgstr ""
+
+#: admin/view/partial/single-style.php:55
+msgid "Job Info"
+msgstr ""
+
+#: admin/view/partial/single-style.php:70
+msgid "Apply Button"
+msgstr ""
+
+#: admin/view/partial/single-style.php:75
+msgid "Button Color"
+msgstr ""
+
+#: core/job_application.php:20
+msgid "Your file size is to large"
+msgstr ""
+
+#: core/job_application.php:30
+msgid "/cg-resume"
+msgstr ""
+
+#: core/job_application.php:44
+msgid "The file cannor be copied in the folder "
+msgstr ""
+
+#: core/job_application.php:84
+msgid "Career - New Application"
+msgstr ""
+
+#: core/job_application.php:85
+msgid "Applicant: "
+msgstr ""
+
+#: core/job_application.php:86
+msgid "Applied For: "
+msgstr ""
+
+#: core/job_application.php:87
+msgid "Email: "
+msgstr ""
+
+#: core/job_application.php:89
+msgid "Cover Letter: "
+msgstr ""
+
+#: core/job_application.php:98
+msgid "Thank you for your application"
+msgstr ""
+
+#: freemius/templates/account/partials/site.php:339
+msgid " "
+msgstr ""
+
+#: front/view/apply.php:6
+msgid "Apply for this position"
+msgstr ""
+
+#: front/view/apply.php:17 front/view/apply.php:18
+msgid "Full Name"
+msgstr ""
+
+#: front/view/apply.php:32
+msgid "Upload CV/Resume"
+msgstr ""
+
+#: front/view/apply.php:33
+msgid "Attach your resume. Max size 2mb"
+msgstr ""
+
+#: front/view/apply.php:35
+msgid "Allowed Type(s): .pdf"
+msgstr ""
+
+#: front/view/apply.php:39
+msgid "Apply Now"
+msgstr ""
+
+#: front/view/listing.php:76
+msgid "Closed"
+msgstr ""
+
+#: front/view/listing.php:98
+msgid "Years"
+msgstr ""
+
+#: front/view/listing.php:166
+msgid "No Jobs found"
+msgstr ""
+
+#: front/view/search.php:59
+msgid "Keyword"
+msgstr ""
+
+#: front/view/search.php:64
+msgid "All Job Category"
+msgstr ""
+
+#: front/view/search.php:77
+msgid "All Job Type"
+msgstr ""
+
+#: front/view/single.php:42
+msgid "Sorry, your nonce did not verify."
+msgstr ""
