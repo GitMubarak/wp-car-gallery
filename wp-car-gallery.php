@@ -29,7 +29,6 @@ define('CG_VERSION', '1.2');
 
 require_once CG_PATH . 'inc/' . CG_CLS_PRFX . 'master.php';
 $cg = new CG_Master();
-//register_activation_hook(__FILE__, array($cg, CG_PRFX . 'create_tables'));
 $cg->cg_run();
 
 // rewrite_rules upon plugin activation

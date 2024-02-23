@@ -68,33 +68,4 @@ class CG_Master {
 
 		return $this->cg_version;
 	}
-
-	function cg_create_tables() {
-		
-		global $wpdb;
-		
-		$table_name = $wpdb->prefix . 'cg_applied';
-		
-		//$sqlTblExist = "DROP TABLE IF EXISTS $table_name";
-		//$wpdb->query( $sqlTblExist );
-		
-		if ($wpdb->get_var("SHOW TABLES LIKE '$table_name'") != $table_name) {
-			//table not in database. Create new table
-			$charset_collate = $wpdb->get_charset_collate();
-			$sql = "CREATE TABLE $table_name (
-					job_id INT(11) NOT NULL AUTO_INCREMENT,
-					job_post_id INT(11) NOT NULL,
-					applied_for VARCHAR(155),
-					applicant_name VARCHAR(155) NOT NULL,
-					applicant_email VARCHAR(155) NOT NULL,
-					applicant_phone VARCHAR(55),
-					applicant_message TEXT,
-					resume_name VARCHAR(155) NOT NULL,
-					applied_on DATETIME,
-					PRIMARY KEY (`job_id`)
-			) $charset_collate;";
-			require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
-			dbDelta($sql);
-		}
-	}
 }

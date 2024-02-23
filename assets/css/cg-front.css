@@ -136,6 +136,20 @@ h3.cg-single-car-name {
     line-height: 30px;
 }
 
+.cg-car-des p {
+    margin: 0;
+    padding: 0;
+}
+
+.cg-specification-container {
+    border: 1px solid #000;
+    padding-top: 20px;
+}
+
+table.cg-specification {
+    border: 1px solid #000;
+}
+
 
 /* Details Ended */
 

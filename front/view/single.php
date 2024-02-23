@@ -27,6 +27,21 @@ while ( have_posts() ) {
                 <?php the_content(); ?>
             </div>
         </div>
+        <div class="cg-specification-container clear">
+            <table class="form-table cg-specification">
+                <tr>
+                    <th colspan="2"><?php _e('Engine Specification', 'wp-car-gallery'); ?></th>
+                </tr>
+                <tr>
+                    <th>
+                        <label><?php _e('Engine Type', 'wp-car-gallery'); ?></label>
+                    </th>
+                    <td>
+                        Petrol
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
     <?php 
 }
