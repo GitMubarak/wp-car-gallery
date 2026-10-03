@@ -15,12 +15,12 @@ foreach ( $cgSingleStyles as $option_name => $option_value ) {
         <!-- Container -->
         <tr>
             <th scope="row" colspan="4">
-                <hr><span><?php _e('Container', JOBWP_TXT_DOMAIN); ?></span><hr>
+                <hr><span><?php _e('Container', 'wp-car-gallery'); ?></span><hr>
             </th>
         </tr>
         <tr>
             <th scope="row">
-                <label><?php _e('Background Color', JOBWP_TXT_DOMAIN); ?>:</label>
+                <label><?php _e('Background Color', 'wp-car-gallery'); ?>:</label>
             </th>
             <td>
                 <input class="cg-wp-color" type="text" name="cg_single_container_bg_color" id="cg_single_container_bg_color" value="<?php esc_attr_e( $cg_single_container_bg_color ); ?>">
@@ -30,19 +30,19 @@ foreach ( $cgSingleStyles as $option_name => $option_value ) {
         <!-- Title -->
         <tr>
             <th scope="row" colspan="4">
-                <hr><span><?php _e('Job Title', JOBWP_TXT_DOMAIN); ?></span><hr>
+                <hr><span><?php _e('Job Title', 'wp-car-gallery'); ?></span><hr>
             </th>
         </tr>
         <tr>
             <th scope="row">
-                <label><?php _e('Font Color', JOBWP_TXT_DOMAIN); ?>:</label>
+                <label><?php _e('Font Color', 'wp-car-gallery'); ?>:</label>
             </th>
             <td>
                 <input class="cg-wp-color" type="text" name="cg_single_title_font_color" id="cg_single_title_font_color" value="<?php esc_attr_e( $cg_single_title_font_color ); ?>">
                 <div id="colorpicker"></div>
             </td>
             <th scope="row">
-                <label><?php _e('Font Size', JOBWP_TXT_DOMAIN); ?>:</label>
+                <label><?php _e('Font Size', 'wp-car-gallery'); ?>:</label>
             </th>
             <td>
                 <input type="number" class="small-text" min="11" max="50" name="cg_single_title_font_size" id="cg_single_title_font_size" value="<?php esc_attr_e( $cg_single_title_font_size ); ?>">
@@ -52,12 +52,12 @@ foreach ( $cgSingleStyles as $option_name => $option_value ) {
         <!-- Job Info -->
         <tr>
             <th scope="row" colspan="4">
-                <hr><span><?php _e('Job Info', JOBWP_TXT_DOMAIN); ?></span><hr>
+                <hr><span><?php _e('Job Info', 'wp-car-gallery'); ?></span><hr>
             </th>
         </tr>
         <tr>
             <th scope="row">
-                <label><?php _e('Font Color', JOBWP_TXT_DOMAIN); ?>:</label>
+                <label><?php _e('Font Color', 'wp-car-gallery'); ?>:</label>
             </th>
             <td>
                 <input class="cg-wp-color" type="text" name="cg_single_info_font_color" id="cg_single_info_font_color" value="<?php esc_attr_e( $cg_single_info_font_color ); ?>">
@@ -67,12 +67,12 @@ foreach ( $cgSingleStyles as $option_name => $option_value ) {
         <!-- Apply Button -->
         <tr>
             <th scope="row" colspan="4">
-                <hr><span><?php _e('Apply Button', JOBWP_TXT_DOMAIN); ?></span><hr>
+                <hr><span><?php _e('Apply Button', 'wp-car-gallery'); ?></span><hr>
             </th>
         </tr>
         <tr>
             <th scope="row">
-                <label><?php _e('Button Color', JOBWP_TXT_DOMAIN); ?>:</label>
+                <label><?php _e('Button Color', 'wp-car-gallery'); ?>:</label>
             </th>
             <td>
                 <input class="cg-wp-color" type="text" name="cg_single_apply_btn_bg_color" id="cg_single_apply_btn_bg_color" value="<?php esc_attr_e( $cg_single_apply_btn_bg_color ); ?>">
@@ -81,5 +81,5 @@ foreach ( $cgSingleStyles as $option_name => $option_value ) {
         </tr>
     </table>
     <hr>
-    <p class="submit"><button id="updateSingleStyles" name="updateSingleStyles" class="button button-primary cg-button"><?php _e('Save Settings', JOBWP_TXT_DOMAIN); ?></button></p>
+    <p class="submit"><button id="updateSingleStyles" name="updateSingleStyles" class="button button-primary cg-button"><?php _e('Save Settings', 'wp-car-gallery'); ?></button></p>
 </form>

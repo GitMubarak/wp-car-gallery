@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div id="wph-wrap-all" class="wrap cg-listing-settings-page">
 
     <div class="settings-banner">
-        <h2><i class="fa fa-cogs" aria-hidden="true"></i>&nbsp;<?php _e('Listing Page Settings', JOBWP_TXT_DOMAIN); ?></h2>
+        <h2><i class="fa fa-cogs" aria-hidden="true"></i>&nbsp;<?php _e('Listing Page Settings', 'wp-car-gallery'); ?></h2>
     </div>
 
     <?php 
@@ -18,11 +18,11 @@ if ( ! defined( 'ABSPATH' ) ) {
     <div class="cg-wrap">
 
         <nav class="nav-tab-wrapper">
-            <a href="?post_type=jobs&page=cg-listing-settings&tab=settings" class="nav-tab cg-tab <?php if ( $cgTab !== 'styles' ) { ?> cg-tab-active<?php } ?>">
-                <i class="fa fa-cog" aria-hidden="true">&nbsp;</i><?php _e('Content', JOBWP_TXT_DOMAIN); ?>
+            <a href="?post_type=car&page=cg-listing-settings&tab=content" class="nav-tab cg-tab <?php if ( $cgTab !== 'styles' ) { ?> cg-tab-active<?php } ?>">
+                <i class="fa fa-cog" aria-hidden="true">&nbsp;</i><?php _e('Content', 'wp-car-gallery'); ?>
             </a>
-            <a href="?post_type=jobs&page=cg-listing-settings&tab=styles" class="nav-tab cg-tab <?php if ( $cgTab === 'styles' ) { ?> cg-tab-active<?php } ?>">
-                <i class="fa fa-paint-brush" aria-hidden="true"></i>&nbsp;<?php _e('Styles', JOBWP_TXT_DOMAIN); ?>
+            <a href="?post_type=car&page=cg-listing-settings&tab=styles" class="nav-tab cg-tab <?php if ( $cgTab === 'styles' ) { ?> cg-tab-active<?php } ?>">
+                <i class="fa fa-paint-brush" aria-hidden="true"></i>&nbsp;<?php _e('Styles', 'wp-car-gallery'); ?>
             </a>
         </nav>
 
@@ -32,10 +32,10 @@ if ( ! defined( 'ABSPATH' ) ) {
                 <?php 
                 switch ( $cgTab ) {
                     case 'styles':
-                        include_once JOBWP_PATH . 'admin/view/partial/listing-style.php';
+                        include_once CG_PATH . 'admin/view/partial/listing-style.php';
                         break;
                     default:
-                        include_once JOBWP_PATH . 'admin/view/partial/listing-content.php';
+                        include_once CG_PATH . 'admin/view/partial/listing-content.php';
                         break;
                 } 
                 ?>

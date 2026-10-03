@@ -80,8 +80,8 @@ class CG_Admin
 
 		add_submenu_page(
 			$cg_cpt_menu,
-			__('General Settings', CG_TXT_DOMAIN),
-			__('General Settings', CG_TXT_DOMAIN),
+			__('General Settings', 'wp-car-gallery'),
+			__('General Settings', 'wp-car-gallery'),
 			'manage_options',
 			'cg-general-settings',
 			array($this, CG_PRFX . 'general_settings'),
@@ -89,8 +89,8 @@ class CG_Admin
 
 		add_submenu_page(
 			$cg_cpt_menu,
-			__('Listing Page Settings', CG_TXT_DOMAIN),
-			__('Listing Page Settings', CG_TXT_DOMAIN),
+			__('Listing Page Settings', 'wp-car-gallery'),
+			__('Listing Page Settings', 'wp-car-gallery'),
 			'manage_options',
 			'cg-listing-settings',
 			array($this, CG_PRFX . 'listing_settings'),
@@ -98,8 +98,8 @@ class CG_Admin
 
 		add_submenu_page(
 			$cg_cpt_menu,
-			__('Detail Page Settings', CG_TXT_DOMAIN),
-			__('Detail Page Settings', CG_TXT_DOMAIN),
+			__('Detail Page Settings', 'wp-car-gallery'),
+			__('Detail Page Settings', 'wp-car-gallery'),
 			'manage_options',
 			'cg-single-settings',
 			array($this, CG_PRFX . 'single_settings'),
@@ -198,23 +198,23 @@ class CG_Admin
 	function cg_custom_post_type() {
 
 		$labels = array(
-							'name'                => __('All Cars', CG_TXT_DOMAIN),
-							'singular_name'       => __('WP Cars', CG_TXT_DOMAIN),
-							'menu_name'           => __('WP Cars', CG_TXT_DOMAIN),
-							'parent_item_colon'   => __('Parent Car', CG_TXT_DOMAIN),
-							'all_items'           => __('All Cars', CG_TXT_DOMAIN),
-							'view_item'           => __('View Car', CG_TXT_DOMAIN),
-							'add_new_item'        => __('Add New Car', CG_TXT_DOMAIN),
-							'add_new'             => __('Add New', CG_TXT_DOMAIN),
-							'edit_item'           => __('Edit Car', CG_TXT_DOMAIN),
-							'update_item'         => __('Update Car', CG_TXT_DOMAIN),
-							'search_items'        => __('Search Car', CG_TXT_DOMAIN),
-							'not_found'           => __('Not Found', CG_TXT_DOMAIN),
-							'not_found_in_trash'  => __('Not found in Trash', CG_TXT_DOMAIN)
+							'name'                => __('All Cars', 'wp-car-gallery'),
+							'singular_name'       => __('WP Cars', 'wp-car-gallery'),
+							'menu_name'           => __('WP Cars', 'wp-car-gallery'),
+							'parent_item_colon'   => __('Parent Car', 'wp-car-gallery'),
+							'all_items'           => __('All Cars', 'wp-car-gallery'),
+							'view_item'           => __('View Car', 'wp-car-gallery'),
+							'add_new_item'        => __('Add New Car', 'wp-car-gallery'),
+							'add_new'             => __('Add New', 'wp-car-gallery'),
+							'edit_item'           => __('Edit Car', 'wp-car-gallery'),
+							'update_item'         => __('Update Car', 'wp-car-gallery'),
+							'search_items'        => __('Search Car', 'wp-car-gallery'),
+							'not_found'           => __('Not Found', 'wp-car-gallery'),
+							'not_found_in_trash'  => __('Not found in Trash', 'wp-car-gallery')
 						);
 		$args = array(
-						'label'               => __('car', CG_TXT_DOMAIN),
-						'description'         => __('Description For Car', CG_TXT_DOMAIN),
+						'label'               => __('car', 'wp-car-gallery'),
+						'description'         => __('Description For Car', 'wp-car-gallery'),
 						'labels'              => $labels,
 						'supports'            => array('title', 'editor', 'page-attributes', 'thumbnail'),
 						'public'              => true,
@@ -242,17 +242,17 @@ class CG_Admin
 	function cg_taxonomy() {
 
 		$make = array(
-			'name'                       => __( 'Car Makes', CG_TXT_DOMAIN ),
-			'singular_name'              => __( 'Car Make', CG_TXT_DOMAIN ),
-			'search_items'               => __( 'Search Car Makes', CG_TXT_DOMAIN ),
-			'all_items'                  => __( 'All Car Makes', CG_TXT_DOMAIN ),
-			'parent_item'                => __( 'Parent Car Make', CG_TXT_DOMAIN ),
-			'parent_item_colon'          => __( 'Parent Car Make:', CG_TXT_DOMAIN ),
-			'edit_item'                  => __( 'Edit Car Make', CG_TXT_DOMAIN ),
-			'update_item'                => __( 'Update Car Make', CG_TXT_DOMAIN ),
-			'add_new_item'               => __( 'Add New Car Make', CG_TXT_DOMAIN ),
-			'new_item_name'              => __( 'New Car Make Name', CG_TXT_DOMAIN ),
-			'menu_name'                  => __( 'Car Makes', CG_TXT_DOMAIN ),
+			'name'                       => __( 'Car Makes', 'wp-car-gallery' ),
+			'singular_name'              => __( 'Car Make', 'wp-car-gallery' ),
+			'search_items'               => __( 'Search Car Makes', 'wp-car-gallery' ),
+			'all_items'                  => __( 'All Car Makes', 'wp-car-gallery' ),
+			'parent_item'                => __( 'Parent Car Make', 'wp-car-gallery' ),
+			'parent_item_colon'          => __( 'Parent Car Make:', 'wp-car-gallery' ),
+			'edit_item'                  => __( 'Edit Car Make', 'wp-car-gallery' ),
+			'update_item'                => __( 'Update Car Make', 'wp-car-gallery' ),
+			'add_new_item'               => __( 'Add New Car Make', 'wp-car-gallery' ),
+			'new_item_name'              => __( 'New Car Make Name', 'wp-car-gallery' ),
+			'menu_name'                  => __( 'Car Makes', 'wp-car-gallery' ),
 		);
 
 		register_taxonomy(
@@ -283,7 +283,7 @@ class CG_Admin
 
 		add_meta_box(
 			'cg_metaboxe_specification',
-			__('Car Specification', CG_TXT_DOMAIN),
+			__('Car Specification', 'wp-car-gallery'),
 			array( $this, 'cg_metabox_specification' ),
 			'car',
 			'normal',
@@ -292,7 +292,7 @@ class CG_Admin
 		/*
 		add_meta_box(
 			'cg-metabox-responsibilities',
-			__( 'Responsibilities:', CG_TXT_DOMAIN ),
+			__( 'Responsibilities:', 'wp-car-gallery' ),
 			array( $this, 'cg_metabox_responsibilities' ),
 			'car',
 			'normal',
@@ -391,8 +391,8 @@ class CG_Admin
 		?>
 		<div class="cg-alert <?php esc_attr_e( $type ); ?>">
 			<span class="cg-closebtn">&times;</span>
-			<strong><?php esc_html_e( ucfirst( $type ), CG_TXT_DOMAIN ); ?>!</strong>
-			<?php esc_html_e( $msg, CG_TXT_DOMAIN ); ?>
+			<strong><?php esc_html_e( ucfirst( $type ), 'wp-car-gallery' ); ?>!</strong>
+			<?php esc_html_e( $msg, 'wp-car-gallery' ); ?>
 		</div>
 		<?php 
 	}

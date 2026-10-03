@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div id="wph-wrap-all" class="wrap cg-single-settings-page">
 
     <div class="settings-banner">
-        <h2><i class="fa fa-cogs" aria-hidden="true"></i>&nbsp;<?php _e('Detail Page Settings', JOBWP_TXT_DOMAIN); ?></h2>
+        <h2><i class="fa fa-cogs" aria-hidden="true"></i>&nbsp;<?php _e('Detail Page Settings', 'wp-car-gallery'); ?></h2>
     </div>
 
     <?php 
@@ -19,10 +19,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
         <nav class="nav-tab-wrapper">
             <a href="?post_type=jobs&page=cg-single-settings&tab=settings" class="nav-tab cg-tab <?php if ( $cgTab !== 'styles' ) { ?>cg-tab-active<?php } ?>">
-                <i class="fa fa-cog" aria-hidden="true">&nbsp;</i><?php _e('Content', JOBWP_TXT_DOMAIN); ?>
+                <i class="fa fa-cog" aria-hidden="true">&nbsp;</i><?php _e('Content', 'wp-car-gallery'); ?>
             </a>
             <a href="?post_type=jobs&page=cg-single-settings&tab=styles" class="nav-tab cg-tab <?php if ( $cgTab === 'styles' ) { ?>cg-tab-active<?php } ?>">
-                <i class="fa fa-paint-brush" aria-hidden="true"></i>&nbsp;<?php _e('Styles', JOBWP_TXT_DOMAIN); ?>
+                <i class="fa fa-paint-brush" aria-hidden="true"></i>&nbsp;<?php _e('Styles', 'wp-car-gallery'); ?>
             </a>
         </nav>
 

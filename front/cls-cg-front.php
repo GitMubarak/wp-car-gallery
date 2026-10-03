@@ -72,7 +72,7 @@ class CG_Front
 
 		$output = '';
 		ob_start();
-		include_once CG_PATH . 'front/view/listing2.php';
+		include_once CG_PATH . 'front/view/listing.php';
 		$output .= ob_get_clean();
 		return $output;
 	}
