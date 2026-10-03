@@ -198,40 +198,41 @@ class CG_Admin
 	function cg_custom_post_type() {
 
 		$labels = array(
-							'name'                => __('All Cars', 'wp-car-gallery'),
-							'singular_name'       => __('WP Cars', 'wp-car-gallery'),
-							'menu_name'           => __('WP Cars', 'wp-car-gallery'),
-							'parent_item_colon'   => __('Parent Car', 'wp-car-gallery'),
-							'all_items'           => __('All Cars', 'wp-car-gallery'),
-							'view_item'           => __('View Car', 'wp-car-gallery'),
-							'add_new_item'        => __('Add New Car', 'wp-car-gallery'),
-							'add_new'             => __('Add New', 'wp-car-gallery'),
-							'edit_item'           => __('Edit Car', 'wp-car-gallery'),
-							'update_item'         => __('Update Car', 'wp-car-gallery'),
-							'search_items'        => __('Search Car', 'wp-car-gallery'),
-							'not_found'           => __('Not Found', 'wp-car-gallery'),
-							'not_found_in_trash'  => __('Not found in Trash', 'wp-car-gallery')
-						);
+			'name'                => __('All Cars', 'wp-car-gallery'),
+			'singular_name'       => __('WP Cars', 'wp-car-gallery'),
+			'menu_name'           => __('WP Cars', 'wp-car-gallery'),
+			'parent_item_colon'   => __('Parent Car', 'wp-car-gallery'),
+			'all_items'           => __('All Cars', 'wp-car-gallery'),
+			'view_item'           => __('View Car', 'wp-car-gallery'),
+			'add_new_item'        => __('Add New Car', 'wp-car-gallery'),
+			'add_new'             => __('Add New', 'wp-car-gallery'),
+			'edit_item'           => __('Edit Car', 'wp-car-gallery'),
+			'update_item'         => __('Update Car', 'wp-car-gallery'),
+			'search_items'        => __('Search Car', 'wp-car-gallery'),
+			'not_found'           => __('Not Found', 'wp-car-gallery'),
+			'not_found_in_trash'  => __('Not found in Trash', 'wp-car-gallery')
+		);
+
 		$args = array(
-						'label'               => __('car', 'wp-car-gallery'),
-						'description'         => __('Description For Car', 'wp-car-gallery'),
-						'labels'              => $labels,
-						'supports'            => array('title', 'editor', 'page-attributes', 'thumbnail'),
-						'public'              => true,
-						'hierarchical'        => false,
-						'show_ui'             => true,
-						'show_in_menu'        => true,
-						'show_in_nav_menus'   => true,
-						'show_in_admin_bar'   => true,
-						'has_archive'         => false,
-						'can_export'          => true,
-						'exclude_from_search' => false,
-						'yarpp_support'       => true,
-						//'taxonomies' 	      => array('post_tag'),
-						'publicly_queryable'  => true,
-						'capability_type'     => 'page',
-						'menu_icon'           => 'dashicons-car'
-					);
+			'label'               => __('car', 'wp-car-gallery'),
+			'description'         => __('Description For Car', 'wp-car-gallery'),
+			'labels'              => $labels,
+			'supports'            => array('title', 'editor', 'page-attributes', 'thumbnail'),
+			'public'              => true,
+			'hierarchical'        => false,
+			'show_ui'             => true,
+			'show_in_menu'        => true,
+			'show_in_nav_menus'   => true,
+			'show_in_admin_bar'   => true,
+			'has_archive'         => false,
+			'can_export'          => true,
+			'exclude_from_search' => false,
+			'yarpp_support'       => true,
+			//'taxonomies' 	      => array('post_tag'),
+			'publicly_queryable'  => true,
+			'capability_type'     => 'page',
+			'menu_icon'           => 'dashicons-car'
+		);
 
 		register_post_type('car', $args);
 	}
@@ -289,16 +290,6 @@ class CG_Admin
 			'normal',
 			'high'
 		);
-		/*
-		add_meta_box(
-			'cg-metabox-responsibilities',
-			__( 'Responsibilities:', 'wp-car-gallery' ),
-			array( $this, 'cg_metabox_responsibilities' ),
-			'car',
-			'normal',
-			'high'
-		);
-		*/
 	}
 
 	/**

@@ -34,11 +34,6 @@ trait CG_Single_Styles_Settings
 
         return [
             [
-                'name'      => 'cg_single_container_bg_color',
-                'type'      => 'text',
-                'default'   => '#FFFFFF',
-            ],
-            [
                 'name'      => 'cg_single_title_font_color',
                 'type'      => 'text',
                 'default'   => '#242424',
@@ -47,16 +42,6 @@ trait CG_Single_Styles_Settings
                 'name'      => 'cg_single_title_font_size',
                 'type'      => 'number',
                 'default'   => '28',
-            ],
-            [
-                'name'      => 'cg_single_info_font_color',
-                'type'      => 'text',
-                'default'   => '#555555',
-            ],
-            [
-                'name'      => 'cg_single_apply_btn_bg_color',
-                'type'      => 'text',
-                'default'   => '#008b8b',
             ],
         ];
     }

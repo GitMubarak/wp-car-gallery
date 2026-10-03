@@ -21,14 +21,9 @@ class CG_Master {
 	function __construct() {
 
 		$this->cg_version = CG_VERSION;
-		add_action( 'plugins_loaded', array( $this, 'cg_load_plugin_textdomain' ) );
 		$this->cg_load_dependencies();
 		$this->cg_trigger_admin_hooks();
 		$this->cg_trigger_front_hooks();
-	}
-
-	function cg_load_plugin_textdomain() {
-		load_plugin_textdomain( CG_TXT_DOMAIN, FALSE, CG_TXT_DOMAIN . '/languages/' );
 	}
 
 	private function cg_load_dependencies() {

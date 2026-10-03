@@ -18,10 +18,10 @@ if ( ! defined( 'ABSPATH' ) ) {
     <div class="cg-wrap">
 
         <nav class="nav-tab-wrapper">
-            <a href="?post_type=jobs&page=cg-single-settings&tab=settings" class="nav-tab cg-tab <?php if ( $cgTab !== 'styles' ) { ?>cg-tab-active<?php } ?>">
+            <a href="?post_type=car&page=cg-single-settings&tab=content" class="nav-tab cg-tab <?php if ( $cgTab !== 'styles' ) { ?>cg-tab-active<?php } ?>">
                 <i class="fa fa-cog" aria-hidden="true">&nbsp;</i><?php _e('Content', 'wp-car-gallery'); ?>
             </a>
-            <a href="?post_type=jobs&page=cg-single-settings&tab=styles" class="nav-tab cg-tab <?php if ( $cgTab === 'styles' ) { ?>cg-tab-active<?php } ?>">
+            <a href="?post_type=car&page=cg-single-settings&tab=styles" class="nav-tab cg-tab <?php if ( $cgTab === 'styles' ) { ?>cg-tab-active<?php } ?>">
                 <i class="fa fa-paint-brush" aria-hidden="true"></i>&nbsp;<?php _e('Styles', 'wp-car-gallery'); ?>
             </a>
         </nav>
@@ -32,10 +32,10 @@ if ( ! defined( 'ABSPATH' ) ) {
                 <?php 
                 switch ( $cgTab ) {
                     case 'styles':
-                        include_once JOBWP_PATH . 'admin/view/partial/single-style.php';
+                        include_once CG_PATH . 'admin/view/partial/single-style.php';
                         break;
                     default:
-                        include_once JOBWP_PATH . 'admin/view/partial/single-content.php';
+                        include_once CG_PATH . 'admin/view/partial/single-content.php';
                         break;
                 } 
                 ?>

@@ -43,16 +43,6 @@ trait CG_Listing_Styles_Settings
                 'type'      => 'number',
                 'default'   => '20',
             ],
-            [
-                'name'      => 'cg_listing_overview_font_color',
-                'type'      => 'text',
-                'default'   => '#555555',
-            ],
-            [
-                'name'      => 'cg_listing_overview_font_size',
-                'type'      => 'number',
-                'default'   => '14',
-            ],
         ];
     }
 }

@@ -8,65 +8,66 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 trait CG_Core
 {
-	protected $data;
-  protected $hmCurrency = '';
-
 	protected function cg_build_set_settings_options( $fields, $post ) {
 
-		$this->data = [];
+		$set_data = [];
+		
+		$sanitizers = [
 
-		$i=0;
-        
-    foreach ( $fields as $field => $value ) {
+			'text'      => 'sanitize_text_field',
+			'textarea'  => 'sanitize_textarea_field',
+			'editor'    => 'wp_kses_post',
+			'url'       => 'esc_url_raw',
+			'email'     => 'sanitize_email',
+			'number'	=> 'intval',
+			'string'    => 'sanitize_text_field',
+		];
 
-        if ( 'string' === $fields[$i]['type'] ) {
+		foreach ( $fields as $value ) {
+			
+			if ( 'boolean' === $value['type'] ) {
 
-            $this->data[$fields[$i]['name']] = isset( $post[$fields[$i]['name']] ) && filter_var( $post[$fields[$i]['name']], FILTER_SANITIZE_STRING ) ? $post[$fields[$i]['name']] : $fields[$i]['default'];
+				$set_data[$value['name']] = ! empty( $post[$value['name']] ) ? $post[$value['name']] : $value['default'];
+			}
 
-        }
-        if ( 'number' === $fields[$i]['type'] ) {
+			if ( 'multipe_checkbox' === $value['type'] ) {
+	
+				$set_data[$value['name']] = isset( $post[$value['name']] ) && is_array( $post[$value['name']] ) ? $this->array_sanitize( $post[$value['name']] ) : $value['default'];
+			}
 
-            $this->data[$fields[$i]['name']] = isset( $post[$fields[$i]['name']] ) && filter_var( $post[$fields[$i]['name']], FILTER_SANITIZE_NUMBER_INT ) ? $post[$fields[$i]['name']] : $fields[$i]['default'];
+			if ( isset( $sanitizers[ $value['type'] ] ) ) {
 
-        }
-        if ( 'boolean' === $fields[$i]['type'] ) {
+				$callback = $sanitizers[ $value['type'] ];
 
-            $this->data[$fields[$i]['name']] = isset( $post[$fields[$i]['name']] ) ? $post[$fields[$i]['name']] : $fields[$i]['default'];
+				$set_data[ $value['name'] ] = isset( $post[ $value['name'] ] ) ? call_user_func( $callback, wp_unslash( $post[ $value['name'] ] ) ) : $value['default'];
+			}
+    	}
+		
+		return $set_data;
+	}
 
-        }
-        if ( 'text' === $this->fields[$i]['type'] ) {
+  	public function array_sanitize( $input ) {
 
-            $this->data[$this->fields[$i]['name']] = isset( $post[$this->fields[$i]['name']] ) ? sanitize_text_field( $post[$this->fields[$i]['name']] ) : $this->fields[$i]['default'];
-
-        }
-        if ( 'textarea' === $this->fields[$i]['type'] ) {
-
-            $this->data[$this->fields[$i]['name']] = isset( $post[$this->fields[$i]['name']] ) ? sanitize_textarea_field( $post[$this->fields[$i]['name']] ) : $this->fields[$i]['default'];
-
-        }
-        if ( 'email' === $this->fields[$i]['type'] ) {
-
-            $this->data[$this->fields[$i]['name']] = isset( $post[$this->fields[$i]['name']] ) ? sanitize_email( $post[$this->fields[$i]['name']] ) : $this->fields[$i]['default'];
-
-        }
-        $i++;
-    }
-
-		return $this->data;
+		$new_input = array();
+	
+		foreach ( $input as $key => $val ) {
+			
+			$new_input[ $key ] = ( isset( $input[ $key ] ) ) ? sanitize_text_field( wp_unslash( $val ) ) : '';
+		}
+	
+		return $new_input;
 	}
 
 	protected function cg_build_get_settings_options( $fields, $settings ) {
 		
-		$this->data = [];
-    $i=0;
+		$get_data = [];
 
-    foreach ( $fields as $option => $value ) {
+		foreach ( $fields as $value ) {
+	
+			$get_data[$value['name']] = isset( $settings[$value['name']] ) ? $settings[$value['name']] : $value['default'];
+		}
 
-      $this->data[$fields[$i]['name']]  = isset( $settings[$fields[$i]['name']] ) ? $settings[$fields[$i]['name']] : $fields[$i]['default'];
-      $i++;
-    }
-
-		return $this->data;
+		return $get_data;
 	}
   
 }

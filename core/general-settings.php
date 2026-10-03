@@ -16,16 +16,16 @@ trait CG_General_Settings
 
         $this->options  = $this->cg_build_set_settings_options( $this->fields, $post );
 
-        $this->settings = apply_filters( 'cg_single_styles', $this->options, $post );
+        $this->settings = apply_filters( 'cg_general_settings', $this->options, $post );
 
-        return update_option( 'cg_single_styles', $this->settings );
+        return update_option( 'cg_general_settings', $this->settings );
 
     }
 
     function cg_get_general_settings() {
 
         $this->fields   = $this->cg_general_settings_option_fileds();
-		$this->settings = get_option('cg_single_styles');
+		$this->settings = get_option('cg_general_settings');
         
         return $this->cg_build_get_settings_options( $this->fields, $this->settings );
 	}
