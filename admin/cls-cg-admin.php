@@ -241,34 +241,39 @@ class CG_Admin
 	 */
 	function cg_taxonomy() {
 
-		$brand = array(
-			'name' 				=> __('Car Brands', CG_TXT_DOMAIN),
-			'singular_name' 	=> __('Car Brand', CG_TXT_DOMAIN),
-			'search_items' 		=> __('Search Car Brands', CG_TXT_DOMAIN),
-			'all_items' 		=> __('All Car Brands', CG_TXT_DOMAIN),
-			'parent_item' 		=> __('Parent Car Brand', CG_TXT_DOMAIN),
-			'parent_item_colon'	=> __('Parent Car Brand:', CG_TXT_DOMAIN),
-			'edit_item' 		=> __('Edit Car Brand', CG_TXT_DOMAIN),
-			'update_item' 		=> __('Update Car Brand', CG_TXT_DOMAIN),
-			'add_new_item' 		=> __('Add New Car Brand', CG_TXT_DOMAIN),
-			'new_item_name' 	=> __('New Car Brand Name', CG_TXT_DOMAIN),
-			'menu_name' 		=> __('Car Brands', CG_TXT_DOMAIN),
+		$make = array(
+			'name'                       => __( 'Car Makes', CG_TXT_DOMAIN ),
+			'singular_name'              => __( 'Car Make', CG_TXT_DOMAIN ),
+			'search_items'               => __( 'Search Car Makes', CG_TXT_DOMAIN ),
+			'all_items'                  => __( 'All Car Makes', CG_TXT_DOMAIN ),
+			'parent_item'                => __( 'Parent Car Make', CG_TXT_DOMAIN ),
+			'parent_item_colon'          => __( 'Parent Car Make:', CG_TXT_DOMAIN ),
+			'edit_item'                  => __( 'Edit Car Make', CG_TXT_DOMAIN ),
+			'update_item'                => __( 'Update Car Make', CG_TXT_DOMAIN ),
+			'add_new_item'               => __( 'Add New Car Make', CG_TXT_DOMAIN ),
+			'new_item_name'              => __( 'New Car Make Name', CG_TXT_DOMAIN ),
+			'menu_name'                  => __( 'Car Makes', CG_TXT_DOMAIN ),
 		);
 
-		register_taxonomy('car_brand', array('car'), array(
-			'hierarchical' 		=> true,
-			'labels' 			=> $brand,
-			'show_ui' 			=> true,
-			'show_admin_column' => true,
-			'query_var' 		=> true,
-			'sort'				=> true,
-			'rewrite' 			=> array('slug' => 'car-brand'),
-			'default_term'      => [ 
-				'name' => 'Toyota',
-				'slug' => 'toyota',
-				'description' => 'Toyota',
-			],
-		));
+		register_taxonomy(
+			'car_make',
+			array( 'car' ),
+			array(
+				'hierarchical'       => true,
+				'labels'             => $make,
+				'show_ui'            => true,
+				'show_admin_column'  => true,
+				'query_var'          => true,
+				'rewrite'            => array(
+					'slug' => 'car-make',
+				),
+				'default_term'       => array(
+					'name'        => 'Toyota',
+					'slug'        => 'toyota',
+					'description' => 'Toyota',
+				),
+			)
+		);
 	}
 
 	/**
