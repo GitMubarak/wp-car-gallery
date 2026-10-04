@@ -15,7 +15,7 @@ $cgQueryArrParams = array(
     'order'       => 'DESC',
     'meta_query'  => array(
         array(
-            'key'     => 'cg_status',
+            'key'     => 'cg_listing_status',
             'value'   => 'active',
             'compare' => '='
         ),

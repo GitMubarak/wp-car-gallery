@@ -242,6 +242,7 @@ class CG_Admin
 	 */
 	function cg_taxonomy() {
 
+		// Taxonomy: Make
 		$make = array(
 			'name'                       => __( 'Car Makes', 'wp-car-gallery' ),
 			'singular_name'              => __( 'Car Make', 'wp-car-gallery' ),
@@ -268,10 +269,95 @@ class CG_Admin
 				'rewrite'            => array(
 					'slug' => 'car-make',
 				),
-				'default_term'       => array(
-					'name'        => 'Toyota',
-					'slug'        => 'toyota',
-					'description' => 'Toyota',
+			)
+		);
+
+		// Taxonomy: Model
+		$model = array(
+			'name'                       => __( 'Car Models', 'wp-car-gallery' ),
+			'singular_name'              => __( 'Car Model', 'wp-car-gallery' ),
+			'search_items'               => __( 'Search Car Models', 'wp-car-gallery' ),
+			'all_items'                  => __( 'All Car Models', 'wp-car-gallery' ),
+			'parent_item'                => __( 'Parent Car Model', 'wp-car-gallery' ),
+			'parent_item_colon'          => __( 'Parent Car Model:', 'wp-car-gallery' ),
+			'edit_item'                  => __( 'Edit Car Model', 'wp-car-gallery' ),
+			'update_item'                => __( 'Update Car Model', 'wp-car-gallery' ),
+			'add_new_item'               => __( 'Add New Car Model', 'wp-car-gallery' ),
+			'new_item_name'              => __( 'New Car Model Name', 'wp-car-gallery' ),
+			'menu_name'                  => __( 'Car Models', 'wp-car-gallery' ),
+		);
+
+		register_taxonomy(
+			'car_model',
+			array( 'car' ),
+			array(
+				'hierarchical'       => true,
+				'labels'             => $model,
+				'show_ui'            => true,
+				'show_admin_column'  => true,
+				'query_var'          => true,
+				'rewrite'            => array(
+					'slug' => 'car-model',
+				),
+			)
+		);
+
+		// Taxonomy: Body Type
+		$body = array(
+			'name'                       => __( 'Body Types', 'wp-car-gallery' ),
+			'singular_name'              => __( 'Body Type', 'wp-car-gallery' ),
+			'search_items'               => __( 'Search Body Types', 'wp-car-gallery' ),
+			'all_items'                  => __( 'All Body Types', 'wp-car-gallery' ),
+			'parent_item'                => __( 'Parent Body Type', 'wp-car-gallery' ),
+			'parent_item_colon'          => __( 'Parent Body Type:', 'wp-car-gallery' ),
+			'edit_item'                  => __( 'Edit Body Type', 'wp-car-gallery' ),
+			'update_item'                => __( 'Update Body Type', 'wp-car-gallery' ),
+			'add_new_item'               => __( 'Add New Body Type', 'wp-car-gallery' ),
+			'new_item_name'              => __( 'New Body Type Name', 'wp-car-gallery' ),
+			'menu_name'                  => __( 'Body Types', 'wp-car-gallery' ),
+		);
+
+		register_taxonomy(
+			'body_type',
+			array( 'car' ),
+			array(
+				'hierarchical'       => true,
+				'labels'             => $body,
+				'show_ui'            => true,
+				'show_admin_column'  => true,
+				'query_var'          => true,
+				'rewrite'            => array(
+					'slug' => 'body-type',
+				),
+			)
+		);
+
+		// Taxonomy: Fuel Type
+		$fuel = array(
+			'name'                       => __( 'Fuel Types', 'wp-car-gallery' ),
+			'singular_name'              => __( 'Fuel Type', 'wp-car-gallery' ),
+			'search_items'               => __( 'Search Fuel Types', 'wp-car-gallery' ),
+			'all_items'                  => __( 'All Fuel Types', 'wp-car-gallery' ),
+			'parent_item'                => __( 'Parent Fuel Type', 'wp-car-gallery' ),
+			'parent_item_colon'          => __( 'Parent Fuel Type:', 'wp-car-gallery' ),
+			'edit_item'                  => __( 'Edit Fuel Type', 'wp-car-gallery' ),
+			'update_item'                => __( 'Update Fuel Type', 'wp-car-gallery' ),
+			'add_new_item'               => __( 'Add New Fuel Type', 'wp-car-gallery' ),
+			'new_item_name'              => __( 'New Fuel Type Name', 'wp-car-gallery' ),
+			'menu_name'                  => __( 'Fuel Types', 'wp-car-gallery' ),
+		);
+
+		register_taxonomy(
+			'car_fuel',
+			array( 'car' ),
+			array(
+				'hierarchical'       => true,
+				'labels'             => $fuel,
+				'show_ui'            => true,
+				'show_admin_column'  => true,
+				'query_var'          => true,
+				'rewrite'            => array(
+					'slug' => 'fuel-type',
 				),
 			)
 		);
@@ -284,7 +370,7 @@ class CG_Admin
 
 		add_meta_box(
 			'cg_metaboxe_specification',
-			__('Car Specification', 'wp-car-gallery'),
+			__('Car Specifications', 'wp-car-gallery'),
 			array( $this, 'cg_metabox_specification' ),
 			'car',
 			'normal',
@@ -297,27 +383,7 @@ class CG_Admin
 	 */
 	function cg_metabox_specification() {
 		
-		global $post;
-
-		wp_nonce_field( basename(__FILE__), 'cg_fields' );
-
-		$cg_engine_type		= get_post_meta( $post->ID, 'cg_engine_type', true );
-		$cg_displacement	= get_post_meta( $post->ID, 'cg_displacement', true );
-		$cg_year			= get_post_meta( $post->ID, 'cg_year', true );
-		$cg_status			= get_post_meta( $post->ID, 'cg_status', true );
-
-		include_once CG_PATH . 'admin/view/partial/car-info.php';
-	}
-
-	function cg_metabox_responsibilities() {
-
-		global $post;
-			
-		$cg_responsibilities	= get_post_meta( $post->ID, 'cg_responsibilities', true );
-		$settings 				= array('media_buttons' => false, 'editor_height' => 200,);
-		$content 				= wp_kses_post( $cg_responsibilities);
-		$editor_id 				= 'cg_responsibilities';
-		wp_editor( $content, $editor_id, $settings );
+		include_once CG_PATH . 'admin/view/car-specification.php';
 	}
 
 	/**
@@ -331,16 +397,24 @@ class CG_Admin
 			return $post_id;
 		}
 
-		if ( ! isset( $_POST['cg_engine_type'] ) || ! wp_verify_nonce( $_POST['cg_fields'], basename(__FILE__) ) ) {
+		if ( ! isset( $_POST['cg_engine_type'] ) 
+			|| ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['cg_car_specification_nonce_fields'] ) ), 'cg_car_specification_action' ) ) {
+			die('dsdasda');
 			return $post_id;
 		}
 
 		$cg_meta_params = array(
 
 			'cg_engine_type'	=> isset( $_POST['cg_engine_type'] ) ? sanitize_text_field( $_POST['cg_engine_type'] ) : null,
-			'cg_displacement'	=> isset( $_POST['cg_displacement'] ) ? sanitize_text_field( $_POST['cg_displacement'] ) : null,
+			'cg_engine_size'	=> isset( $_POST['cg_engine_size'] ) ? sanitize_text_field( $_POST['cg_engine_size'] ) : null,
 			'cg_year'			=> isset( $_POST['cg_year'] ) ? sanitize_text_field( $_POST['cg_year'] ) : null,
-			'cg_status'			=> isset( $_POST['cg_status'] ) ? sanitize_text_field( $_POST['cg_status'] ) : null,
+			'cg_car_price'		=> isset( $_POST['cg_car_price'] ) ? sanitize_text_field( $_POST['cg_car_price'] ) : null,
+			'cg_car_mileage'	=> isset( $_POST['cg_car_mileage'] ) ? sanitize_text_field( $_POST['cg_car_mileage'] ) : null,
+			'cg_car_color'		=> isset( $_POST['cg_car_color'] ) ? sanitize_text_field( $_POST['cg_car_color'] ) : null,
+			'cg_car_condition'	=> isset( $_POST['cg_car_condition'] ) ? sanitize_text_field( $_POST['cg_car_condition'] ) : null,
+			'cg_car_transmission'	=> isset( $_POST['cg_car_transmission'] ) ? sanitize_text_field( $_POST['cg_car_transmission'] ) : null,
+			'cg_car_drive_type'	=> isset( $_POST['cg_car_drive_type'] ) ? sanitize_text_field( $_POST['cg_car_drive_type'] ) : null,
+			'cg_listing_status'	=> isset( $_POST['cg_listing_status'] ) ? sanitize_text_field( $_POST['cg_listing_status'] ) : null,
 		);
 
 		foreach( $cg_meta_params as $key => $value ) {
