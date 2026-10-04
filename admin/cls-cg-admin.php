@@ -399,7 +399,6 @@ class CG_Admin
 
 		if ( ! isset( $_POST['cg_engine_type'] ) 
 			|| ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['cg_car_specification_nonce_fields'] ) ), 'cg_car_specification_action' ) ) {
-			die('dsdasda');
 			return $post_id;
 		}
 

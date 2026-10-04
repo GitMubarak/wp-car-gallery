@@ -2,84 +2,124 @@
     clear: both;
 }
 
-.cg-listing-body-container {
+.cg-listing-parent-container {
     width: 100%;
     max-width: 1200px;
 }
 
 
-/* Listing Started */
+/* Listing Started - Grid View */
 
-.cg-item {
-    padding: 10px 20px;
-    background: transparent;
-    border: 1px solid #ddd;
-    margin-bottom: 30px;
-    display: inline-block;
-    width: 100%;
-}
-
-.cg-item .cg-car-image {
-    width: 100%;
-    min-height: 50px;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.cg-item .cg-car-image img {
-    border: 1px solid #f2f2f2;
-    height: 250px;
-    width: auto;
-}
-
-.cg-item h3.cg-car-name {
-    margin-bottom: 0px;
-}
-
-.cg-item h3.cg-car-name a.cg-car-name {
-    font-size: 22px;
-    font-weight: 600;
-    text-decoration: none;
-    color: #242424;
-}
-
-.cg-item h3.cg-car-name a.cg-car-name:hover {
-    color: #666;
-}
-
-
-/* Listing Ended */
-
-
-/* Grid Layout Started */
-
-.cg-listing-body-container.grid {
+.cg-listing-grid-body-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
 }
 
-.cg-listing-body-container.grid .cg-item {
-    margin-bottom: 0;
+.cg-grid-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid #e8edf3;
+    border-radius: 12px;
+    padding: 30px 25px;
+    transition: .25s;
 }
 
-.cg-listing-body-container.grid .cg-item .cg-bottom {
-    border: 0px solid #000;
-    display: inline-block;
-    width: 100%;
+.cg-grid-item:hover {
+    transform: translateY(-5px);
+    border-color: #2271b1;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .08);
 }
 
-.cg-listing-body-container.grid .cg-item .cg-list-bottom-item {
+.cg-car-image {
+    width: auto;
+    height: 190px;
+    margin: 0 auto 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border-radius: 0%;
+}
+
+.cg-car-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.cg-car-name {
+    margin: 0 0 25px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.cg-grid-item .cg-car-name a {
+    color: #1d2327;
+    text-decoration: none;
+}
+
+.cg-grid-item .cg-car-name a:hover {
+    color: #2271b1;
+}
+
+.cg-grid-item .cg-car-specifications {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    flex: 1;
+}
+
+.cg-grid-item .cg-car-specifications li {
+    border-top: 1px solid #edf1f5;
+}
+
+.cg-grid-item .cg-car-specifications li:last-child {
+    border-bottom: 1px solid #edf1f5;
+}
+
+.cg-grid-item .cg-car-specifications a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 0;
+    color: #444;
+    text-decoration: none;
+    transition: .2s;
+}
+
+.cg-grid-item .cg-car-specifications a:hover {
+    color: #2271b1;
+    padding-left: 8px;
+}
+
+.cg-specification-icon {
+    flex: none;
+}
+
+.cg-listing-grid-body-container .cg-grid-item .cg-view-details-button {
+    margin-top: 25px;
     display: block;
-    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    padding: 14px;
+    border-radius: 8px;
+    background: #f5f8fc;
+    color: #2271b1;
+    font-weight: 600;
+    transition: .25s;
 }
 
-.cg-listing-body-container.grid .cg-item .pull-right {
-    float: left;
+.cg-grid-item .cg-view-details-button:hover {
+    background: #2271b1;
+    color: #fff;
 }
 
 
-/* Grid Layout Ended */
+/* Listing Ended - Grid View */
 
 
 /* Details Started */
@@ -153,23 +193,20 @@ table.cg-specification {
 
 /* Details Ended */
 
-@media only screen and (max-width: 500px) {
-    .cg-listing-body-container.grid {
-        display: block;
+
+/* Tablet */
+
+@media (max-width:991px) {
+    .cg-listing-grid-body-container {
+        grid-template-columns: repeat(2, 1fr);
     }
-    /* Single */
-    .left-cell {
-        float: none;
-        text-align: left;
-        width: 100%;
-        border-bottom: 1px solid #DDD;
-        line-height: 30px;
-        padding: 10px 20px;
-    }
-    .right-cell {
-        float: none;
-        width: 100%;
-        border-left: 0px;
-        padding: 10px 20px;
+}
+
+
+/* Mobile */
+
+@media (max-width:600px) {
+    .cg-listing-grid-body-container {
+        grid-template-columns: 1fr;
     }
 }

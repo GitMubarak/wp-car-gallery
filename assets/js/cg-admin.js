@@ -16,12 +16,6 @@
         $(value).wpColorPicker();
     });
 
-    $("#cg_deadline").datepicker({
-        dateFormat: "yy-mm-dd",
-        changeMonth: true,
-        changeYear: true,
-    });
-
     $('.cg-closebtn').on('click', function() {
         this.parentElement.style.display = 'none';
     });
