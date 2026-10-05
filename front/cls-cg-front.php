@@ -43,6 +43,14 @@ class CG_Front
 			$this->cg_version,
 			FALSE 
 		);
+
+		wp_enqueue_style(	
+			'cg-front-search',
+			CG_ASSETS . 'css/cg-search.css',
+			array(),
+			$this->cg_version,
+			FALSE 
+		);
 		
 		if ( ! wp_script_is( 'jquery' ) ) {
 			wp_enqueue_script('jquery');

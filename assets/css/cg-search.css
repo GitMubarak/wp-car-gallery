@@ -1,0 +1,155 @@
+/* Search Panel
+--------------------------------------------- */
+
+.cg-search-panel {
+    width: 100%;
+    margin: 0 0 35px;
+    padding: 28px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+
+/* Form
+--------------------------------------------- */
+
+.cg-search-form {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    align-items: end;
+}
+
+
+/* Fields
+--------------------------------------------- */
+
+.cg-field {
+    min-width: 0;
+}
+
+.cg-field label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #374151;
+}
+
+.cg-field input,
+.cg-field select {
+    width: 100%;
+    height: 44px;
+    padding: 0 13px;
+    border: 1px solid #dfe3e8;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #374151;
+    font-size: 14px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cg-field input:focus,
+.cg-field select:focus {
+    border-color: #3273a8;
+    box-shadow: 0 0 0 3px rgba(50, 115, 168, 0.08);
+}
+
+
+/* Price / Year Range
+--------------------------------------------- */
+
+.cg-range-fields {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cg-range-fields input {
+    min-width: 0;
+}
+
+.cg-range-fields span {
+    color: #9ca3af;
+    font-size: 14px;
+}
+
+
+/* Search Button
+--------------------------------------------- */
+
+.cg-search-action {
+    display: flex;
+    gap: 10px;
+}
+
+.cg-search-panel .cg-search-action button.cg-search-button,
+.cg-search-panel .cg-search-action .cg-reset-button {
+    height: 44px;
+    padding: 0 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.cg-search-action .cg-search-button {
+    border: 0;
+    background: #3273a8;
+    color: #fff;
+    cursor: pointer;
+}
+
+.cg-search-action .cg-reset-button {
+    border: 1px solid #dfe3e8;
+    background: #fff;
+    color: #4b5563;
+}
+
+.cg-search-action button:hover {
+    background: #28618f;
+}
+
+.cg-search-action button:active {
+    transform: translateY(1px);
+}
+
+.cg-search-action .cg-reset-button:hover {
+    background: #f8f9fa;
+}
+
+
+/* Tablet
+--------------------------------------------- */
+
+@media (max-width: 991px) {
+    .cg-search-form {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* Mobile
+--------------------------------------------- */
+
+@media (max-width: 600px) {
+    .cg-search-panel {
+        padding: 20px;
+    }
+    .cg-search-form {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    .cg-range-fields {
+        gap: 6px;
+    }
+}

@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $post;
 
-$cg_list_layout = isset( $cgAttr['layout'] ) ? $cgAttr['layout'] : 'grid';
+//$cg_list_layout = isset( $cgAttr['layout'] ) ? $cgAttr['layout'] : 'grid';
 
 // Main Query Arguments
 $cgQueryArrParams = array(
@@ -20,14 +20,19 @@ $cgQueryArrParams = array(
             'compare' => '='
         ),
     ),
+    'tax_query'         => array(
+        'relation' => 'AND',
+    ),
 );
 
 $cgQueryArr = apply_filters( 'cg_listing_query_array', $cgQueryArrParams );
-
-$cgCars = new WP_Query( $cgQueryArr );
 ?>
 <div class="cg-listing-parent-container">
     <?php
+    include 'search.php';
+
+    $cgCars = new WP_Query( $cgQueryArr );
+
     if ( $cgCars->have_posts() ) {
         ?>
         <div class="cg-listing-grid-body-container">
@@ -69,14 +74,14 @@ $cgCars = new WP_Query( $cgQueryArr );
                         <li>
                             <a href="#">
                                 <span class="cg-specification-icon"><i class="fas fa-car"></i></span>
-                                <?php _e('Price', 'wp-car-gallery'); ?> - <?php _e('$', 'wp-car-gallery'); ?><?php echo number_format( esc_html( $cg_car_price ) ); ?>
+                                <?php _e('Price', 'wp-car-gallery'); ?> – <?php _e('$', 'wp-car-gallery'); ?><?php echo number_format( esc_html( $cg_car_price ) ); ?>
                             </a>
                         </li>
 
                         <li>
                             <a href="#">
                                 <span class="cg-specification-icon"><i class="fa-solid fa-gauge-high"></i></span>
-                                <?php _e('Mileage', 'wp-car-gallery'); ?> - <?php echo number_format( esc_html( $cg_car_mileage ) ); ?>&nbsp;<?php _e('km', 'wp-car-gallery'); ?>
+                                <?php _e('Mileage', 'wp-car-gallery'); ?> – <?php echo number_format( esc_html( $cg_car_mileage ) ); ?>&nbsp;<?php _e('km', 'wp-car-gallery'); ?>
                             </a>
                         </li>
 
@@ -87,7 +92,7 @@ $cgCars = new WP_Query( $cgQueryArr );
                             <li>
                                 <a href="#">
                                     <span class="cg-specification-icon"><i class="fas fa-gas-pump"></i></span>
-                                    <?php _e('Fuel', 'wp-car-gallery'); ?> - 
+                                    <?php _e('Fuel', 'wp-car-gallery'); ?> – 
                                     <?php
                                     foreach( $car_fuel as $fuel ) {
                                         $car_fuel_arr[] = $fuel->name . '';
@@ -103,21 +108,21 @@ $cgCars = new WP_Query( $cgQueryArr );
                         <li>
                             <a href="#">
                                 <span class="cg-specification-icon"><i class="fas fa-car"></i></span>
-                                <?php _e('Transmission', 'wp-car-gallery'); ?> - <?php esc_html_e( $cg_car_transmission ); ?>
+                                <?php _e('Transmission', 'wp-car-gallery'); ?> – <?php esc_html_e( $cg_car_transmission ); ?>
                             </a>
                         </li>
 
                         <li>
                             <a href="#">
                                 <span class="cg-specification-icon"><i class="fas fa-car"></i></span>
-                                <?php _e('Engine', 'wp-car-gallery'); ?> - <?php esc_html_e( $cg_engine_size ); ?>&nbsp;<?php _e('CC', 'wp-car-gallery'); ?>
+                                <?php _e('Engine', 'wp-car-gallery'); ?> – <?php esc_html_e( $cg_engine_size ); ?>&nbsp;<?php _e('CC', 'wp-car-gallery'); ?>
                             </a>
                         </li>
 
                         <li>
                             <a href="#">
                                 <span class="cg-specification-icon"><i class="fas fa-paint-roller"></i></span>
-                                <?php _e('Color', 'wp-car-gallery'); ?> - <?php esc_html_e( $cg_car_color ); ?>
+                                <?php _e('Color', 'wp-car-gallery'); ?> – <?php esc_html_e( $cg_car_color ); ?>
                             </a>
                         </li>
 
@@ -143,5 +148,4 @@ $cgCars = new WP_Query( $cgQueryArr );
     // Reset Post Data
     wp_reset_postdata();
     ?>
-    </div>
 </div>
