@@ -1,255 +1,151 @@
-=== WordPress Job Board and Recruitment Plugin - JobWP ===
+=== Car Gallery ===
 Contributors: hmplugin, mhmrajib
-Donate link: https://www.paypal.me/mhmrajib
-Tags: job manager, job listing, job board, job management, job lists, job list, job, jobs, company, hiring, employment, employer, employees, candidate, freelance, internship, job listings, positions, board, application, hiring, listing, manager, recruiting, recruitment, talent
-Requires at least: 5.2
-Tested up to: 6.1.1
-Stable tag: 1.6
-Requires PHP: 7.2
+Tags: car listings, vehicle listings, car inventory, automobile, vehicle inventory
+Requires at least: 6.0
+Tested up to: 7.1
+Requires PHP: 7.4
+Stable tag: 1.0.0
 License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Display job listings in a career page and allow users to apply directly to your site.
+Create car listings with vehicle details, pricing, images, search filters, pagination, and seller contact options in WordPress.
 
 == Description ==
 
-**JobWP** is the **Easiest Job Board, Career and Recruitment Plugin for WordPress** to display job listing in a career page.
+**WP Car Gallery – Car Listings & Vehicle Inventory for WordPress**
 
-Employer can add multiple job listings and can show them on a career page by inserting [cg_listing] shortcode.
-Applicants can apply directly via the job application form.
-After an applicant apply for a job, employer can see that application instantly in the Application List page.
+Create a car listing website or showcase your vehicle inventory directly on your WordPress website with WP Car Gallery.
 
-**How It Works!**
+Whether you are building a car dealership website, a used car listing directory, or a website to showcase available vehicles, WP Car Gallery helps you organize and display your car listings with a clean, user-friendly interface.
 
-[youtube https://youtu.be/ZtbjdFyas90]
+Add vehicle information, display attractive listing cards, let visitors search and filter cars, and provide dedicated details pages with seller contact options.
 
-
-= ✅ Fully Customizable =
-
-With this job board plugin you can customize your job listing very easily and extensively. You active, inactive a job, you can show hide and change colors and font size of your job info.
-
-= ✅ Accept Online Application =
-
-Job seeker can see their jobs, serch by category or job keywords or title. If they find any suitable job they can apply directly to a specific job. An apply online button is available in the job detail page which will open an application form where applicants can apply easily.
-
-= ✅ Multiple Layouts =
-
-There are multiple layouts available where you can display jobs with a list or grid view. You can display the layouts in different pages via shortcoded option. 
-
-[__Live Demo__](http://cg.hmplugin.com/demo/)
-
-[Read more about JobWP](http://cg.hmplugin.com/).
 
 **🌟 Key Features:**
 
-* Easy to install and use
-* Option to use external form in the application form
-* Fully responsive for any device
-* Translation Ready
-* Display job listing in a career page
-* Two layouts - List and Grid view
-* Display job details in a single page
-* Lots of job informations
-* Job search panel
-* Applicants can apply directly to a job
-* Instant notification email when an application is submitted
-* Admin application list panel
+* **Car Listings**: Display published and active vehicles in an organized listing layout.
+
+* **Vehicle Details Pages**: Give each car its own page with a featured image, description, price, and key specifications.
+
+* **Search and Filters**: Help visitors find vehicles using keywords, make, model, price range, year range, fuel type, body type, transmission, and condition.
+
+* **Pagination**: Split large collections of vehicles across multiple pages.
+
+* **Vehicle Information**: Organize vehicle details such as year, price, mileage, engine size, engine technology, transmission, drive type, exterior color, and condition.
+
+* **Make and Model Organization**: Categorize vehicles by make and model.
+
+* **Seller Contact Options**: Provide Contact Seller and Call Seller buttons on vehicle details pages.
+
+* **Listing Page Settings**: Configure the number of vehicles displayed per page and choose the listing sort order.
+
+* **Detail Page Settings**: Control the display of the car title, overview, and seller contact buttons.
+
+* **Featured Images**: Display a representative image for each vehicle.
+
+* **Translation Ready**: Translate interface text into your preferred language using WordPress translation tools.
+
+* **Theme Compatibility**: Designed to work with WordPress themes while retaining your theme's overall page structure.
 
 
-**✅ Available Job Information**
+➡️ Display Your Car Listings:⬅️
 
-* Job overview
-* Year of Experience
-* Number of Vacancies
-* Job Deadline
-* Job Status - Active / Inactive a job
-* Job Categories - Sales / Marketing / IT etc.
-* Job Nature - Full time / part time etc.
-* Job Level - Sr. / Jr. Position
-* Job Location
-* Job Responsibilities
-* Skills Required
-* Educational Requirements
-* Additional Requirements
-* Salary
-* Other Benefits
+<strong> Use the WP Car Gallery shortcode to display car listings on a page: </strong>
 
-**✅ Search Panel Items**
+<pre> [wp_car_gallery] </pre>
 
-* Search by Job Title
-* Search by Job Category
-* Search by Job Type
-* Search by Job Location
+You can also specify the number of listings to display:
 
+<pre> [wp_car_gallery limit="9"]</pre>
 
-
-**✅ Options In Listing Page Settings**
-
-* Overview show-hide option
-* Overview word length option
-* Deadline label text option
-* Experience label text option
-* Title font color option
-* Title font size option
-* Overview font color option
-* Overview font size option
-
-
-**✅ Options In Details Page Settings**
-
-* Apply procedure title option
-* Apply procedure content option
-* Title font color option
-* Title font size option
+The shortcode supports optional listing limit, sorting field, and sorting direction attributes.
 
 
 
-➡️ Useage of Shortcode:⬅️
+**👍 Built for Vehicle Listing Websites:**
 
-<strong> Use the below Shortcode to display Jobs </strong>
+WP Car Gallery provides the essential tools to organize your vehicle inventory and help visitors discover cars through a straightforward browsing experience.
 
-<pre> [cg_listing] </pre>
-
-
-**📋 Translation Ready:**
-
-* POT file included (/languages/)
-* English (United States) (Default)
-* Bengoli (Bangladesh)
-
-
-**👍 Feedback/Rating:**
-If you find this plugin helpful, feel free to give us your valuable review. Rate us and share this plugin with your friends and others. This will motivate us and help us to grow.
-[Rate Us](https://wordpress.org/support/plugin/cg/reviews/#new-post)
-
-
-**🔥 Other Plugins from [HM Plugin](https://hmplugin.com)**
-
-👉 [WordPress Books Showcase Plugin](https://wordpress.org/plugins/wp-books-gallery/) Create an online digital library to sell and affiliate books
-👉 [WordPress Donation Plugin](https://wordpress.org/plugins/wp-stripe-donation/) Create a form to collect donation and payment via Stripe payment gateway
-👉 [WordPress News Plugin](https://wordpress.org/plugins/wp-top-news/) Display internal and external news in various layouts
-👉 [WordPress Notification Bar Plugin](https://wordpress.org/plugins/tiny-bar/) Dsiplay message and a button at the top or bottom of your webpage
-👉 [WordPress Author Bio Box Plugin](https://wordpress.org/plugins/hm-cool-author-box-widget/) Displays an author box / author info / auhor bio to your website
-👉 [WordPress Logo Showcase Plugin](https://wordpress.org/plugins/hm-logo-showcase/) Easiest client, brand logo showcase plugin to display logos on your website
-👉 [WordPress Resume Manager Plugin](https://wordpress.org/plugins/hm-resume-manager/) Display and manage personal resume or CV at your WordPress webpage
-👉 [WordPress Restaurant Menu Plugin](https://wordpress.org/plugins/menukaart/) Simplest plugin that displays food items, menus in your webpage
-👉 [WordPress Job Board and Recruitment Plugin](https://wordpress.org/plugins/cg/) Easiest Job Board, Career and Recruitment Plugin to display job listing in a career page
-👉 [WordPress Product Showcase Plugin](https://wordpress.org/plugins/hm-product-catalog/) Display products with various informations on your website
-👉 [WordPress Testimonial Plugin](https://wordpress.org/plugins/hm-testimonial/) Displays client’s testimonial, review or quote in multiple ways
-👉 [WordPress FAQ Plugin](https://wordpress.org/plugins/wp-display-faq/) WordPress FAQ Plugin which will display various FAQs in your website
 
 
 == Installation ==
 
-Install JobWp as a regular WordPress plugin. Here are different ways to install plugin:
+Install WP Car Gallery as a regular WordPress plugin. Here are different ways to install plugin:
 
 **Install by search plugin:**
 
 1. In your Admin, go to menu Plugins > Add New
-2. Search Display cg
+2. Search WP Car Gallery
 3. Click to install
 4. Activate the plugin
-5. Setup the proper settings in WP Jobs menu
+5. Setup the proper settings in WP Cars menu
 
 **Install by upload plugin:**
 
-1. Download the latest version of JobWp (.zip file)
+1. Download the latest version of WP Car Gallery (wp-car-gallery.zip file)
 2. In your Admin, go to menu Plugins > Add New
 3. Select "Upload Plugin"
 4. Click on "Choose File"
-5. Select downloaded cg.zip and click on "Install Now" button
+5. Select downloaded wp-car-gallery.zip and click on "Install Now" button
 6. Activate the plugin
+
 
 == Frequently Asked Questions ==
 
-= How can I Display Job? =
+= How do I display car listings? =
 
-After activating the plugin, you will see “WP Jobs” in WordPress Admin Dashboard.
+Create a WordPress page and add the [wp_car_gallery] shortcode to display your vehicle listings.
 
-Firstly, Go to “Add New” and add your Job there.
+= Can I control how many cars appear on a page? =
 
-Next, create a page and in the page editor put the shortcode [cg_listing] and Update it.
-You will see a Job Listing on that page.
+Yes. Use the shortcode's limit attribute or configure the listing limit in the plugin's Listing Page Settings.
 
-= Job detail page is not working! Showing 404 not found! =
+For example:
 
-Please go to your admin panel settings -> Permalinks.
+[wp_car_gallery limit="9"]
 
-After that just press Save Changes button.
+= Can visitors search and filter cars? =
 
-Now go to your detail page and refresh it.
+Yes. Visitors can filter listings by keyword, make, model, price range, year range, fuel type, body type, transmission, and vehicle condition.
+
+= Does each car have its own details page? =
+
+Yes. Each vehicle has a dedicated details page that can display its featured image, description, price, key specifications, and seller contact options.
+
+= Can I customize the listing order? =
+
+Yes. Listing Page Settings let you choose the sorting field and ascending or descending order.
+
+= Can I hide elements on the vehicle details page? =
+
+Yes. Detail Page Settings let you control the display of the car title, overview, Contact Seller button, and Call Seller button.
+
+= Can I use WP Car Gallery with my WordPress theme? =
+
+WP Car Gallery is designed to work with WordPress themes. Styling and some page elements may vary depending on the active theme.
+
+= Is WP Car Gallery translation ready? =
+
+Yes. The plugin uses WordPress translation functions so its interface text can be translated into other languages.
 
 
 == Screenshots ==
 
-1. Showing Job Listing in a career page
-2. Showing Jeb Detail Page
-3. Job Application Form
-4. Application list panel in admin
-5. Listing page content settings
-6. Listing page styles settings
-7. Details page content settings
-8. Details page styles settings
-9. Job listing grid view
-10. Job listing minimal view
+1. Car listings displayed in a clean, organized layout.
+2. Search and filter options for finding vehicles.
+3. Single-car details page with vehicle image, price, specifications, and seller contact buttons.
+4. Listing Page Settings for configuring the listing limit and sorting.
+5. Detail Page Settings for controlling the visibility of page elements.
 
 
 == Changelog ==
 
-= 1.6 =
-* Job detail page not found issue fixed
-* Apply form nonce field verified
-* Application table drop issue fixed
-* Freemius sdk updated
-* Modal css fixed
-* Option to use external form in the application form
+= 1.0.0 =
 
-= 1.5 =
-* Location label text option added
-* Job type label text option added
-* Details page item show hide option added
-* Details page item label text option added
-* Detail container bg color option added
-* Detail job info font color option added
-* Detail apply online button bg color option added
-* Detail mobile responsive improved
-* List job info item show hide option added
-* List mobile responsive improved
-* Two layouts added - List/Grid
-
-= 1.4 =
-* Font Awesome Free 6.1.1 integrated
-* Search by Job Type Feature added
-* Search by Job Location Feature added
-* Css fixed
-* js console error fixed
-* Job location added in listing
-* Job type added in listing
-* Admin notification email features added
-
-= 1.3 =
-* Search by Job Title item added
-* Search by Job Category item added
-* Job Application Form Added
-
-= 1.2 =
-* List page overview show-hide option added
-* List page overview word length option added
-* List page experience label text option added
-* List page deadline label text option added
-* List page title font color option added
-* List page title font size option added
-* List page overview font color option added
-* List page overview font size option added
-* Single page title font color option added
-* Single page title font size option added
-* Admin design improved
-
-= 1.1 =
-* Primary color changed
-* Job listing hover color changed
-* Font Awesome 4 integrated
-* Css changed
-
-= 1.0 =
-* Initial release
+* Initial release.
+* Added vehicle listings and individual vehicle details pages.
+* Added vehicle information fields and make/model organization.
+* Added frontend search, filters, and pagination.
+* Added seller contact options.
+* Added listing page and detail page settings.
+* Added shortcode support for displaying car listings.

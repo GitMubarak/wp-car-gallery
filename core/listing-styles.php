@@ -16,16 +16,16 @@ trait CG_Listing_Styles_Settings
 
         $this->options  = $this->cg_build_set_settings_options( $this->fields, $post );
 
-        $this->settings = apply_filters( 'cg_listing_styles', $this->options, $post );
+        $this->settings = apply_filters( 'cg_listing_styles_settings', $this->options, $post );
 
-        return update_option( 'cg_listing_styles', $this->settings );
+        return update_option( 'cg_listing_styles_settings', $this->settings );
 
     }
 
     function cg_get_listing_styles_settings() {
 
         $this->fields   = $this->cg_listing_styles_option_fileds();
-		$this->settings = get_option('cg_listing_styles');
+		$this->settings = get_option('cg_listing_styles_settings');
         
         return $this->cg_build_get_settings_options( $this->fields, $this->settings );
 	}
@@ -36,7 +36,7 @@ trait CG_Listing_Styles_Settings
             [
                 'name'      => 'cg_listing_title_font_color',
                 'type'      => 'text',
-                'default'   => '#242424',
+                'default'   => '#2271b1',
             ],
             [
                 'name'      => 'cg_listing_title_font_size',

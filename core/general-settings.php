@@ -34,24 +34,19 @@ trait CG_General_Settings
 
         return [
             [
-                'name'      => 'cg_admin_noti_email',
+                'name'      => 'cg_contact_seller_email',
                 'type'      => 'email',
                 'default'   => '',
             ],
             [
-                'name'      => 'cg_list_layout',
-                'type'      => 'string',
-                'default'   => 'list',
-            ],
-            [
-                'name'      => 'cg_ext_application_form',
-                'type'      => 'boolean',
-                'default'   => false,
-            ],
-            [
-                'name'      => 'cg_ext_application_form_shortcode',
+                'name'      => 'cg_contact_seller_tel',
                 'type'      => 'text',
                 'default'   => '',
+            ],
+            [
+                'name'      => 'cg_car_currency',
+                'type'      => 'text',
+                'default'   => 'USD-&#36;',
             ],
         ];
     }

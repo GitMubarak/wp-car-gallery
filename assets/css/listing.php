@@ -4,14 +4,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 <style type="text/css">
-  /* Job Listing */
-  .cg-item .cg-job-title a.cg-job-title-a {
-    color: <?php esc_html_e( $cg_listing_title_font_color ); ?>;
-    font-size: <?php esc_html_e( $cg_listing_title_font_size ); ?>px;
-  }
-  /* Job overview */
-  .cg-item p.cg-overview-excerpt {
-    color: <?php esc_html_e( $cg_listing_overview_font_color ); ?>;
-    font-size: <?php esc_html_e( $cg_listing_overview_font_size ); ?>px;
-  }
+.cg-grid-item .cg-car-name a.cg-car-name-link {
+  color: <?php echo esc_html( $cg_listing_title_font_color ); ?>;
+  font-size: <?php echo esc_html( $cg_listing_title_font_size ); ?>px;
+}
+
+.cg-item p.cg-overview-excerpt {
+  color: <?php echo esc_html( $cg_listing_overview_font_color ); ?>;
+  font-size: <?php echo esc_html( $cg_listing_overview_font_size ); ?>px;
+}
 </style>

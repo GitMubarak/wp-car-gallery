@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 */
 class CG_Front 
 {
-	use CG_Core, 
+	use CG_Core,
 	CG_General_Settings, 
 	CG_Listing_Content_Settings, 
 	CG_Listing_Styles_Settings, 
@@ -51,6 +51,14 @@ class CG_Front
 			$this->cg_version,
 			FALSE 
 		);
+
+		wp_enqueue_style(	
+			'cg-front-single',
+			CG_ASSETS . 'css/cg-single.css',
+			array(),
+			$this->cg_version,
+			FALSE 
+		);
 		
 		if ( ! wp_script_is( 'jquery' ) ) {
 			wp_enqueue_script('jquery');
@@ -78,15 +86,15 @@ class CG_Front
 	*/
 	function cg_load_shortcode_view( $cgAttr ) {
 
-		$output = '';
 		ob_start();
-		include_once CG_PATH . 'front/view/listing.php';
-		$output .= ob_get_clean();
-		return $output;
+		
+		include CG_PATH . 'front/view/listing.php';
+		
+		return ob_get_clean();
 	}
 
 	/**
-	 * Function for loading Job Single Template
+	 * Function for loading Single Template
 	*/
 	function cg_single_template( $template ) {
 		
@@ -97,6 +105,26 @@ class CG_Front
 		}
 
 		return $template;
+	}
+
+	/**
+	 * Function for loading only car content in the details page
+	*/
+	function cg_single_template_only_content( $content ) {
+		
+		if (
+			! is_singular( 'car' ) ||
+			! is_main_query() ||
+			! in_the_loop()
+		) {
+			return $content;
+		}
+
+		ob_start();
+
+		include CG_PATH . 'front/view/single.php';
+
+		return ob_get_clean();
 	}
 }
 ?>

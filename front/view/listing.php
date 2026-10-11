@@ -5,14 +5,61 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $post;
 
-//$cg_list_layout = isset( $cgAttr['layout'] ) ? $cgAttr['layout'] : 'grid';
+$cgGeneralSettings = $this->cg_get_general_settings();
+
+foreach ( $cgGeneralSettings as $option_name => $option_value ) {
+    if ( isset( $cgGeneralSettings[$option_name] ) ) {
+        ${"" . $option_name} = $option_value;
+    }
+}
+
+$cgListingContent = $this->cg_get_listing_content_settings();
+
+foreach ( $cgListingContent as $option_name => $option_value ) {
+    if ( isset( $cgListingContent[$option_name] ) ) {
+        ${"" . $option_name} = $option_value;
+    }
+}
+
+$cgListingStyles = $this->cg_get_listing_styles_settings();
+
+foreach ( $cgListingStyles as $option_name => $option_value ) {
+    if ( isset( $cgListingStyles[$option_name] ) ) {
+        ${"" . $option_name} = $option_value;
+    }
+}
+
+$cg_currency_symbol = substr( $cg_car_currency, strrpos( $cg_car_currency, '-' ) + 1 );
+
+// For Pagination
+if ( is_front_page() ) {
+    $cg_paged = ( get_query_var('page') ) ? get_query_var('page') : 1;
+} else {
+    $cg_paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+}
+
+$cg_display_limit       = isset( $cgAttr['limit'] ) ? max( 1, absint( $cgAttr['limit'] ) ) : $cg_listing_limit;
+$cg_listing_order_by    = isset( $cgAttr['order_by'] ) ? sanitize_key( $cgAttr['order_by'] ) : $cg_listing_order_by;
+$cg_listing_order       = isset( $cgAttr['order'] ) ? strtoupper( sanitize_key( $cgAttr['order'] ) ) : $cg_listing_order;
+
+if ( ! in_array( $cg_listing_order_by, array( 'date', 'title', 'menu_order' ), true ) ) {
+    $cg_listing_order_by = 'date';
+}
+
+if ( ! in_array( $cg_listing_order, array( 'ASC', 'DESC' ), true ) ) {
+    $cg_listing_order = 'DESC';
+} else {
+    $cg_listing_order = strtoupper( $cg_listing_order );
+}
 
 // Main Query Arguments
 $cgQueryArrParams = array(
     'post_type'   => 'car',
     'post_status' => 'publish',
-    'orderby'     => 'date',
-    'order'       => 'DESC',
+    'orderby'     => $cg_listing_order_by,
+    'order'       => $cg_listing_order,
+    'posts_per_page' => $cg_display_limit,
+    'paged'          => $cg_paged,
     'meta_query'  => array(
         array(
             'key'     => 'cg_listing_status',
@@ -26,6 +73,9 @@ $cgQueryArrParams = array(
 );
 
 $cgQueryArr = apply_filters( 'cg_listing_query_array', $cgQueryArrParams );
+
+// Load Styling
+include CG_PATH . 'assets/css/listing.php';
 ?>
 <div class="cg-listing-parent-container">
     <?php
@@ -53,7 +103,7 @@ $cgQueryArr = apply_filters( 'cg_listing_query_array', $cgQueryArrParams );
 
                 $car_fuel          = wp_get_post_terms( $post->ID, 'car_fuel', array('fields' => 'all') );
                 
-                $cg_img 	= CG_ASSETS . 'img/no-image.jpg';
+                $cg_img = CG_ASSETS . 'img/no-image.jpg';
 
                 if ( has_post_thumbnail() ) {
                     $cg_img = get_the_post_thumbnail_url( $post->ID,'full' );
@@ -62,7 +112,7 @@ $cgQueryArr = apply_filters( 'cg_listing_query_array', $cgQueryArrParams );
                 <div class="cg-grid-item">
 
                     <div class="cg-car-image">
-                        <img src="<?php echo esc_url( $cg_img ); ?>" alt="<?php _e( 'No Image Available', 'wp-car-gallery' ); ?>">
+                        <img src="<?php echo esc_url( $cg_img ); ?>" alt="<?php esc_html_e( 'No Image Available', 'wp-car-gallery' ); ?>">
                     </div>
                     
                     <h3 class="cg-car-name">
@@ -71,65 +121,86 @@ $cgQueryArr = apply_filters( 'cg_listing_query_array', $cgQueryArrParams );
 
                     <ul class="cg-car-specifications">
 
-                        <li>
-                            <a href="#">
-                                <span class="cg-specification-icon"><i class="fas fa-car"></i></span>
-                                <?php _e('Price', 'wp-car-gallery'); ?> – <?php _e('$', 'wp-car-gallery'); ?><?php echo number_format( esc_html( $cg_car_price ) ); ?>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#">
-                                <span class="cg-specification-icon"><i class="fa-solid fa-gauge-high"></i></span>
-                                <?php _e('Mileage', 'wp-car-gallery'); ?> – <?php echo number_format( esc_html( $cg_car_mileage ) ); ?>&nbsp;<?php _e('km', 'wp-car-gallery'); ?>
-                            </a>
-                        </li>
-
                         <?php
+                        if ( '' != $cg_car_price ) {
+                            ?>
+                            <li>
+                                <a href="#">
+                                    <span class="cg-specification-icon"><i class="fas fa-car"></i></span>
+                                    <?php esc_html_e('Price', 'wp-car-gallery'); ?> – <?php echo esc_html( $cg_currency_symbol ); ?><?php echo number_format( esc_html( $cg_car_price ) ); ?>
+                                </a>
+                            </li>
+                            <?php
+                        }
+
+                        if ( '' != $cg_car_mileage ) {
+                            ?>
+                            <li>
+                                <a href="#">
+                                    <span class="cg-specification-icon"><i class="fa-solid fa-gauge-high"></i></span>
+                                    <?php esc_html_e('Mileage', 'wp-car-gallery'); ?> – <?php echo number_format( esc_html( $cg_car_mileage ) ); ?>&nbsp;<?php esc_html_e('km', 'wp-car-gallery'); ?>
+                                </a>
+                            </li>
+                            <?php
+                        }
+
                         if ( ! empty( $car_fuel ) ) {
                             $car_fuel_arr = [];
                             ?>
                             <li>
                                 <a href="#">
                                     <span class="cg-specification-icon"><i class="fas fa-gas-pump"></i></span>
-                                    <?php _e('Fuel', 'wp-car-gallery'); ?> – 
+                                    <?php esc_html_e('Fuel', 'wp-car-gallery'); ?> – 
                                     <?php
                                     foreach( $car_fuel as $fuel ) {
-                                        $car_fuel_arr[] = $fuel->name . '';
+                                        $car_fuel_arr[] = $fuel->name;
                                     }
-                                    echo implode( ', ', $car_fuel_arr );
+
+                                    echo esc_html( implode( ', ', $car_fuel_arr ) );
                                     ?>
+                                </a>
+                            </li>
+                            <?php
+                        }
+
+                        if ( '' != $cg_car_transmission ) {
+                            ?>
+                            <li>
+                                <a href="#">
+                                    <span class="cg-specification-icon"><i class="fas fa-car"></i></span>
+                                    <?php esc_html_e('Transmission', 'wp-car-gallery'); ?> – <?php echo esc_html( $cg_car_transmission ); ?>
+                                </a>
+                            </li>
+                            <?php
+                        }
+
+                        if ( '' != $cg_engine_size ) {
+                            ?>
+                            <li>
+                                <a href="#">
+                                    <span class="cg-specification-icon"><i class="fas fa-car"></i></span>
+                                    <?php esc_html_e('Engine', 'wp-car-gallery'); ?> – <?php echo esc_html( $cg_engine_size ); ?>&nbsp;<?php esc_html_e('CC', 'wp-car-gallery'); ?>
+                                </a>
+                            </li>
+                            <?php
+                        }
+
+                        if ( '' != $cg_car_color ) {
+                            ?>
+                            <li>
+                                <a href="#">
+                                    <span class="cg-specification-icon"><i class="fas fa-paint-roller"></i></span>
+                                    <?php esc_html_e('Color', 'wp-car-gallery'); ?> – <?php echo esc_html( $cg_car_color ); ?>
                                 </a>
                             </li>
                             <?php
                         }
                         ?>
 
-                        <li>
-                            <a href="#">
-                                <span class="cg-specification-icon"><i class="fas fa-car"></i></span>
-                                <?php _e('Transmission', 'wp-car-gallery'); ?> – <?php esc_html_e( $cg_car_transmission ); ?>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#">
-                                <span class="cg-specification-icon"><i class="fas fa-car"></i></span>
-                                <?php _e('Engine', 'wp-car-gallery'); ?> – <?php esc_html_e( $cg_engine_size ); ?>&nbsp;<?php _e('CC', 'wp-car-gallery'); ?>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#">
-                                <span class="cg-specification-icon"><i class="fas fa-paint-roller"></i></span>
-                                <?php _e('Color', 'wp-car-gallery'); ?> – <?php esc_html_e( $cg_car_color ); ?>
-                            </a>
-                        </li>
-
                     </ul>
 
                     <a href="<?php the_permalink(); ?>" class="cg-view-details-button">
-                        <?php _e('View Details', 'wp-car-gallery'); ?> →
+                        <?php esc_html_e('View Details', 'wp-car-gallery'); ?> →
                     </a>
                 
                 </div>
@@ -137,11 +208,31 @@ $cgQueryArr = apply_filters( 'cg_listing_query_array', $cgQueryArrParams );
             }
             ?>
         </div>
+
+        <div class="cg-pagination">
+            <?php
+            if ( $cgCars->max_num_pages > 1 ) {
+                $cgPaginateBig = 999999999; // need an unlikely integer
+                $cgPaginateArgs = array(
+                    'base'      => str_replace( $cgPaginateBig, '%#%', esc_url( get_pagenum_link( $cgPaginateBig ) ) ),
+                    'format'    => '?page=%#%',
+                    'total'     => $cgCars->max_num_pages,
+                    'current'   => max( 1, $cg_paged ),
+                    'end_size'  => 1,
+                    'mid_size'  => 2,
+                    'prev_text' => '« ',
+                    'next_text' => ' »',
+                    'type'      => 'list',
+                );
+                echo wp_kses_post( paginate_links( $cgPaginateArgs ) );
+            }
+            ?>
+        </div>
         <?php
     }
     else {
         ?>
-        <p class="cg-no-jobs-found"><?php _e('No Cars found', 'wp-car-gallery'); ?></p>
+        <p class="cg-no-jobs-found"><?php esc_html_e('No cars found', 'wp-car-gallery'); ?></p>
         <?php
     }
     

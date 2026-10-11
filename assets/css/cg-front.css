@@ -88,6 +88,7 @@
     gap: 12px;
     padding: 14px 0;
     color: #444;
+    font-size: 15px;
     text-decoration: none;
     transition: .2s;
 }
@@ -111,6 +112,7 @@
     background: #f5f8fc;
     color: #2271b1;
     font-weight: 600;
+    font-size: 15px;
     transition: .25s;
 }
 
@@ -121,6 +123,60 @@
 
 
 /* Listing Ended - Grid View */
+
+
+/* Pagination Started */
+
+.cg-pagination {
+    width: 100%;
+}
+
+div.cg-pagination ul.page-numbers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    justify-content: center;
+}
+
+div.cg-pagination ul.page-numbers li {
+    margin: 0;
+}
+
+div.cg-pagination ul.page-numbers li a,
+div.cg-pagination ul.page-numbers li span {
+    min-width: 45px;
+    height: 45px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #333;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.5s ease;
+    box-sizing: border-box;
+}
+
+div.cg-pagination ul.page-numbers li a:hover {
+    background: #f5f5f5;
+    border-color: #bbb;
+}
+
+div.cg-pagination ul.page-numbers li a.active,
+div.cg-pagination ul.page-numbers li span.current {
+    background: #0073aa;
+    color: #fff;
+    border-color: #0073aa;
+}
+
+
+/* Pagination Ended */
 
 
 /* Details Started */

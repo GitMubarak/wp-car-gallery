@@ -16,16 +16,15 @@ trait CG_Listing_Content_Settings
 
         $this->options  = $this->cg_build_set_settings_options( $this->fields, $post );
 
-        $this->settings = apply_filters( 'cg_detail_settings', $this->options, $post );
+        $this->settings = apply_filters( 'cg_listing_content_settings', $this->options, $post );
 
-        return update_option( 'cg_detail_settings', serialize( $this->settings ) );
-
+        return update_option( 'cg_listing_content_settings', $this->settings );
     }
 
     function cg_get_listing_content_settings() {
 
         $this->fields   = $this->cg_listing_content_option_fileds();
-		$this->settings = stripslashes_deep( unserialize( get_option('cg_detail_settings') ) );
+		$this->settings = get_option('cg_listing_content_settings');
         
         return $this->cg_build_get_settings_options( $this->fields, $this->settings );
 	}
@@ -34,19 +33,19 @@ trait CG_Listing_Content_Settings
 
         return [
             [
-                'name'      => 'cg_list_display_overview',
-                'type'      => 'boolean',
-                'default'   => false,
-            ],
-            [
-                'name'      => 'cg_list_overview_length',
+                'name'      => 'cg_listing_limit',
                 'type'      => 'number',
-                'default'   => 30,
+                'default'   => 9,
             ],
             [
-                'name'      => 'cg_list_exp_lbl_txt',
-                'type'      => 'text',
-                'default'   => 'Experience',
+                'name'      => 'cg_listing_order_by',
+                'type'      => 'string',
+                'default'   => 'date',
+            ],
+            [
+                'name'      => 'cg_listing_order',
+                'type'      => 'string',
+                'default'   => 'DESC',
             ],
         ];
     }

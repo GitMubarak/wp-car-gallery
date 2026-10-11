@@ -5,10 +5,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // Search Items
 $keyword_s	= isset( $_GET['keyword_s'] ) ? sanitize_text_field( wp_unslash( $_GET['keyword_s'] ) ) : '';
-$min_price = ( isset( $_GET['min_price_s'] ) && '' !== $_GET['min_price_s'] ) ? absint( $_GET['min_price_s'] ) : '';
-$max_price = ( isset( $_GET['max_price_s'] ) && '' !== $_GET['max_price_s'] ) ? absint( $_GET['max_price_s'] ) : '';
-$min_year = ( isset( $_GET['min_year_s'] ) && '' !== $_GET['min_year_s'] ) ? absint( $_GET['min_year_s'] ) : '';
-$max_year = ( isset( $_GET['max_year_s'] ) && '' !== $_GET['max_year_s'] ) ? absint( $_GET['max_year_s'] ) : '';
+$min_price = ( isset( $_GET['min_price_s'] ) && '' !== $_GET['min_price_s'] ) ? absint( wp_unslash( $_GET['min_price_s'] ) ) : '';
+$max_price = ( isset( $_GET['max_price_s'] ) && '' !== $_GET['max_price_s'] ) ? absint( wp_unslash( $_GET['max_price_s'] ) ) : '';
+$min_year = ( isset( $_GET['min_year_s'] ) && '' !== $_GET['min_year_s'] ) ? absint( wp_unslash( $_GET['min_year_s'] ) ) : '';
+$max_year = ( isset( $_GET['max_year_s'] ) && '' !== $_GET['max_year_s'] ) ? absint( wp_unslash( $_GET['max_year_s'] ) ) : '';
 
 // Search Keyword
 if ( '' != $keyword_s ) {
@@ -17,10 +17,6 @@ if ( '' != $keyword_s ) {
     // Optional: Let WordPress sort by relevancy instead of date when searching
     unset( $cgQueryArr['orderby'] ); 
     unset( $cgQueryArr['order'] );
-
-    // NEW: Restricts the 's' keyword search strictly to the book title column
-    // Works on: WordPress 6.2 or higher
-    //$wbgBooksArr['search_columns'] = array( 'post_title' ); 
 }
 
 // Search Price range
@@ -84,7 +80,7 @@ $cg_search_meta_filters = array(
 
 foreach ( $cg_search_meta_filters as $get_key => $meta_key ) {
     
-    if ( isset( $_GET[ $get_key ] ) && '' !== trim( $_GET[ $get_key ] ) ) {
+    if ( isset( $_GET[ $get_key ] ) && is_string( $_GET[ $get_key ] ) && '' !== trim( sanitize_text_field( wp_unslash( $_GET[ $get_key ] ) ) ) ) {
         
         $cg_clean_search_params[ $get_key ] = sanitize_text_field( wp_unslash( $_GET[ $get_key ] ) );
 
@@ -109,7 +105,7 @@ $cg_search_tax_filters = array(
 
 foreach ( $cg_search_tax_filters as $get_key => $meta_key ) {
     
-    if ( isset( $_GET[ $get_key ] ) && '' !== trim( $_GET[ $get_key ] ) ) {
+    if ( isset( $_GET[ $get_key ] ) && is_string( $_GET[ $get_key ] ) && '' !== trim( sanitize_text_field( wp_unslash( $_GET[ $get_key ] ) ) ) ) {
         
         $cg_clean_search_params[ $get_key ] = sanitize_text_field( wp_unslash( $_GET[ $get_key ] ) );
 
@@ -130,26 +126,26 @@ foreach ( $cg_search_tax_filters as $get_key => $meta_key ) {
 
         <!-- Keyword -->
         <div class="cg-field cg-field-keyword">
-            <label for="cg-keyword"><?php _e('Keyword', 'wp-car-gallery'); ?></label>
+            <label for="cg-keyword"><?php esc_html_e('Keyword', 'wp-car-gallery'); ?></label>
             <input
                 type="text"
                 id="cg-keyword"
                 name="keyword_s"
                 placeholder="Search cars..."
-				value="<?php esc_attr_e( $keyword_s ); ?>"
+				value="<?php echo esc_attr( $keyword_s ); ?>"
             >
         </div>
 
         <!-- Make -->
         <div class="cg-field">
-            <label for="cg-make"><?php _e('Make', 'wp-car-gallery'); ?></label>
+            <label for="cg-make"><?php esc_html_e('Make', 'wp-car-gallery'); ?></label>
             <select id="cg-make" name="car_make_s">
-                <option value=""><?php _e('All Makes', 'wp-car-gallery'); ?></option>
+                <option value=""><?php esc_html_e('All Makes', 'wp-car-gallery'); ?></option>
 				<?php
 				$car_makes = get_terms( array( 'taxonomy' => 'car_make', 'hide_empty' => false, 'order' => 'ASC' ) );
 				foreach( $car_makes as $make) {
 					?>
-					<option value="<?php esc_attr_e( $make->slug ); ?>" <?php selected( $cg_clean_search_params['car_make_s'], $make->slug ); ?>><?php esc_html_e( $make->name ); ?></option>
+					<option value="<?php echo esc_attr( $make->slug ); ?>" <?php selected( $cg_clean_search_params['car_make_s'], $make->slug ); ?>><?php echo esc_html( $make->name ); ?></option>
 					<?php 
                 }
                 ?>
@@ -158,14 +154,14 @@ foreach ( $cg_search_tax_filters as $get_key => $meta_key ) {
 
         <!-- Model -->
         <div class="cg-field">
-            <label for="cg-model"><?php _e('Model', 'wp-car-gallery'); ?></label>
+            <label for="cg-model"><?php esc_html_e('Model', 'wp-car-gallery'); ?></label>
             <select id="cg-model" name="car_model_s">
-                <option value=""><?php _e('All Models', 'wp-car-gallery'); ?></option>
+                <option value=""><?php esc_html_e('All Models', 'wp-car-gallery'); ?></option>
 				<?php
 				$car_models = get_terms( array( 'taxonomy' => 'car_model', 'hide_empty' => false, 'order' => 'ASC' ) );
 				foreach( $car_models as $model) {
 					?>
-                	<option value="<?php esc_attr_e( $model->slug ); ?>" <?php selected( $cg_clean_search_params['car_model_s'], $model->slug ); ?>><?php esc_html_e( $model->name ); ?></option>
+                	<option value="<?php echo esc_attr( $model->slug ); ?>" <?php selected( $cg_clean_search_params['car_model_s'], $model->slug ); ?>><?php echo esc_html( $model->name ); ?></option>
 					<?php 
                 }
                 ?>
@@ -174,7 +170,7 @@ foreach ( $cg_search_tax_filters as $get_key => $meta_key ) {
 
         <!-- Price -->
         <div class="cg-field cg-price-field">
-            <label><?php _e('Price', 'wp-car-gallery'); ?></label>
+            <label><?php esc_html_e('Price', 'wp-car-gallery'); ?></label>
 
             <div class="cg-range-fields">
                 <input
@@ -182,7 +178,7 @@ foreach ( $cg_search_tax_filters as $get_key => $meta_key ) {
                     name="min_price_s"
                     placeholder="Min price"
                     min="0"
-					value="<?php esc_attr_e( $min_price ); ?>"
+					value="<?php echo esc_attr( $min_price ); ?>"
                 >
 
                 <span>–</span>
@@ -192,14 +188,14 @@ foreach ( $cg_search_tax_filters as $get_key => $meta_key ) {
                     name="max_price_s"
                     placeholder="Max price"
                     min="0"
-					value="<?php esc_attr_e( $max_price ); ?>"
+					value="<?php echo esc_attr( $max_price ); ?>"
                 >
             </div>
         </div>
 
         <!-- Year -->
         <div class="cg-field cg-year-field">
-            <label><?php _e('Year', 'wp-car-gallery'); ?></label>
+            <label><?php esc_html_e('Year', 'wp-car-gallery'); ?></label>
 
             <div class="cg-range-fields">
                 <input
@@ -208,7 +204,7 @@ foreach ( $cg_search_tax_filters as $get_key => $meta_key ) {
                     placeholder="From"
                     min="1900"
 					step="1"
-					value="<?php esc_attr_e( $min_year ); ?>"
+					value="<?php echo esc_attr( $min_year ); ?>"
                 >
 
                 <span>–</span>
@@ -219,21 +215,21 @@ foreach ( $cg_search_tax_filters as $get_key => $meta_key ) {
                     placeholder="To"
                     min="1900"
 					step="1"
-					value="<?php esc_attr_e( $max_year ); ?>"
+					value="<?php echo esc_attr( $max_year ); ?>"
                 >
             </div>
         </div>
 
         <!-- Fuel -->
         <div class="cg-field">
-            <label for="cg-fuel"><?php _e('Fuel Type', 'wp-car-gallery'); ?></label>
+            <label for="cg-fuel"><?php esc_html_e('Fuel Type', 'wp-car-gallery'); ?></label>
             <select id="cg-fuel" name="car_fuel_s">
-                <option value=""><?php _e('All Fuel Types', 'wp-car-gallery'); ?></option>
+                <option value=""><?php esc_html_e('All Fuel Types', 'wp-car-gallery'); ?></option>
 				<?php
 				$car_fuels = get_terms( array( 'taxonomy' => 'car_fuel', 'hide_empty' => false, 'order' => 'ASC' ) );
 				foreach( $car_fuels as $fuel) {
 					?>
-                	<option value="<?php esc_attr_e( $fuel->slug ); ?>" <?php selected( $cg_clean_search_params['car_fuel_s'], $fuel->slug ); ?>><?php esc_html_e( $fuel->name ); ?></option>
+                	<option value="<?php echo esc_attr( $fuel->slug ); ?>" <?php selected( $cg_clean_search_params['car_fuel_s'], $fuel->slug ); ?>><?php echo esc_html( $fuel->name ); ?></option>
 					<?php 
                 }
                 ?>
@@ -242,14 +238,14 @@ foreach ( $cg_search_tax_filters as $get_key => $meta_key ) {
 
         <!-- Body Type -->
         <div class="cg-field">
-            <label for="cg-body-type"><?php _e('Body Type', 'wp-car-gallery'); ?></label>
+            <label for="cg-body-type"><?php esc_html_e('Body Type', 'wp-car-gallery'); ?></label>
             <select id="cg-body-type" name="car_body_type_s">
-                <option value=""><?php _e('All Body Types', 'wp-car-gallery'); ?></option>
+                <option value=""><?php esc_html_e('All Body Types', 'wp-car-gallery'); ?></option>
                 <?php
 				$body_type_s = get_terms( array( 'taxonomy' => 'body_type', 'hide_empty' => false, 'order' => 'ASC' ) );
 				foreach( $body_type_s as $body) {
 					?>
-                	<option value="<?php esc_attr_e( $body->slug ); ?>" <?php selected( $cg_clean_search_params['car_body_type_s'], $body->slug ); ?>><?php esc_html_e( $body->name ); ?></option>
+                	<option value="<?php echo esc_attr( $body->slug ); ?>" <?php selected( $cg_clean_search_params['car_body_type_s'], $body->slug ); ?>><?php echo esc_html( $body->name ); ?></option>
 					<?php 
                 }
                 ?>
@@ -258,30 +254,30 @@ foreach ( $cg_search_tax_filters as $get_key => $meta_key ) {
 
         <!-- Transmission -->
         <div class="cg-field">
-            <label for="cg-transmission"><?php _e('Transmission', 'wp-car-gallery'); ?></label>
+            <label for="cg-transmission"><?php esc_html_e('Transmission', 'wp-car-gallery'); ?></label>
             <select id="cg-transmission" name="transmission_s">
-                <option value=""><?php _e('All Transmissions', 'wp-car-gallery'); ?></option>
-                <option value="<?php _e('automatic', 'wp-car-gallery'); ?>" <?php selected( $cg_clean_search_params['transmission_s'], 'automatic' ); ?>><?php _e('Automatic', 'wp-car-gallery'); ?></option>
-                <option value="<?php _e('manual', 'wp-car-gallery'); ?>" <?php selected( $cg_clean_search_params['transmission_s'], 'manual' ); ?>><?php _e('Manual', 'wp-car-gallery'); ?></option>
+                <option value=""><?php esc_html_e('All Transmissions', 'wp-car-gallery'); ?></option>
+                <option value="<?php echo esc_attr( 'automatic' ); ?>" <?php selected( $cg_clean_search_params['transmission_s'], 'automatic' ); ?>><?php esc_html_e('Automatic', 'wp-car-gallery'); ?></option>
+                <option value="<?php echo esc_attr( 'manual' ); ?>" <?php selected( $cg_clean_search_params['transmission_s'], 'manual' ); ?>><?php esc_html_e('Manual', 'wp-car-gallery'); ?></option>
             </select>
         </div>
 
         <!-- Condition -->
         <div class="cg-field">
-            <label for="cg-condition"><?php _e('Condition', 'wp-car-gallery'); ?></label>
+            <label for="cg-condition"><?php esc_html_e('Condition', 'wp-car-gallery'); ?></label>
             <select id="cg-condition" name="condition_s">
-                <option value=""><?php _e('All Conditions', 'wp-car-gallery'); ?></option>
-                <option value="<?php _e('new', 'wp-car-gallery'); ?>" <?php selected( $cg_clean_search_params['condition_s'], 'new' ); ?>><?php _e('New', 'wp-car-gallery'); ?></option>
-                <option value="<?php _e('used', 'wp-car-gallery'); ?>" <?php selected( $cg_clean_search_params['condition_s'], 'used' ); ?>><?php _e('Used', 'wp-car-gallery'); ?></option>
-                <option value="<?php _e('pre-owned', 'wp-car-gallery'); ?>" <?php selected( $cg_clean_search_params['condition_s'], 'pre-owned' ); ?>><?php _e('Certified Pre-Owned', 'wp-car-gallery'); ?></option>
-                <option value="<?php _e('reconditioned', 'wp-car-gallery'); ?>" <?php selected( $cg_clean_search_params['condition_s'], 'reconditioned' ); ?>><?php _e('Reconditioned', 'wp-car-gallery'); ?></option>
+                <option value=""><?php esc_html_e('All Conditions', 'wp-car-gallery'); ?></option>
+                <option value="<?php echo esc_attr( 'new' ); ?>" <?php selected( $cg_clean_search_params['condition_s'], 'new' ); ?>><?php esc_html_e('New', 'wp-car-gallery'); ?></option>
+                <option value="<?php echo esc_attr( 'used' ); ?>" <?php selected( $cg_clean_search_params['condition_s'], 'used' ); ?>><?php esc_html_e('Used', 'wp-car-gallery'); ?></option>
+                <option value="<?php echo esc_attr( 'pre-owned' ); ?>" <?php selected( $cg_clean_search_params['condition_s'], 'pre-owned' ); ?>><?php esc_html_e('Certified Pre-Owned', 'wp-car-gallery'); ?></option>
+                <option value="<?php echo esc_attr( 'reconditioned' ); ?>" <?php selected( $cg_clean_search_params['condition_s'], 'reconditioned' ); ?>><?php esc_html_e('Reconditioned', 'wp-car-gallery'); ?></option>
             </select>
         </div>
 
         <!-- Button -->
         <div class="cg-search-action">
             <button type="submit" class="cg-search-button">
-                <?php _e('Search Cars', 'wp-car-gallery'); ?>
+                <?php esc_html_e('Search Cars', 'wp-car-gallery'); ?>
             </button>
 
 			<a href="<?php echo esc_url( get_permalink() ); ?>" class="cg-reset-button"><i class="fa fa-refresh" aria-hidden="true"></i></a>

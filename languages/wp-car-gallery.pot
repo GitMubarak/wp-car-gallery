@@ -1,0 +1,574 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2026-10-10 18:06+0600\n"
+"PO-Revision-Date: 2021-12-27 04:06+0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.9\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: _e;esc_htm;esc_attr;esc_html_e;esc_html_;__(;__\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: admin/cls-cg-admin.php\n"
+"X-Poedit-SearchPath-2: front\n"
+"X-Poedit-SearchPath-3: admin\n"
+
+#: admin/cls-cg-admin.php:83 admin/cls-cg-admin.php:84
+#: admin/view/general.php:30
+msgid "General Settings"
+msgstr ""
+
+#: admin/cls-cg-admin.php:92 admin/cls-cg-admin.php:93
+#: admin/view/listing.php:37
+msgid "Listing Page Settings"
+msgstr ""
+
+#: admin/cls-cg-admin.php:101 admin/cls-cg-admin.php:102
+#: admin/view/single.php:37
+msgid "Detail Page Settings"
+msgstr ""
+
+#: admin/cls-cg-admin.php:148 admin/cls-cg-admin.php:152
+msgid "All Cars"
+msgstr ""
+
+#: admin/cls-cg-admin.php:149 admin/cls-cg-admin.php:150
+msgid "WP Cars"
+msgstr ""
+
+#: admin/cls-cg-admin.php:151
+msgid "Parent Car"
+msgstr ""
+
+#: admin/cls-cg-admin.php:153
+msgid "View Car"
+msgstr ""
+
+#: admin/cls-cg-admin.php:154
+msgid "Add New Car"
+msgstr ""
+
+#: admin/cls-cg-admin.php:155
+msgid "Add New"
+msgstr ""
+
+#: admin/cls-cg-admin.php:156
+msgid "Edit Car"
+msgstr ""
+
+#: admin/cls-cg-admin.php:157
+msgid "Update Car"
+msgstr ""
+
+#: admin/cls-cg-admin.php:158
+msgid "Search Car"
+msgstr ""
+
+#: admin/cls-cg-admin.php:159
+msgid "Not Found"
+msgstr ""
+
+#: admin/cls-cg-admin.php:160
+msgid "Not found in Trash"
+msgstr ""
+
+#: admin/cls-cg-admin.php:164
+msgid "car"
+msgstr ""
+
+#: admin/cls-cg-admin.php:165
+msgid "Description For Car"
+msgstr ""
+
+#: admin/cls-cg-admin.php:194 admin/cls-cg-admin.php:204
+msgid "Car Makes"
+msgstr ""
+
+#: admin/cls-cg-admin.php:195
+msgid "Car Make"
+msgstr ""
+
+#: admin/cls-cg-admin.php:196
+msgid "Search Car Makes"
+msgstr ""
+
+#: admin/cls-cg-admin.php:197
+msgid "All Car Makes"
+msgstr ""
+
+#: admin/cls-cg-admin.php:198
+msgid "Parent Car Make"
+msgstr ""
+
+#: admin/cls-cg-admin.php:199
+msgid "Parent Car Make:"
+msgstr ""
+
+#: admin/cls-cg-admin.php:200
+msgid "Edit Car Make"
+msgstr ""
+
+#: admin/cls-cg-admin.php:201
+msgid "Update Car Make"
+msgstr ""
+
+#: admin/cls-cg-admin.php:202
+msgid "Add New Car Make"
+msgstr ""
+
+#: admin/cls-cg-admin.php:203
+msgid "New Car Make Name"
+msgstr ""
+
+#: admin/cls-cg-admin.php:224 admin/cls-cg-admin.php:234
+msgid "Car Models"
+msgstr ""
+
+#: admin/cls-cg-admin.php:225
+msgid "Car Model"
+msgstr ""
+
+#: admin/cls-cg-admin.php:226
+msgid "Search Car Models"
+msgstr ""
+
+#: admin/cls-cg-admin.php:227
+msgid "All Car Models"
+msgstr ""
+
+#: admin/cls-cg-admin.php:228
+msgid "Parent Car Model"
+msgstr ""
+
+#: admin/cls-cg-admin.php:229
+msgid "Parent Car Model:"
+msgstr ""
+
+#: admin/cls-cg-admin.php:230
+msgid "Edit Car Model"
+msgstr ""
+
+#: admin/cls-cg-admin.php:231
+msgid "Update Car Model"
+msgstr ""
+
+#: admin/cls-cg-admin.php:232
+msgid "Add New Car Model"
+msgstr ""
+
+#: admin/cls-cg-admin.php:233
+msgid "New Car Model Name"
+msgstr ""
+
+#: admin/cls-cg-admin.php:254 admin/cls-cg-admin.php:264
+msgid "Body Types"
+msgstr ""
+
+#: admin/cls-cg-admin.php:255 front/view/search.php:241
+#: front/view/single.php:224 front/view/single.php:360
+msgid "Body Type"
+msgstr ""
+
+#: admin/cls-cg-admin.php:256
+msgid "Search Body Types"
+msgstr ""
+
+#: admin/cls-cg-admin.php:257 front/view/search.php:243
+msgid "All Body Types"
+msgstr ""
+
+#: admin/cls-cg-admin.php:258
+msgid "Parent Body Type"
+msgstr ""
+
+#: admin/cls-cg-admin.php:259
+msgid "Parent Body Type:"
+msgstr ""
+
+#: admin/cls-cg-admin.php:260
+msgid "Edit Body Type"
+msgstr ""
+
+#: admin/cls-cg-admin.php:261
+msgid "Update Body Type"
+msgstr ""
+
+#: admin/cls-cg-admin.php:262
+msgid "Add New Body Type"
+msgstr ""
+
+#: admin/cls-cg-admin.php:263
+msgid "New Body Type Name"
+msgstr ""
+
+#: admin/cls-cg-admin.php:284 admin/cls-cg-admin.php:294
+msgid "Fuel Types"
+msgstr ""
+
+#: admin/cls-cg-admin.php:285 front/view/search.php:225
+#: front/view/single.php:185 front/view/single.php:321
+msgid "Fuel Type"
+msgstr ""
+
+#: admin/cls-cg-admin.php:286
+msgid "Search Fuel Types"
+msgstr ""
+
+#: admin/cls-cg-admin.php:287 front/view/search.php:227
+msgid "All Fuel Types"
+msgstr ""
+
+#: admin/cls-cg-admin.php:288
+msgid "Parent Fuel Type"
+msgstr ""
+
+#: admin/cls-cg-admin.php:289
+msgid "Parent Fuel Type:"
+msgstr ""
+
+#: admin/cls-cg-admin.php:290
+msgid "Edit Fuel Type"
+msgstr ""
+
+#: admin/cls-cg-admin.php:291
+msgid "Update Fuel Type"
+msgstr ""
+
+#: admin/cls-cg-admin.php:292
+msgid "Add New Fuel Type"
+msgstr ""
+
+#: admin/cls-cg-admin.php:293
+msgid "New Fuel Type Name"
+msgstr ""
+
+#: admin/cls-cg-admin.php:320
+msgid "Car Specifications"
+msgstr ""
+
+#: admin/view/car-specification.php:24
+msgid "Engine Type / Technology"
+msgstr ""
+
+#: admin/view/car-specification.php:32
+msgid "Engine Size (CC)"
+msgstr ""
+
+#: admin/view/car-specification.php:40 front/view/search.php:198
+#: front/view/single.php:154 front/view/single.php:292
+msgid "Year"
+msgstr ""
+
+#: admin/view/car-specification.php:48 front/view/listing.php:117
+#: front/view/search.php:173 front/view/single.php:164
+msgid "Price"
+msgstr ""
+
+#: admin/view/car-specification.php:56
+msgid "Mileage (km)"
+msgstr ""
+
+#: admin/view/car-specification.php:64 front/view/listing.php:166
+msgid "Color"
+msgstr ""
+
+#: admin/view/car-specification.php:72 front/view/search.php:267
+#: front/view/single.php:252
+msgid "Condition"
+msgstr ""
+
+#: admin/view/car-specification.php:77 front/view/search.php:270
+msgid "New"
+msgstr ""
+
+#: admin/view/car-specification.php:81 front/view/search.php:271
+msgid "Used"
+msgstr ""
+
+#: admin/view/car-specification.php:85 front/view/search.php:272
+msgid "Certified Pre-Owned"
+msgstr ""
+
+#: admin/view/car-specification.php:89 front/view/search.php:273
+msgid "Reconditioned"
+msgstr ""
+
+#: admin/view/car-specification.php:94 front/view/listing.php:152
+#: front/view/search.php:257 front/view/single.php:203
+#: front/view/single.php:331
+msgid "Transmission"
+msgstr ""
+
+#: admin/view/car-specification.php:99 front/view/search.php:260
+msgid "Automatic"
+msgstr ""
+
+#: admin/view/car-specification.php:103 front/view/search.php:261
+msgid "Manual"
+msgstr ""
+
+#: admin/view/car-specification.php:108 front/view/single.php:262
+msgid "Drive Type"
+msgstr ""
+
+#: admin/view/car-specification.php:113
+msgid "FWD"
+msgstr ""
+
+#: admin/view/car-specification.php:117
+msgid "RWD"
+msgstr ""
+
+#: admin/view/car-specification.php:121
+msgid "AWD"
+msgstr ""
+
+#: admin/view/car-specification.php:125
+msgid "4WD"
+msgstr ""
+
+#: admin/view/car-specification.php:130
+msgid "Listing Status"
+msgstr ""
+
+#: admin/view/car-specification.php:135
+msgid "Active"
+msgstr ""
+
+#: admin/view/car-specification.php:139
+msgid "Inactive"
+msgstr ""
+
+#: admin/view/general.php:51
+msgid "Currency"
+msgstr ""
+
+#: admin/view/general.php:55 admin/view/partial/listing-content.php:31
+msgid "Select One"
+msgstr ""
+
+#: admin/view/general.php:74
+msgid "Contact Seller Email"
+msgstr ""
+
+#: admin/view/general.php:80
+msgid "Contact seller button email"
+msgstr ""
+
+#: admin/view/general.php:85
+msgid "Contact Seller Tel"
+msgstr ""
+
+#: admin/view/general.php:91
+msgid "Contact seller button tel"
+msgstr ""
+
+#: admin/view/general.php:98 admin/view/partial/listing-content.php:52
+#: admin/view/partial/listing-style.php:45
+#: admin/view/partial/single-content.php:57
+#: admin/view/partial/single-style.php:43
+msgid "Save Settings"
+msgstr ""
+
+#: admin/view/listing.php:50 admin/view/single.php:50
+msgid "Content"
+msgstr ""
+
+#: admin/view/listing.php:53 admin/view/single.php:53
+msgid "Styles"
+msgstr ""
+
+#: admin/view/partial/listing-content.php:19
+msgid "Listing Limit"
+msgstr ""
+
+#: admin/view/partial/listing-content.php:27
+msgid "Order By"
+msgstr ""
+
+#: admin/view/partial/listing-content.php:32
+msgid "date"
+msgstr ""
+
+#: admin/view/partial/listing-content.php:32
+msgid "Date"
+msgstr ""
+
+#: admin/view/partial/listing-content.php:33
+msgid "title"
+msgstr ""
+
+#: admin/view/partial/listing-content.php:33
+msgid "Name"
+msgstr ""
+
+#: admin/view/partial/listing-content.php:34
+msgid "menu_order"
+msgstr ""
+
+#: admin/view/partial/listing-content.php:34
+msgid "Post Order"
+msgstr ""
+
+#: admin/view/partial/listing-content.php:38
+msgid "Order"
+msgstr ""
+
+#: admin/view/partial/listing-content.php:42
+msgid "Ascending"
+msgstr ""
+
+#: admin/view/partial/listing-content.php:45
+msgid "Descending"
+msgstr ""
+
+#: admin/view/partial/listing-style.php:20
+#: admin/view/partial/single-style.php:20
+msgid "Car Title"
+msgstr ""
+
+#: admin/view/partial/listing-style.php:25
+#: admin/view/partial/single-style.php:25
+msgid "Font Color"
+msgstr ""
+
+#: admin/view/partial/listing-style.php:34
+#: admin/view/partial/single-style.php:33
+msgid "Font Size"
+msgstr ""
+
+#: admin/view/partial/single-content.php:19
+msgid "Display Car Title"
+msgstr ""
+
+#: admin/view/partial/single-content.php:28
+msgid "Hide Overview"
+msgstr ""
+
+#: admin/view/partial/single-content.php:37
+msgid "Hide Contact Seller"
+msgstr ""
+
+#: admin/view/partial/single-content.php:46
+msgid "Hide Call Seller"
+msgstr ""
+
+#: front/view/listing.php:105
+msgid "No Image Available"
+msgstr ""
+
+#: front/view/listing.php:124 front/view/single.php:174
+#: front/view/single.php:302
+msgid "Mileage"
+msgstr ""
+
+#: front/view/listing.php:124
+msgid "km"
+msgstr ""
+
+#: front/view/listing.php:135
+msgid "Fuel"
+msgstr ""
+
+#: front/view/listing.php:159 front/view/single.php:213
+#: front/view/single.php:341
+msgid "Engine"
+msgstr ""
+
+#: front/view/listing.php:159
+msgid "CC"
+msgstr ""
+
+#: front/view/listing.php:173
+msgid "View Details"
+msgstr ""
+
+#: front/view/listing.php:205
+msgid "No cars found"
+msgstr ""
+
+#: front/view/search.php:129
+msgid "Keyword"
+msgstr ""
+
+#: front/view/search.php:141 front/view/single.php:117
+msgid "Make"
+msgstr ""
+
+#: front/view/search.php:143
+msgid "All Makes"
+msgstr ""
+
+#: front/view/search.php:157 front/view/single.php:136
+msgid "Model"
+msgstr ""
+
+#: front/view/search.php:159
+msgid "All Models"
+msgstr ""
+
+#: front/view/search.php:259
+msgid "All Transmissions"
+msgstr ""
+
+#: front/view/search.php:260
+msgid "automatic"
+msgstr ""
+
+#: front/view/search.php:261
+msgid "manual"
+msgstr ""
+
+#: front/view/search.php:269
+msgid "All Conditions"
+msgstr ""
+
+#: front/view/search.php:270
+msgid "new"
+msgstr ""
+
+#: front/view/search.php:271
+msgid "used"
+msgstr ""
+
+#: front/view/search.php:272
+msgid "pre-owned"
+msgstr ""
+
+#: front/view/search.php:273
+msgid "reconditioned"
+msgstr ""
+
+#: front/view/search.php:280
+msgid "Search Cars"
+msgstr ""
+
+#: front/view/single.php:63 front/view/single.php:395
+msgid "Back to Listings"
+msgstr ""
+
+#: front/view/single.php:102
+msgid "Overview"
+msgstr ""
+
+#: front/view/single.php:110
+msgid "Key Specifications"
+msgstr ""
+
+#: front/view/single.php:242
+msgid "Exterior Color"
+msgstr ""
+
+#: front/view/single.php:372
+msgid "Contact Seller"
+msgstr ""
+
+#: front/view/single.php:381
+msgid "Call Seller"
+msgstr ""

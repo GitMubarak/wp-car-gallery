@@ -1,14 +1,14 @@
 <?php
 /**
- * Plugin Name:         WP Car Gallery
- * Plugin URI:		    https://wordpress.org/plugins/wp-car-gallery/
+ * Plugin Name:         Car Gallery
+ * Plugin URI:		    https://wordpress.org/plugins/car-gallery/
  * Description: 	    Car Listings & Vehicle Inventory for WordPress
- * Version:             1.0
+ * Version:             1.0.0
  * Author:		        HM Plugin
  * Author URI:	        https://hmplugin.com
- * Requires at least:   5.8
+ * Requires at least:   6.0
  * Requires PHP:        7.4
- * Tested up to:        7.1.2
+ * Tested up to:        7.1
  * Text Domain:         wp-car-gallery
  * Domain Path:         /languages/
  * License:             GPL-2.0+
@@ -25,7 +25,7 @@ define('CG_SLUG', plugin_basename(__FILE__));
 define('CG_PRFX', 'cg_');
 define('CG_CLS_PRFX', 'cls-cg-');
 define('CG_TXT_DOMAIN', 'wp-car-gallery');
-define('CG_VERSION', '1.0');
+define('CG_VERSION', '1.0.0');
 
 require_once CG_PATH . 'inc/' . CG_CLS_PRFX . 'master.php';
 $cg = new CG_Master();

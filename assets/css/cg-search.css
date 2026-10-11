@@ -38,8 +38,8 @@
     color: #374151;
 }
 
-.cg-field input,
-.cg-field select {
+.cg-search-panel .cg-field input,
+.cg-search-panel .cg-field select {
     width: 100%;
     height: 44px;
     padding: 0 13px;

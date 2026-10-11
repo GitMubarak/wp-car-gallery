@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 */
 class CG_Admin 
 {
-	use CG_Core, 
+	use CG_Core, CG_Currency,
 	CG_General_Settings, 
 	CG_Listing_Content_Settings, 
 	CG_Listing_Styles_Settings, 
@@ -115,17 +115,6 @@ class CG_Admin
 			return;
 		}
 
-		$cgGeneralMessage = false;
-
-		// Content
-		if ( isset( $_POST['updateGeneralSettings'] ) ) {
-
-			$cgGeneralMessage = $this->cg_set_general_settings( $_POST );
-
-		}
-
-		$cgGeneralSettings = $this->cg_get_general_settings();
-
 		require_once CG_PATH . 'admin/view/general.php';
 	}
 
@@ -137,27 +126,6 @@ class CG_Admin
 		if ( ! current_user_can( 'manage_options' ) ) {
 			return;
 		}
-	
-		$cgTab = isset( $_GET['tab'] ) ? sanitize_text_field( $_GET['tab'] ) : null;
-
-		$cgListingMessage = false;
-
-		// Content
-		if ( isset( $_POST['updateListingContent'] ) ) {
-
-			$cgListingMessage = $this->cg_set_listing_content_settings( $_POST );
-
-		}
-
-		$cgListingContent = $this->cg_get_listing_content_settings();
-
-		// Style
-		if ( isset( $_POST['updateListingStyles'] ) ) {
-
-            $cgListingMessage = $this->cg_set_listing_styles_settings( $_POST );
-        }
-
-        $cgListingStyles = $this->cg_get_listing_styles_settings();
 
 		require_once CG_PATH . 'admin/view/listing.php';
 	}
@@ -167,27 +135,6 @@ class CG_Admin
 		if ( ! current_user_can( 'manage_options' ) ) {
 			return;
 		}
-	
-		$cgTab = isset( $_GET['tab'] ) ? sanitize_text_field( $_GET['tab'] ) : null;
-
-		$cgSingleMessage = false;
-
-		// Content
-		if ( isset( $_POST['updateSingleContent'] ) ) {
-
-			$cgSingleMessage = $this->cg_set_single_content_settings( $_POST );
-
-		}
-
-		$cgSingleContent = $this->cg_get_single_content_settings();
-
-		// Style
-		if ( isset( $_POST['updateSingleStyles'] ) ) {
-
-            $cgSingleMessage = $this->cg_set_single_styles_settings( $_POST );
-        }
-
-        $cgSingleStyles = $this->cg_get_single_styles_settings();
 
 		require_once CG_PATH . 'admin/view/single.php';
 	}
@@ -397,23 +344,23 @@ class CG_Admin
 			return $post_id;
 		}
 
-		if ( ! isset( $_POST['cg_engine_type'] ) 
+		if ( ! isset( $_POST['cg_car_specification_nonce_fields'] ) 
 			|| ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['cg_car_specification_nonce_fields'] ) ), 'cg_car_specification_action' ) ) {
 			return $post_id;
 		}
 
 		$cg_meta_params = array(
 
-			'cg_engine_type'	=> isset( $_POST['cg_engine_type'] ) ? sanitize_text_field( $_POST['cg_engine_type'] ) : null,
-			'cg_engine_size'	=> isset( $_POST['cg_engine_size'] ) ? sanitize_text_field( $_POST['cg_engine_size'] ) : null,
-			'cg_year'			=> isset( $_POST['cg_year'] ) ? sanitize_text_field( $_POST['cg_year'] ) : null,
-			'cg_car_price'		=> isset( $_POST['cg_car_price'] ) ? sanitize_text_field( $_POST['cg_car_price'] ) : null,
-			'cg_car_mileage'	=> isset( $_POST['cg_car_mileage'] ) ? sanitize_text_field( $_POST['cg_car_mileage'] ) : null,
-			'cg_car_color'		=> isset( $_POST['cg_car_color'] ) ? sanitize_text_field( $_POST['cg_car_color'] ) : null,
-			'cg_car_condition'	=> isset( $_POST['cg_car_condition'] ) ? sanitize_text_field( $_POST['cg_car_condition'] ) : null,
-			'cg_car_transmission'	=> isset( $_POST['cg_car_transmission'] ) ? sanitize_text_field( $_POST['cg_car_transmission'] ) : null,
-			'cg_car_drive_type'	=> isset( $_POST['cg_car_drive_type'] ) ? sanitize_text_field( $_POST['cg_car_drive_type'] ) : null,
-			'cg_listing_status'	=> isset( $_POST['cg_listing_status'] ) ? sanitize_text_field( $_POST['cg_listing_status'] ) : null,
+			'cg_engine_type'	=> isset( $_POST['cg_engine_type'] ) ? sanitize_text_field( wp_unslash( $_POST['cg_engine_type'] ) ) : null,
+			'cg_engine_size'	=> isset( $_POST['cg_engine_size'] ) ? sanitize_text_field( wp_unslash( $_POST['cg_engine_size'] ) ) : null,
+			'cg_year'			=> isset( $_POST['cg_year'] ) ? sanitize_text_field( wp_unslash( $_POST['cg_year'] ) ) : null,
+			'cg_car_price'		=> isset( $_POST['cg_car_price'] ) ? sanitize_text_field( wp_unslash( $_POST['cg_car_price'] ) ) : null,
+			'cg_car_mileage'	=> isset( $_POST['cg_car_mileage'] ) ? sanitize_text_field( wp_unslash( $_POST['cg_car_mileage'] ) ) : null,
+			'cg_car_color'		=> isset( $_POST['cg_car_color'] ) ? sanitize_text_field( wp_unslash( $_POST['cg_car_color'] ) ) : null,
+			'cg_car_condition'	=> isset( $_POST['cg_car_condition'] ) ? sanitize_text_field( wp_unslash( $_POST['cg_car_condition'] ) ) : null,
+			'cg_car_transmission'	=> isset( $_POST['cg_car_transmission'] ) ? sanitize_text_field( wp_unslash( $_POST['cg_car_transmission'] ) ) : null,
+			'cg_car_drive_type'	=> isset( $_POST['cg_car_drive_type'] ) ? sanitize_text_field( wp_unslash( $_POST['cg_car_drive_type'] ) ) : null,
+			'cg_listing_status'	=> isset( $_POST['cg_listing_status'] ) ? sanitize_text_field( wp_unslash( $_POST['cg_listing_status'] ) ) : null,
 		);
 
 		foreach( $cg_meta_params as $key => $value ) {
@@ -451,12 +398,26 @@ class CG_Admin
 	/**
 	 *	Function for loading notification on save / update
 	 */
-	function cg_display_notification( $type, $msg ) { 
+	function cg_display_notification( $type, $msg ) {
+
+		$allowed_types = array(
+			'success',
+			'error',
+			'warning',
+			'info',
+		);
+
+		if ( ! in_array( $type, $allowed_types, true ) ) {
+			$type = 'info';
+		}
+
+		$type = sanitize_html_class( $type );
+		$title = ucfirst( $type );
 		?>
-		<div class="cg-alert <?php esc_attr_e( $type ); ?>">
+		<div class="cg-alert <?php echo esc_attr( $type ); ?>">
 			<span class="cg-closebtn">&times;</span>
-			<strong><?php esc_html_e( ucfirst( $type ), 'wp-car-gallery' ); ?>!</strong>
-			<?php esc_html_e( $msg, 'wp-car-gallery' ); ?>
+			<strong><?php echo esc_html( $title ); ?>!</strong>
+			<?php echo esc_html( $msg ); ?>
 		</div>
 		<?php 
 	}

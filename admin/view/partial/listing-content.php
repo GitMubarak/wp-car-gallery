@@ -3,7 +3,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-//print_r( $cgListingContent );
+$cgListingContent = $this->cg_get_listing_content_settings();
+
 foreach ( $cgListingContent as $option_name => $option_value ) {
     if ( isset( $cgListingContent[$option_name] ) ) {
         ${"" . $option_name} = $option_value;
@@ -11,42 +12,44 @@ foreach ( $cgListingContent as $option_name => $option_value ) {
 }
 ?>
 <form name="cg_listing_content_settings_form" role="form" class="form-horizontal" method="post" action="" id="cg-listing-content-settings-form">
+<?php wp_nonce_field( 'cg_listing_content_settings_nonce_action', 'cg_listing_content_settings_nonce_field' ); ?>
     <table class="cg-listing-content-settings-table">
         <tr>
             <th scope="row">
-                <label for="cg_list_display_overview"><?php _e('Hide Overview', 'wp-car-gallery'); ?>?</label>
+                <label for="cg_listing_limit"><?php esc_html_e('Listing Limit', 'wp-car-gallery'); ?></label>
             </th>
             <td>
-                <input type="checkbox" name="cg_list_display_overview" class="cg_list_display_overview" id="cg_list_display_overview"
-                    <?php echo $cg_list_display_overview ? 'checked' : ''; ?> >
-            </td>
-            <th scope="row">
-                <label for="wbg_cat_label_txt"><?php _e('Word Lengtht', 'wp-car-gallery'); ?>:</label>
-            </th>
-            <td>
-                <input type="number" name="cg_list_overview_length" class="medium-text" min="1" max="150" step="1" value="<?php esc_attr_e( $cg_list_overview_length ); ?>">
+                <input type="number" name="cg_listing_limit" class="medium-text" min="1" max="150" step="1" value="<?php echo esc_attr( $cg_listing_limit ); ?>">
             </td>
         </tr>
         <tr>
             <th scope="row">
-                <label for="cg_list_display_experience"><?php _e('Hide Experience', 'wp-car-gallery'); ?>?</label>
+                <label for="cg_listing_order_by"><?php esc_html_e('Order By', 'wp-car-gallery'); ?></label>
             </th>
             <td>
-                <input type="checkbox" name="cg_list_display_experience" class="cg_list_display_experience" id="cg_list_display_experience"
-                    <?php echo $cg_list_display_experience ? 'checked' : ''; ?> >
+                <select name="cg_listing_order_by" id="cg_listing_order_by">
+                    <option value=""><?php esc_html_e('Select One', 'wp-car-gallery'); ?></option>
+                    <option value="<?php echo esc_attr( 'date' ); ?>" <?php selected( $cg_listing_order_by, 'date' ); ?>><?php esc_html_e('Date', 'wp-car-gallery'); ?></option>
+                    <option value="<?php echo esc_attr( 'title' ); ?>" <?php selected( $cg_listing_order_by, 'title' ); ?>><?php esc_html_e('Name', 'wp-car-gallery'); ?></option>
+                    <option value="<?php echo esc_attr( 'menu_order' ); ?>" <?php selected( $cg_listing_order_by, 'menu_order' ); ?>><?php esc_html_e('Post Order', 'wp-car-gallery'); ?></option>
+                </select>
             </td>
             <th scope="row">
-                <label><?php _e('Label Text', 'wp-car-gallery'); ?></label>
+                <label for="cg_listing_order"><?php esc_html_e('Order', 'wp-car-gallery'); ?></label>
             </th>
             <td>
-                <input type="text" name="cg_list_exp_lbl_txt" id="cg_list_exp_lbl_txt" class="regular-text" value="<?php esc_attr_e( $cg_list_exp_lbl_txt ); ?>" />
+                <input type="radio" name="cg_listing_order" id="cg_listing_order_asc" value="ASC" <?php echo ( 'DESC' !== $cg_listing_order ) ? 'checked' : ''; ?> >
+                <label for="cg_listing_order_asc"><span></span><?php esc_html_e( 'Ascending', 'wp-car-gallery' ); ?></label>
+                &nbsp;&nbsp;
+                <input type="radio" name="cg_listing_order" id="cg_listing_order_desc" value="DESC" <?php echo ( 'DESC' === $cg_listing_order ) ? 'checked' : ''; ?> >
+                <label for="cg_listing_order_desc"><span></span><?php esc_html_e( 'Descending', 'wp-car-gallery' ); ?></label>
             </td>
         </tr>
     </table>
     <hr>
     <p class="submit">
         <button id="updateListingContent" name="updateListingContent" class="button button-primary cg-button">
-            <i class="fa fa-check-circle" aria-hidden="true"></i>&nbsp;<?php _e('Save Settings', 'wp-car-gallery'); ?>
+            <i class="fa fa-check-circle" aria-hidden="true"></i>&nbsp;<?php esc_html_e('Save Settings', 'wp-car-gallery'); ?>
         </button>
     </p>
 

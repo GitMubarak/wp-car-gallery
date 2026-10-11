@@ -3,7 +3,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-//print_r( $cgGeneralSettings );
+$cgGeneralMessage = false;
+
+if ( isset( $_POST['updateGeneralSettings'] ) ) {
+
+    if ( ! isset( $_POST['cg_general_settings_nonce_field'] ) 
+        || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['cg_general_settings_nonce_field'] ) ), 'cg_general_settings_nonce_action' ) ) {
+        
+        wp_die( esc_html__( 'Sorry, your nonce did not verify.', 'wp-car-gallery' ) );
+    } 
+    
+    $cgGeneralMessage = $this->cg_set_general_settings( $_POST );
+}
+
+$cgGeneralSettings = $this->cg_get_general_settings();
+
 foreach ( $cgGeneralSettings as $option_name => $option_value ) {
     if ( isset( $cgGeneralSettings[$option_name] ) ) {
         ${"" . $option_name} = $option_value;
@@ -13,7 +27,7 @@ foreach ( $cgGeneralSettings as $option_name => $option_value ) {
 <div id="wph-wrap-all" class="wrap cg-single-settings-page">
 
     <div class="settings-banner">
-        <h2><i class="fa fa-cogs" aria-hidden="true"></i>&nbsp;<?php _e('General Settings', 'wp-car-gallery'); ?></h2>
+        <h2><i class="fa fa-cogs" aria-hidden="true"></i>&nbsp;<?php esc_html_e('General Settings', 'wp-car-gallery'); ?></h2>
     </div>
 
     <?php
@@ -29,43 +43,59 @@ foreach ( $cgGeneralSettings as $option_name => $option_value ) {
             
             <div class="tab-content">
                 <form name="cg_general_settings_form" role="form" class="form-horizontal" method="post" action="" id="cg-general-settings-form">
+                    <?php wp_nonce_field( 'cg_general_settings_nonce_action', 'cg_general_settings_nonce_field' ); ?>
                     <table class="cg-single-settings-table">
+                        <!-- Currency -->
                         <tr>
                             <th scope="row">
-                                <label><?php _e('Admin Notification Email', 'wp-car-gallery'); ?></label>
+                                <label><?php esc_html_e('Currency', 'wp-car-gallery'); ?></label>
+                            </th>
+                            <td colspan="5">
+                                <select name="cg_car_currency" id="cg_car_currency" class="regular-text">
+                                    <option value=""><?php esc_html_e('Select One', 'wp-car-gallery'); ?></option>
+                                    <?php
+                                    $cgCurrency = $this->hm_get_all_currency();
+                                    foreach ( $cgCurrency as $curr ) {
+                                        $cg_symbol       = html_entity_decode( $curr->symbol, ENT_QUOTES, 'UTF-8' );
+                                        $cg_curr_op_val  = $curr->abbreviation . '-' . $cg_symbol;
+                                        $cg_saved_value  = html_entity_decode( $cg_car_currency, ENT_QUOTES, 'UTF-8' );
+                                        ?>
+                                        <option value="<?php echo esc_attr( $cg_curr_op_val ); ?>" <?php selected( $cg_saved_value, $cg_curr_op_val ); ?>>
+                                            <?php echo esc_html( $curr->currency . '-' . $curr->abbreviation . '-' . $cg_symbol ); ?>
+                                        </option>
+                                        <?php
+                                    } 
+                                    ?>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <label><?php esc_html_e('Contact Seller Email', 'wp-car-gallery'); ?></label>
                             </th>
                             <td>
-                                <input type="text" name="cg_admin_noti_email" id="cg_admin_noti_email" class="regular-text" value="<?php esc_attr_e( $cg_admin_noti_email ); ?>" />
+                                <input type="text" name="cg_contact_seller_email" id="cg_contact_seller_email" class="regular-text" 
+                                    value="<?php echo esc_attr( $cg_contact_seller_email ); ?>" />
                                 <br>
-                                <code><?php _e('An email will sent to this email when a candidate submit an applicaiton.', 'wp-car-gallery'); ?></code>
+                                <code><?php esc_html_e('Contact seller button email', 'wp-car-gallery'); ?></code>
                             </td>
                         </tr>
                         <tr>
                             <th scope="row">
-                                <label><?php _e('Job List Layout', 'wp-car-gallery'); ?></label>
+                                <label><?php esc_html_e('Contact Seller Tel', 'wp-car-gallery'); ?></label>
                             </th>
                             <td>
-                                <input type="radio" name="cg_list_layout" id="cg_list_layout_list" value="list" <?php echo ( 'list' === $cg_list_layout ) ? 'checked' : ''; ?> >
-                                <label for="cg_list_layout_list"><span></span><?php _e('List', 'wp-car-gallery'); ?></label>
-                                &nbsp;&nbsp;
-                                <input type="radio" name="cg_list_layout" id="cg_list_layout_grid" value="grid" <?php echo ( 'grid' === $cg_list_layout ) ? 'checked' : ''; ?> >
-                                <label for="cg_list_layout_grid"><span></span><?php _e('Grid', 'wp-car-gallery'); ?></label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">
-                                <label for="cg_ext_application_form"><?php _e('Use External Apply Form', 'wp-car-gallery'); ?>?</label>
-                            </th>
-                            <td>
-                                <input type="checkbox" name="cg_ext_application_form" class="cg_ext_application_form" id="cg_ext_application_form"
-                                    <?php echo $cg_ext_application_form ? 'checked' : ''; ?> >
+                                <input type="text" name="cg_contact_seller_tel" id="cg_contact_seller_tel" class="regular-text" 
+                                    value="<?php echo esc_attr( $cg_contact_seller_tel ); ?>" />
+                                <br>
+                                <code><?php esc_html_e('Contact seller button tel', 'wp-car-gallery'); ?></code>
                             </td>
                         </tr>
                     </table>
                     <hr>
                     <p class="submit">
                         <button id="updateGeneralSettings" name="updateGeneralSettings" class="button button-primary cg-button">
-                            <i class="fa fa-check-circle" aria-hidden="true"></i>&nbsp;<?php _e('Save Settings', 'wp-car-gallery'); ?>
+                            <i class="fa fa-check-circle" aria-hidden="true"></i>&nbsp;<?php esc_html_e('Save Settings', 'wp-car-gallery'); ?>
                         </button>
                     </p>
                 </form>

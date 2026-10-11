@@ -4,6 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 require_once CG_PATH . 'core/core.php';
+include_once CG_PATH . 'inc/cls-cg-currency.php';
 include_once CG_PATH . 'core/general-settings.php';
 include_once CG_PATH . 'core/listing-content.php';
 include_once CG_PATH . 'core/listing-styles.php';
@@ -50,7 +51,8 @@ class CG_Master {
 
 		$cg_front = new CG_Front( $this->cg_version() );
 		$this->cg_loader->add_action('wp_enqueue_scripts', $cg_front, CG_PRFX . 'front_assets');
-		$this->cg_loader->add_filter('single_template', $cg_front, CG_PRFX . 'single_template', 10);
+		//$this->cg_loader->add_filter('single_template', $cg_front, CG_PRFX . 'single_template', 10);
+		$this->cg_loader->add_filter('the_content', $cg_front, 'cg_single_template_only_content', 10);
 		$cg_front->cg_load_shortcode();
 	}
 

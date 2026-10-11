@@ -16,16 +16,16 @@ trait CG_Single_Content_Settings
 
         $this->options  = $this->cg_build_set_settings_options( $this->fields, $post );
 
-        $this->settings = apply_filters( 'cg_detail_settings', $this->options, $post );
+        $this->settings = apply_filters( 'cg_single_content_settings', $this->options, $post );
 
-        return update_option( 'cg_detail_settings', serialize( $this->settings ) );
+        return update_option( 'cg_single_content_settings', $this->settings );
 
     }
 
     function cg_get_single_content_settings() {
 
         $this->fields   = $this->cg_single_content_option_fileds();
-		$this->settings = stripslashes_deep( unserialize( get_option('cg_detail_settings') ) );
+		$this->settings = get_option('cg_single_content_settings');
         
         return $this->cg_build_get_settings_options( $this->fields, $this->settings );
 	}
@@ -34,7 +34,22 @@ trait CG_Single_Content_Settings
 
         return [
             [
+                'name'      => 'cg_single_show_car_title',
+                'type'      => 'boolean',
+                'default'   => false,
+            ],
+            [
                 'name'      => 'cg_single_hide_overview',
+                'type'      => 'boolean',
+                'default'   => false,
+            ],
+            [
+                'name'      => 'cg_single_hide_contact_seller',
+                'type'      => 'boolean',
+                'default'   => false,
+            ],
+            [
+                'name'      => 'cg_single_hide_call_seller',
                 'type'      => 'boolean',
                 'default'   => false,
             ],

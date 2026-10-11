@@ -2,27 +2,55 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
+$cgTab = isset( $_GET['tab'] ) ? sanitize_text_field( wp_unslash( $_GET['tab'] ) ) : null;
+
+$cgSingleMessage = false;
+
+// Content
+if ( isset( $_POST['updateSingleContent'] ) ) {
+
+    if ( ! isset( $_POST['cg_single_content_settings_nonce_field'] ) 
+        || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['cg_single_content_settings_nonce_field'] ) ), 'cg_single_content_settings_nonce_action' ) ) {
+        
+        wp_die( esc_html__( 'Sorry, your nonce did not verify.', 'wp-car-gallery' ) );
+    } 
+    
+    $cgListingMessage = $this->cg_set_single_content_settings( $_POST );
+}
+
+// Style
+if ( isset( $_POST['updateSingleStyles'] ) ) {
+
+    if ( ! isset( $_POST['cg_single_style_settings_nonce_field'] ) 
+        || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['cg_single_style_settings_nonce_field'] ) ), 'cg_single_style_settings_nonce_action' ) ) {
+        
+        wp_die( esc_html__( 'Sorry, your nonce did not verify.', 'wp-car-gallery' ) );
+    } 
+    
+    $cgListingMessage = $this->cg_set_single_styles_settings( $_POST );
+}
 ?>
 <div id="wph-wrap-all" class="wrap cg-single-settings-page">
 
     <div class="settings-banner">
-        <h2><i class="fa fa-cogs" aria-hidden="true"></i>&nbsp;<?php _e('Detail Page Settings', 'wp-car-gallery'); ?></h2>
+        <h2><i class="fa fa-cogs" aria-hidden="true"></i>&nbsp;<?php esc_html_e('Detail Page Settings', 'wp-car-gallery'); ?></h2>
     </div>
 
     <?php 
-        if ( $cgSingleMessage ) {
-            $this->cg_display_notification('success', 'Your information updated successfully.');
-        }
+    if ( $cgSingleMessage ) {
+        $this->cg_display_notification('success', 'Your information updated successfully.');
+    }
     ?>
 
     <div class="cg-wrap">
 
         <nav class="nav-tab-wrapper">
             <a href="?post_type=car&page=cg-single-settings&tab=content" class="nav-tab cg-tab <?php if ( $cgTab !== 'styles' ) { ?>cg-tab-active<?php } ?>">
-                <i class="fa fa-cog" aria-hidden="true">&nbsp;</i><?php _e('Content', 'wp-car-gallery'); ?>
+                <i class="fa fa-cog" aria-hidden="true">&nbsp;</i><?php esc_html_e('Content', 'wp-car-gallery'); ?>
             </a>
             <a href="?post_type=car&page=cg-single-settings&tab=styles" class="nav-tab cg-tab <?php if ( $cgTab === 'styles' ) { ?>cg-tab-active<?php } ?>">
-                <i class="fa fa-paint-brush" aria-hidden="true"></i>&nbsp;<?php _e('Styles', 'wp-car-gallery'); ?>
+                <i class="fa fa-paint-brush" aria-hidden="true"></i>&nbsp;<?php esc_html_e('Styles', 'wp-car-gallery'); ?>
             </a>
         </nav>
 
