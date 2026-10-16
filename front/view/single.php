@@ -27,14 +27,6 @@ foreach ( $cgSingleContent as $option_name => $option_value ) {
     }
 }
 
-$cgSingleStyles = $cg_front->cg_get_single_styles_settings();
-
-foreach ( $cgSingleStyles as $option_name => $option_value ) {
-    if ( isset( $cgSingleStyles[$option_name] ) ) {
-        ${"" . $option_name} = $option_value;
-    }
-}
-
 $cg_engine_type		= get_post_meta( get_the_ID(), 'cg_engine_type', true );
 $cg_engine_size	    = get_post_meta( get_the_ID(), 'cg_engine_size', true );
 $cg_year			= get_post_meta( get_the_ID(), 'cg_year', true );
@@ -52,9 +44,6 @@ $car_body          = wp_get_post_terms( get_the_ID(), 'body_type', array('fields
 
 $cg_tel_number    = preg_replace( '/[^\d+]/', '', $cg_contact_seller_tel );
 $cg_currency_sym = substr( $cg_car_currency, strrpos( $cg_car_currency, '-' ) + 1 );
-
-// Load Styling
-include CG_PATH . 'assets/css/single.php';
 ?>
 <div class="cg-container">
     
