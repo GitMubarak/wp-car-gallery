@@ -10,7 +10,7 @@ if ( isset( $_POST['updateGeneralSettings'] ) ) {
     if ( ! isset( $_POST['cg_general_settings_nonce_field'] ) 
         || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['cg_general_settings_nonce_field'] ) ), 'cg_general_settings_nonce_action' ) ) {
         
-        wp_die( esc_html__( 'Sorry, your nonce did not verify.', 'wp-car-gallery' ) );
+        wp_die( esc_html__( 'Sorry, your nonce did not verify.', 'hm-car-listings' ) );
     } 
     
     $cgGeneralMessage = $this->cg_set_general_settings( $_POST );
@@ -27,7 +27,7 @@ foreach ( $cgGeneralSettings as $option_name => $option_value ) {
 <div id="wph-wrap-all" class="wrap cg-single-settings-page">
 
     <div class="settings-banner">
-        <h2><i class="fa fa-cogs" aria-hidden="true"></i>&nbsp;<?php esc_html_e('General Settings', 'wp-car-gallery'); ?></h2>
+        <h2><i class="fa fa-cogs" aria-hidden="true"></i>&nbsp;<?php esc_html_e('General Settings', 'hm-car-listings'); ?></h2>
     </div>
 
     <?php
@@ -48,11 +48,11 @@ foreach ( $cgGeneralSettings as $option_name => $option_value ) {
                         <!-- Currency -->
                         <tr>
                             <th scope="row">
-                                <label><?php esc_html_e('Currency', 'wp-car-gallery'); ?></label>
+                                <label><?php esc_html_e('Currency', 'hm-car-listings'); ?></label>
                             </th>
                             <td colspan="5">
                                 <select name="cg_car_currency" id="cg_car_currency" class="regular-text">
-                                    <option value=""><?php esc_html_e('Select One', 'wp-car-gallery'); ?></option>
+                                    <option value=""><?php esc_html_e('Select One', 'hm-car-listings'); ?></option>
                                     <?php
                                     $cgCurrency = $this->hm_get_all_currency();
                                     foreach ( $cgCurrency as $curr ) {
@@ -71,31 +71,31 @@ foreach ( $cgGeneralSettings as $option_name => $option_value ) {
                         </tr>
                         <tr>
                             <th scope="row">
-                                <label><?php esc_html_e('Contact Seller Email', 'wp-car-gallery'); ?></label>
+                                <label><?php esc_html_e('Contact Seller Email', 'hm-car-listings'); ?></label>
                             </th>
                             <td>
                                 <input type="text" name="cg_contact_seller_email" id="cg_contact_seller_email" class="regular-text" 
                                     value="<?php echo esc_attr( $cg_contact_seller_email ); ?>" />
                                 <br>
-                                <code><?php esc_html_e('Contact seller button email', 'wp-car-gallery'); ?></code>
+                                <code><?php esc_html_e('Contact seller button email', 'hm-car-listings'); ?></code>
                             </td>
                         </tr>
                         <tr>
                             <th scope="row">
-                                <label><?php esc_html_e('Contact Seller Tel', 'wp-car-gallery'); ?></label>
+                                <label><?php esc_html_e('Contact Seller Tel', 'hm-car-listings'); ?></label>
                             </th>
                             <td>
                                 <input type="text" name="cg_contact_seller_tel" id="cg_contact_seller_tel" class="regular-text" 
                                     value="<?php echo esc_attr( $cg_contact_seller_tel ); ?>" />
                                 <br>
-                                <code><?php esc_html_e('Contact seller button tel', 'wp-car-gallery'); ?></code>
+                                <code><?php esc_html_e('Contact seller button tel', 'hm-car-listings'); ?></code>
                             </td>
                         </tr>
                     </table>
                     <hr>
                     <p class="submit">
                         <button id="updateGeneralSettings" name="updateGeneralSettings" class="button button-primary cg-button">
-                            <i class="fa fa-check-circle" aria-hidden="true"></i>&nbsp;<?php esc_html_e('Save Settings', 'wp-car-gallery'); ?>
+                            <i class="fa fa-check-circle" aria-hidden="true"></i>&nbsp;<?php esc_html_e('Save Settings', 'hm-car-listings'); ?>
                         </button>
                     </p>
                 </form>

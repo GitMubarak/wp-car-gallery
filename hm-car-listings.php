@@ -1,18 +1,17 @@
 <?php
 /**
- * Plugin Name:         Car Gallery
- * Plugin URI:		    https://wordpress.org/plugins/car-gallery/
+ * Plugin Name:         HM Car Listings
+ * Plugin URI:		    https://wordpress.org/plugins/hm-car-listings/
  * Description: 	    Car Listings & Vehicle Inventory for WordPress
  * Version:             1.0.0
  * Author:		        HM Plugin
  * Author URI:	        https://hmplugin.com
  * Requires at least:   6.0
  * Requires PHP:        7.4
- * Tested up to:        7.1
- * Text Domain:         wp-car-gallery
+ * Text Domain:         hm-car-listings
  * Domain Path:         /languages/
- * License:             GPL-2.0+
- * License URI:         http://www.gnu.org/licenses/gpl-2.0.txt
+ * License:             GPLv2 or later
+ * License URI:         https://www.gnu.org/licenses/gpl-2.0.txt
 */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -24,7 +23,7 @@ define('CG_ASSETS', plugins_url('/assets/', __FILE__));
 define('CG_SLUG', plugin_basename(__FILE__));
 define('CG_PRFX', 'cg_');
 define('CG_CLS_PRFX', 'cls-cg-');
-define('CG_TXT_DOMAIN', 'wp-car-gallery');
+define('CG_TXT_DOMAIN', 'hm-car-listings');
 define('CG_VERSION', '1.0.0');
 
 require_once CG_PATH . 'inc/' . CG_CLS_PRFX . 'master.php';

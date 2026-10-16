@@ -17,12 +17,12 @@ foreach ( $cgListingStyles as $option_name => $option_value ) {
         <!-- Title -->
         <tr>
             <th scope="row" colspan="2">
-                <hr><span><?php esc_html_e('Car Title', 'wp-car-gallery'); ?></span><hr>
+                <hr><span><?php esc_html_e('Car Title', 'hm-car-listings'); ?></span><hr>
             </th>
         </tr>
         <tr>
             <th scope="row">
-                <label><?php esc_html_e('Font Color', 'wp-car-gallery'); ?>:</label>
+                <label><?php esc_html_e('Font Color', 'hm-car-listings'); ?>:</label>
             </th>
             <td>
                 <input class="cg-wp-color" type="text" name="cg_listing_title_font_color" id="cg_listing_title_font_color" value="<?php echo esc_attr( $cg_listing_title_font_color ); ?>">
@@ -31,7 +31,7 @@ foreach ( $cgListingStyles as $option_name => $option_value ) {
         </tr>
         <tr>
             <th scope="row">
-                <label><?php esc_html_e('Font Size', 'wp-car-gallery'); ?>:</label>
+                <label><?php esc_html_e('Font Size', 'hm-car-listings'); ?>:</label>
             </th>
             <td>
                 <input type="number" class="small-text" min="11" max="50" name="cg_listing_title_font_size" id="cg_listing_title_font_size" value="<?php echo esc_attr( $cg_listing_title_font_size ); ?>">
@@ -42,7 +42,7 @@ foreach ( $cgListingStyles as $option_name => $option_value ) {
     <hr>
     <p class="submit">
         <button id="updateListingStyles" name="updateListingStyles" class="button button-primary cg-button">
-            <?php esc_html_e('Save Settings', 'wp-car-gallery'); ?>
+            <?php esc_html_e('Save Settings', 'hm-car-listings'); ?>
         </button>
     </p>
 </form>

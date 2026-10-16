@@ -126,7 +126,7 @@ foreach ( $cg_search_tax_filters as $get_key => $meta_key ) {
 
         <!-- Keyword -->
         <div class="cg-field cg-field-keyword">
-            <label for="cg-keyword"><?php esc_html_e('Keyword', 'wp-car-gallery'); ?></label>
+            <label for="cg-keyword"><?php esc_html_e('Keyword', 'hm-car-listings'); ?></label>
             <input
                 type="text"
                 id="cg-keyword"
@@ -138,9 +138,9 @@ foreach ( $cg_search_tax_filters as $get_key => $meta_key ) {
 
         <!-- Make -->
         <div class="cg-field">
-            <label for="cg-make"><?php esc_html_e('Make', 'wp-car-gallery'); ?></label>
+            <label for="cg-make"><?php esc_html_e('Make', 'hm-car-listings'); ?></label>
             <select id="cg-make" name="car_make_s">
-                <option value=""><?php esc_html_e('All Makes', 'wp-car-gallery'); ?></option>
+                <option value=""><?php esc_html_e('All Makes', 'hm-car-listings'); ?></option>
 				<?php
 				$car_makes = get_terms( array( 'taxonomy' => 'car_make', 'hide_empty' => false, 'order' => 'ASC' ) );
 				foreach( $car_makes as $make) {
@@ -154,9 +154,9 @@ foreach ( $cg_search_tax_filters as $get_key => $meta_key ) {
 
         <!-- Model -->
         <div class="cg-field">
-            <label for="cg-model"><?php esc_html_e('Model', 'wp-car-gallery'); ?></label>
+            <label for="cg-model"><?php esc_html_e('Model', 'hm-car-listings'); ?></label>
             <select id="cg-model" name="car_model_s">
-                <option value=""><?php esc_html_e('All Models', 'wp-car-gallery'); ?></option>
+                <option value=""><?php esc_html_e('All Models', 'hm-car-listings'); ?></option>
 				<?php
 				$car_models = get_terms( array( 'taxonomy' => 'car_model', 'hide_empty' => false, 'order' => 'ASC' ) );
 				foreach( $car_models as $model) {
@@ -170,7 +170,7 @@ foreach ( $cg_search_tax_filters as $get_key => $meta_key ) {
 
         <!-- Price -->
         <div class="cg-field cg-price-field">
-            <label><?php esc_html_e('Price', 'wp-car-gallery'); ?></label>
+            <label><?php esc_html_e('Price', 'hm-car-listings'); ?></label>
 
             <div class="cg-range-fields">
                 <input
@@ -195,7 +195,7 @@ foreach ( $cg_search_tax_filters as $get_key => $meta_key ) {
 
         <!-- Year -->
         <div class="cg-field cg-year-field">
-            <label><?php esc_html_e('Year', 'wp-car-gallery'); ?></label>
+            <label><?php esc_html_e('Year', 'hm-car-listings'); ?></label>
 
             <div class="cg-range-fields">
                 <input
@@ -222,9 +222,9 @@ foreach ( $cg_search_tax_filters as $get_key => $meta_key ) {
 
         <!-- Fuel -->
         <div class="cg-field">
-            <label for="cg-fuel"><?php esc_html_e('Fuel Type', 'wp-car-gallery'); ?></label>
+            <label for="cg-fuel"><?php esc_html_e('Fuel Type', 'hm-car-listings'); ?></label>
             <select id="cg-fuel" name="car_fuel_s">
-                <option value=""><?php esc_html_e('All Fuel Types', 'wp-car-gallery'); ?></option>
+                <option value=""><?php esc_html_e('All Fuel Types', 'hm-car-listings'); ?></option>
 				<?php
 				$car_fuels = get_terms( array( 'taxonomy' => 'car_fuel', 'hide_empty' => false, 'order' => 'ASC' ) );
 				foreach( $car_fuels as $fuel) {
@@ -238,9 +238,9 @@ foreach ( $cg_search_tax_filters as $get_key => $meta_key ) {
 
         <!-- Body Type -->
         <div class="cg-field">
-            <label for="cg-body-type"><?php esc_html_e('Body Type', 'wp-car-gallery'); ?></label>
+            <label for="cg-body-type"><?php esc_html_e('Body Type', 'hm-car-listings'); ?></label>
             <select id="cg-body-type" name="car_body_type_s">
-                <option value=""><?php esc_html_e('All Body Types', 'wp-car-gallery'); ?></option>
+                <option value=""><?php esc_html_e('All Body Types', 'hm-car-listings'); ?></option>
                 <?php
 				$body_type_s = get_terms( array( 'taxonomy' => 'body_type', 'hide_empty' => false, 'order' => 'ASC' ) );
 				foreach( $body_type_s as $body) {
@@ -254,30 +254,30 @@ foreach ( $cg_search_tax_filters as $get_key => $meta_key ) {
 
         <!-- Transmission -->
         <div class="cg-field">
-            <label for="cg-transmission"><?php esc_html_e('Transmission', 'wp-car-gallery'); ?></label>
+            <label for="cg-transmission"><?php esc_html_e('Transmission', 'hm-car-listings'); ?></label>
             <select id="cg-transmission" name="transmission_s">
-                <option value=""><?php esc_html_e('All Transmissions', 'wp-car-gallery'); ?></option>
-                <option value="<?php echo esc_attr( 'automatic' ); ?>" <?php selected( $cg_clean_search_params['transmission_s'], 'automatic' ); ?>><?php esc_html_e('Automatic', 'wp-car-gallery'); ?></option>
-                <option value="<?php echo esc_attr( 'manual' ); ?>" <?php selected( $cg_clean_search_params['transmission_s'], 'manual' ); ?>><?php esc_html_e('Manual', 'wp-car-gallery'); ?></option>
+                <option value=""><?php esc_html_e('All Transmissions', 'hm-car-listings'); ?></option>
+                <option value="<?php echo esc_attr( 'automatic' ); ?>" <?php selected( $cg_clean_search_params['transmission_s'], 'automatic' ); ?>><?php esc_html_e('Automatic', 'hm-car-listings'); ?></option>
+                <option value="<?php echo esc_attr( 'manual' ); ?>" <?php selected( $cg_clean_search_params['transmission_s'], 'manual' ); ?>><?php esc_html_e('Manual', 'hm-car-listings'); ?></option>
             </select>
         </div>
 
         <!-- Condition -->
         <div class="cg-field">
-            <label for="cg-condition"><?php esc_html_e('Condition', 'wp-car-gallery'); ?></label>
+            <label for="cg-condition"><?php esc_html_e('Condition', 'hm-car-listings'); ?></label>
             <select id="cg-condition" name="condition_s">
-                <option value=""><?php esc_html_e('All Conditions', 'wp-car-gallery'); ?></option>
-                <option value="<?php echo esc_attr( 'new' ); ?>" <?php selected( $cg_clean_search_params['condition_s'], 'new' ); ?>><?php esc_html_e('New', 'wp-car-gallery'); ?></option>
-                <option value="<?php echo esc_attr( 'used' ); ?>" <?php selected( $cg_clean_search_params['condition_s'], 'used' ); ?>><?php esc_html_e('Used', 'wp-car-gallery'); ?></option>
-                <option value="<?php echo esc_attr( 'pre-owned' ); ?>" <?php selected( $cg_clean_search_params['condition_s'], 'pre-owned' ); ?>><?php esc_html_e('Certified Pre-Owned', 'wp-car-gallery'); ?></option>
-                <option value="<?php echo esc_attr( 'reconditioned' ); ?>" <?php selected( $cg_clean_search_params['condition_s'], 'reconditioned' ); ?>><?php esc_html_e('Reconditioned', 'wp-car-gallery'); ?></option>
+                <option value=""><?php esc_html_e('All Conditions', 'hm-car-listings'); ?></option>
+                <option value="<?php echo esc_attr( 'new' ); ?>" <?php selected( $cg_clean_search_params['condition_s'], 'new' ); ?>><?php esc_html_e('New', 'hm-car-listings'); ?></option>
+                <option value="<?php echo esc_attr( 'used' ); ?>" <?php selected( $cg_clean_search_params['condition_s'], 'used' ); ?>><?php esc_html_e('Used', 'hm-car-listings'); ?></option>
+                <option value="<?php echo esc_attr( 'pre-owned' ); ?>" <?php selected( $cg_clean_search_params['condition_s'], 'pre-owned' ); ?>><?php esc_html_e('Certified Pre-Owned', 'hm-car-listings'); ?></option>
+                <option value="<?php echo esc_attr( 'reconditioned' ); ?>" <?php selected( $cg_clean_search_params['condition_s'], 'reconditioned' ); ?>><?php esc_html_e('Reconditioned', 'hm-car-listings'); ?></option>
             </select>
         </div>
 
         <!-- Button -->
         <div class="cg-search-action">
             <button type="submit" class="cg-search-button">
-                <?php esc_html_e('Search Cars', 'wp-car-gallery'); ?>
+                <?php esc_html_e('Search Cars', 'hm-car-listings'); ?>
             </button>
 
 			<a href="<?php echo esc_url( get_permalink() ); ?>" class="cg-reset-button"><i class="fa fa-refresh" aria-hidden="true"></i></a>

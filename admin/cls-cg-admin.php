@@ -80,8 +80,8 @@ class CG_Admin
 
 		add_submenu_page(
 			$cg_cpt_menu,
-			__('General Settings', 'wp-car-gallery'),
-			__('General Settings', 'wp-car-gallery'),
+			__('General Settings', 'hm-car-listings'),
+			__('General Settings', 'hm-car-listings'),
 			'manage_options',
 			'cg-general-settings',
 			array($this, CG_PRFX . 'general_settings'),
@@ -89,8 +89,8 @@ class CG_Admin
 
 		add_submenu_page(
 			$cg_cpt_menu,
-			__('Listing Page Settings', 'wp-car-gallery'),
-			__('Listing Page Settings', 'wp-car-gallery'),
+			__('Listing Page Settings', 'hm-car-listings'),
+			__('Listing Page Settings', 'hm-car-listings'),
 			'manage_options',
 			'cg-listing-settings',
 			array($this, CG_PRFX . 'listing_settings'),
@@ -98,8 +98,8 @@ class CG_Admin
 
 		add_submenu_page(
 			$cg_cpt_menu,
-			__('Detail Page Settings', 'wp-car-gallery'),
-			__('Detail Page Settings', 'wp-car-gallery'),
+			__('Detail Page Settings', 'hm-car-listings'),
+			__('Detail Page Settings', 'hm-car-listings'),
 			'manage_options',
 			'cg-single-settings',
 			array($this, CG_PRFX . 'single_settings'),
@@ -145,24 +145,24 @@ class CG_Admin
 	function cg_custom_post_type() {
 
 		$labels = array(
-			'name'                => __('All Cars', 'wp-car-gallery'),
-			'singular_name'       => __('WP Cars', 'wp-car-gallery'),
-			'menu_name'           => __('WP Cars', 'wp-car-gallery'),
-			'parent_item_colon'   => __('Parent Car', 'wp-car-gallery'),
-			'all_items'           => __('All Cars', 'wp-car-gallery'),
-			'view_item'           => __('View Car', 'wp-car-gallery'),
-			'add_new_item'        => __('Add New Car', 'wp-car-gallery'),
-			'add_new'             => __('Add New', 'wp-car-gallery'),
-			'edit_item'           => __('Edit Car', 'wp-car-gallery'),
-			'update_item'         => __('Update Car', 'wp-car-gallery'),
-			'search_items'        => __('Search Car', 'wp-car-gallery'),
-			'not_found'           => __('Not Found', 'wp-car-gallery'),
-			'not_found_in_trash'  => __('Not found in Trash', 'wp-car-gallery')
+			'name'                => __('All Cars', 'hm-car-listings'),
+			'singular_name'       => __('WP Cars', 'hm-car-listings'),
+			'menu_name'           => __('WP Cars', 'hm-car-listings'),
+			'parent_item_colon'   => __('Parent Car', 'hm-car-listings'),
+			'all_items'           => __('All Cars', 'hm-car-listings'),
+			'view_item'           => __('View Car', 'hm-car-listings'),
+			'add_new_item'        => __('Add New Car', 'hm-car-listings'),
+			'add_new'             => __('Add New', 'hm-car-listings'),
+			'edit_item'           => __('Edit Car', 'hm-car-listings'),
+			'update_item'         => __('Update Car', 'hm-car-listings'),
+			'search_items'        => __('Search Car', 'hm-car-listings'),
+			'not_found'           => __('Not Found', 'hm-car-listings'),
+			'not_found_in_trash'  => __('Not found in Trash', 'hm-car-listings')
 		);
 
 		$args = array(
-			'label'               => __('car', 'wp-car-gallery'),
-			'description'         => __('Description For Car', 'wp-car-gallery'),
+			'label'               => __('car', 'hm-car-listings'),
+			'description'         => __('Description For Car', 'hm-car-listings'),
 			'labels'              => $labels,
 			'supports'            => array('title', 'editor', 'page-attributes', 'thumbnail'),
 			'public'              => true,
@@ -191,17 +191,17 @@ class CG_Admin
 
 		// Taxonomy: Make
 		$make = array(
-			'name'                       => __( 'Car Makes', 'wp-car-gallery' ),
-			'singular_name'              => __( 'Car Make', 'wp-car-gallery' ),
-			'search_items'               => __( 'Search Car Makes', 'wp-car-gallery' ),
-			'all_items'                  => __( 'All Car Makes', 'wp-car-gallery' ),
-			'parent_item'                => __( 'Parent Car Make', 'wp-car-gallery' ),
-			'parent_item_colon'          => __( 'Parent Car Make:', 'wp-car-gallery' ),
-			'edit_item'                  => __( 'Edit Car Make', 'wp-car-gallery' ),
-			'update_item'                => __( 'Update Car Make', 'wp-car-gallery' ),
-			'add_new_item'               => __( 'Add New Car Make', 'wp-car-gallery' ),
-			'new_item_name'              => __( 'New Car Make Name', 'wp-car-gallery' ),
-			'menu_name'                  => __( 'Car Makes', 'wp-car-gallery' ),
+			'name'                       => __( 'Car Makes', 'hm-car-listings' ),
+			'singular_name'              => __( 'Car Make', 'hm-car-listings' ),
+			'search_items'               => __( 'Search Car Makes', 'hm-car-listings' ),
+			'all_items'                  => __( 'All Car Makes', 'hm-car-listings' ),
+			'parent_item'                => __( 'Parent Car Make', 'hm-car-listings' ),
+			'parent_item_colon'          => __( 'Parent Car Make:', 'hm-car-listings' ),
+			'edit_item'                  => __( 'Edit Car Make', 'hm-car-listings' ),
+			'update_item'                => __( 'Update Car Make', 'hm-car-listings' ),
+			'add_new_item'               => __( 'Add New Car Make', 'hm-car-listings' ),
+			'new_item_name'              => __( 'New Car Make Name', 'hm-car-listings' ),
+			'menu_name'                  => __( 'Car Makes', 'hm-car-listings' ),
 		);
 
 		register_taxonomy(
@@ -221,17 +221,17 @@ class CG_Admin
 
 		// Taxonomy: Model
 		$model = array(
-			'name'                       => __( 'Car Models', 'wp-car-gallery' ),
-			'singular_name'              => __( 'Car Model', 'wp-car-gallery' ),
-			'search_items'               => __( 'Search Car Models', 'wp-car-gallery' ),
-			'all_items'                  => __( 'All Car Models', 'wp-car-gallery' ),
-			'parent_item'                => __( 'Parent Car Model', 'wp-car-gallery' ),
-			'parent_item_colon'          => __( 'Parent Car Model:', 'wp-car-gallery' ),
-			'edit_item'                  => __( 'Edit Car Model', 'wp-car-gallery' ),
-			'update_item'                => __( 'Update Car Model', 'wp-car-gallery' ),
-			'add_new_item'               => __( 'Add New Car Model', 'wp-car-gallery' ),
-			'new_item_name'              => __( 'New Car Model Name', 'wp-car-gallery' ),
-			'menu_name'                  => __( 'Car Models', 'wp-car-gallery' ),
+			'name'                       => __( 'Car Models', 'hm-car-listings' ),
+			'singular_name'              => __( 'Car Model', 'hm-car-listings' ),
+			'search_items'               => __( 'Search Car Models', 'hm-car-listings' ),
+			'all_items'                  => __( 'All Car Models', 'hm-car-listings' ),
+			'parent_item'                => __( 'Parent Car Model', 'hm-car-listings' ),
+			'parent_item_colon'          => __( 'Parent Car Model:', 'hm-car-listings' ),
+			'edit_item'                  => __( 'Edit Car Model', 'hm-car-listings' ),
+			'update_item'                => __( 'Update Car Model', 'hm-car-listings' ),
+			'add_new_item'               => __( 'Add New Car Model', 'hm-car-listings' ),
+			'new_item_name'              => __( 'New Car Model Name', 'hm-car-listings' ),
+			'menu_name'                  => __( 'Car Models', 'hm-car-listings' ),
 		);
 
 		register_taxonomy(
@@ -251,17 +251,17 @@ class CG_Admin
 
 		// Taxonomy: Body Type
 		$body = array(
-			'name'                       => __( 'Body Types', 'wp-car-gallery' ),
-			'singular_name'              => __( 'Body Type', 'wp-car-gallery' ),
-			'search_items'               => __( 'Search Body Types', 'wp-car-gallery' ),
-			'all_items'                  => __( 'All Body Types', 'wp-car-gallery' ),
-			'parent_item'                => __( 'Parent Body Type', 'wp-car-gallery' ),
-			'parent_item_colon'          => __( 'Parent Body Type:', 'wp-car-gallery' ),
-			'edit_item'                  => __( 'Edit Body Type', 'wp-car-gallery' ),
-			'update_item'                => __( 'Update Body Type', 'wp-car-gallery' ),
-			'add_new_item'               => __( 'Add New Body Type', 'wp-car-gallery' ),
-			'new_item_name'              => __( 'New Body Type Name', 'wp-car-gallery' ),
-			'menu_name'                  => __( 'Body Types', 'wp-car-gallery' ),
+			'name'                       => __( 'Body Types', 'hm-car-listings' ),
+			'singular_name'              => __( 'Body Type', 'hm-car-listings' ),
+			'search_items'               => __( 'Search Body Types', 'hm-car-listings' ),
+			'all_items'                  => __( 'All Body Types', 'hm-car-listings' ),
+			'parent_item'                => __( 'Parent Body Type', 'hm-car-listings' ),
+			'parent_item_colon'          => __( 'Parent Body Type:', 'hm-car-listings' ),
+			'edit_item'                  => __( 'Edit Body Type', 'hm-car-listings' ),
+			'update_item'                => __( 'Update Body Type', 'hm-car-listings' ),
+			'add_new_item'               => __( 'Add New Body Type', 'hm-car-listings' ),
+			'new_item_name'              => __( 'New Body Type Name', 'hm-car-listings' ),
+			'menu_name'                  => __( 'Body Types', 'hm-car-listings' ),
 		);
 
 		register_taxonomy(
@@ -281,17 +281,17 @@ class CG_Admin
 
 		// Taxonomy: Fuel Type
 		$fuel = array(
-			'name'                       => __( 'Fuel Types', 'wp-car-gallery' ),
-			'singular_name'              => __( 'Fuel Type', 'wp-car-gallery' ),
-			'search_items'               => __( 'Search Fuel Types', 'wp-car-gallery' ),
-			'all_items'                  => __( 'All Fuel Types', 'wp-car-gallery' ),
-			'parent_item'                => __( 'Parent Fuel Type', 'wp-car-gallery' ),
-			'parent_item_colon'          => __( 'Parent Fuel Type:', 'wp-car-gallery' ),
-			'edit_item'                  => __( 'Edit Fuel Type', 'wp-car-gallery' ),
-			'update_item'                => __( 'Update Fuel Type', 'wp-car-gallery' ),
-			'add_new_item'               => __( 'Add New Fuel Type', 'wp-car-gallery' ),
-			'new_item_name'              => __( 'New Fuel Type Name', 'wp-car-gallery' ),
-			'menu_name'                  => __( 'Fuel Types', 'wp-car-gallery' ),
+			'name'                       => __( 'Fuel Types', 'hm-car-listings' ),
+			'singular_name'              => __( 'Fuel Type', 'hm-car-listings' ),
+			'search_items'               => __( 'Search Fuel Types', 'hm-car-listings' ),
+			'all_items'                  => __( 'All Fuel Types', 'hm-car-listings' ),
+			'parent_item'                => __( 'Parent Fuel Type', 'hm-car-listings' ),
+			'parent_item_colon'          => __( 'Parent Fuel Type:', 'hm-car-listings' ),
+			'edit_item'                  => __( 'Edit Fuel Type', 'hm-car-listings' ),
+			'update_item'                => __( 'Update Fuel Type', 'hm-car-listings' ),
+			'add_new_item'               => __( 'Add New Fuel Type', 'hm-car-listings' ),
+			'new_item_name'              => __( 'New Fuel Type Name', 'hm-car-listings' ),
+			'menu_name'                  => __( 'Fuel Types', 'hm-car-listings' ),
 		);
 
 		register_taxonomy(
@@ -317,7 +317,7 @@ class CG_Admin
 
 		add_meta_box(
 			'cg_metaboxe_specification',
-			__('Car Specifications', 'wp-car-gallery'),
+			__('Car Specifications', 'hm-car-listings'),
 			array( $this, 'cg_metabox_specification' ),
 			'car',
 			'normal',

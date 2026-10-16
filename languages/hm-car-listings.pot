@@ -1,24 +1,23 @@
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: WP Car Gallery\n"
-"POT-Creation-Date: 2026-10-10 18:06+0600\n"
-"PO-Revision-Date: 2026-10-10 12:19+0000\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2026-10-16 19:40+0600\n"
+"PO-Revision-Date: 2021-12-27 04:06+0600\n"
 "Last-Translator: \n"
-"Language-Team: বাংলা\n"
-"Language: bn_BD\n"
+"Language-Team: \n"
+"Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Loco https://localise.biz/\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.10\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: _e;esc_htm;esc_attr;esc_html_e;esc_html_;__(;__\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPath-1: admin/cls-cg-admin.php\n"
 "X-Poedit-SearchPath-2: front\n"
 "X-Poedit-SearchPath-3: admin\n"
-"Report-Msgid-Bugs-To: \n"
-"X-Loco-Version: 2.8.9; wp-7.1.3; php-7.4.19"
 
 #: admin/cls-cg-admin.php:83 admin/cls-cg-admin.php:84
 #: admin/view/general.php:30
@@ -129,7 +128,7 @@ msgstr ""
 
 #: admin/cls-cg-admin.php:224 admin/cls-cg-admin.php:234
 msgid "Car Models"
-msgstr "গাড়ির মডেল"
+msgstr ""
 
 #: admin/cls-cg-admin.php:225
 msgid "Car Model"
@@ -174,7 +173,7 @@ msgstr ""
 #: admin/cls-cg-admin.php:255 front/view/search.php:241
 #: front/view/single.php:224 front/view/single.php:360
 msgid "Body Type"
-msgstr "বডি টাইপ"
+msgstr ""
 
 #: admin/cls-cg-admin.php:256
 msgid "Search Body Types"
@@ -215,7 +214,7 @@ msgstr ""
 #: admin/cls-cg-admin.php:285 front/view/search.php:225
 #: front/view/single.php:185 front/view/single.php:321
 msgid "Fuel Type"
-msgstr "ফুয়েল টাইপ"
+msgstr ""
 
 #: admin/cls-cg-admin.php:286
 msgid "Search Fuel Types"
@@ -264,25 +263,25 @@ msgstr ""
 #: admin/view/car-specification.php:40 front/view/search.php:198
 #: front/view/single.php:154 front/view/single.php:292
 msgid "Year"
-msgstr "সাল"
+msgstr ""
 
-#: admin/view/car-specification.php:48 front/view/listing.php:117
+#: admin/view/car-specification.php:48 front/view/listing.php:130
 #: front/view/search.php:173 front/view/single.php:164
 msgid "Price"
-msgstr "মূল্য"
+msgstr ""
 
 #: admin/view/car-specification.php:56
 msgid "Mileage (km)"
 msgstr ""
 
-#: admin/view/car-specification.php:64 front/view/listing.php:166
+#: admin/view/car-specification.php:64 front/view/listing.php:193
 msgid "Color"
 msgstr ""
 
 #: admin/view/car-specification.php:72 front/view/search.php:267
 #: front/view/single.php:252
 msgid "Condition"
-msgstr "অবস্থা"
+msgstr ""
 
 #: admin/view/car-specification.php:77 front/view/search.php:270
 msgid "New"
@@ -300,15 +299,15 @@ msgstr ""
 msgid "Reconditioned"
 msgstr ""
 
-#: admin/view/car-specification.php:94 front/view/listing.php:152
+#: admin/view/car-specification.php:94 front/view/listing.php:171
 #: front/view/search.php:257 front/view/single.php:203
 #: front/view/single.php:331
 msgid "Transmission"
-msgstr "ট্রান্সমিশন"
+msgstr ""
 
 #: admin/view/car-specification.php:99 front/view/search.php:260
 msgid "Automatic"
-msgstr "অটোম্যাটিক"
+msgstr ""
 
 #: admin/view/car-specification.php:103 front/view/search.php:261
 msgid "Manual"
@@ -316,7 +315,7 @@ msgstr ""
 
 #: admin/view/car-specification.php:108 front/view/single.php:262
 msgid "Drive Type"
-msgstr "ড্রাইভের ধরন"
+msgstr ""
 
 #: admin/view/car-specification.php:113
 msgid "FWD"
@@ -340,7 +339,7 @@ msgstr ""
 
 #: admin/view/car-specification.php:135
 msgid "Active"
-msgstr "সক্রিয়"
+msgstr ""
 
 #: admin/view/car-specification.php:139
 msgid "Inactive"
@@ -399,7 +398,7 @@ msgstr ""
 
 #: admin/view/partial/listing-content.php:32
 msgid "Date"
-msgstr "তারিখ"
+msgstr ""
 
 #: admin/view/partial/listing-content.php:33
 msgid "title"
@@ -460,37 +459,37 @@ msgstr ""
 msgid "Hide Call Seller"
 msgstr ""
 
-#: front/view/listing.php:105
+#: front/view/listing.php:115
 msgid "No Image Available"
 msgstr ""
 
-#: front/view/listing.php:124 front/view/single.php:174
+#: front/view/listing.php:141 front/view/single.php:174
 #: front/view/single.php:302
 msgid "Mileage"
-msgstr "মাইলেজ"
+msgstr ""
 
-#: front/view/listing.php:124
+#: front/view/listing.php:141
 msgid "km"
 msgstr ""
 
-#: front/view/listing.php:135
+#: front/view/listing.php:153
 msgid "Fuel"
 msgstr ""
 
-#: front/view/listing.php:159 front/view/single.php:213
+#: front/view/listing.php:182 front/view/single.php:213
 #: front/view/single.php:341
 msgid "Engine"
-msgstr "ইঞ্জিন"
+msgstr ""
 
-#: front/view/listing.php:159
+#: front/view/listing.php:182
 msgid "CC"
 msgstr ""
 
-#: front/view/listing.php:173
+#: front/view/listing.php:203
 msgid "View Details"
 msgstr ""
 
-#: front/view/listing.php:205
+#: front/view/listing.php:235
 msgid "No cars found"
 msgstr ""
 
@@ -500,7 +499,7 @@ msgstr ""
 
 #: front/view/search.php:141 front/view/single.php:117
 msgid "Make"
-msgstr "নির্মাণ কারি"
+msgstr ""
 
 #: front/view/search.php:143
 msgid "All Makes"
@@ -508,7 +507,7 @@ msgstr ""
 
 #: front/view/search.php:157 front/view/single.php:136
 msgid "Model"
-msgstr "মডেল"
+msgstr ""
 
 #: front/view/search.php:159
 msgid "All Models"
@@ -552,24 +551,24 @@ msgstr ""
 
 #: front/view/single.php:63 front/view/single.php:395
 msgid "Back to Listings"
-msgstr "তালিকা-তে ফিরে যান"
+msgstr ""
 
 #: front/view/single.php:102
 msgid "Overview"
-msgstr "সারসংক্ষেপ"
+msgstr ""
 
 #: front/view/single.php:110
 msgid "Key Specifications"
-msgstr "প্রধান বৈশিষ্ট্যসমূহ"
+msgstr ""
 
 #: front/view/single.php:242
 msgid "Exterior Color"
-msgstr "বাইরের রঙ"
+msgstr ""
 
 #: front/view/single.php:372
 msgid "Contact Seller"
-msgstr "বিক্রেতার সাথে যোগাযোগ করুন"
+msgstr ""
 
 #: front/view/single.php:381
 msgid "Call Seller"
-msgstr "বিক্রেতাকে কল করুন"
+msgstr ""

@@ -60,7 +60,7 @@ include CG_PATH . 'assets/css/single.php';
     
     <a class="cg-back-link top"
         href="javascript:history.back();">
-        &larr; <?php esc_html_e( 'Back to Listings', 'wp-car-gallery' ); ?>
+        &larr; <?php esc_html_e( 'Back to Listings', 'hm-car-listings' ); ?>
     </a>
 
     <?php
@@ -99,7 +99,7 @@ include CG_PATH . 'assets/css/single.php';
             if ( ! $cg_single_hide_overview ) {
                 ?>
                 <section class="cg-panel">
-                    <h3 class="cg-section-title"><?php esc_html_e('Overview', 'wp-car-gallery'); ?></h3>
+                    <h3 class="cg-section-title"><?php esc_html_e('Overview', 'hm-car-listings'); ?></h3>
                     <?php echo wp_kses_post( $content ); ?>
                 </section>
                 <?php
@@ -107,14 +107,14 @@ include CG_PATH . 'assets/css/single.php';
             ?>
 
             <section class="cg-panel">
-                <h3 class="cg-section-title"><?php esc_html_e('Key Specifications', 'wp-car-gallery'); ?></h3>
+                <h3 class="cg-section-title"><?php esc_html_e('Key Specifications', 'hm-car-listings'); ?></h3>
                 <div class="cg-detail-list">
                     <?php
                     if ( ! empty( $car_make ) ) {
                         $car_make_arr = [];
                         ?>
                         <div class="cg-detail-row">
-                            <span><?php esc_html_e('Make', 'wp-car-gallery'); ?></span>
+                            <span><?php esc_html_e('Make', 'hm-car-listings'); ?></span>
                             <span>
                                 <?php
                                 foreach( $car_make as $make ) {
@@ -133,7 +133,7 @@ include CG_PATH . 'assets/css/single.php';
                         $car_model_arr = [];
                         ?>
                         <div class="cg-detail-row">
-                            <span><?php esc_html_e('Model', 'wp-car-gallery'); ?></span>
+                            <span><?php esc_html_e('Model', 'hm-car-listings'); ?></span>
                             <span>
                                 <?php
                                 foreach( $car_model as $model ) {
@@ -151,7 +151,7 @@ include CG_PATH . 'assets/css/single.php';
                     if ( '' !== $cg_year ) {
                         ?>
                         <div class="cg-detail-row">
-                            <span><?php esc_html_e('Year', 'wp-car-gallery'); ?></span>
+                            <span><?php esc_html_e('Year', 'hm-car-listings'); ?></span>
                             <span><?php echo esc_html( $cg_year ); ?></span>
                         </div>
                         <?php
@@ -161,7 +161,7 @@ include CG_PATH . 'assets/css/single.php';
                     if ( '' !== $cg_car_price ) {
                         ?>
                         <div class="cg-detail-row">
-                            <span><?php esc_html_e('Price', 'wp-car-gallery'); ?></span>
+                            <span><?php esc_html_e('Price', 'hm-car-listings'); ?></span>
                             <span><?php echo esc_html( $cg_currency_sym ) . number_format( esc_html( $cg_car_price ) ); ?></span>
                         </div>
                         <?php
@@ -171,7 +171,7 @@ include CG_PATH . 'assets/css/single.php';
                     if ( '' !== $cg_car_mileage ) {
                         ?>
                         <div class="cg-detail-row">
-                            <span><?php esc_html_e('Mileage', 'wp-car-gallery'); ?></span>
+                            <span><?php esc_html_e('Mileage', 'hm-car-listings'); ?></span>
                             <span><?php echo number_format( esc_html( $cg_car_mileage ) ) . '&nbsp;km'; ?></span>
                         </div>
                         <?php
@@ -182,7 +182,7 @@ include CG_PATH . 'assets/css/single.php';
                         $car_fuel_arr = [];
                         ?>
                         <div class="cg-detail-row">
-                            <span><?php esc_html_e('Fuel Type', 'wp-car-gallery'); ?></span>
+                            <span><?php esc_html_e('Fuel Type', 'hm-car-listings'); ?></span>
                             <span>
                                 <?php
                                 foreach( $car_fuel as $fuel ) {
@@ -200,7 +200,7 @@ include CG_PATH . 'assets/css/single.php';
                     if ( '' !== $cg_car_transmission ) {
                         ?>
                         <div class="cg-detail-row">
-                            <span><?php esc_html_e('Transmission', 'wp-car-gallery'); ?></span>
+                            <span><?php esc_html_e('Transmission', 'hm-car-listings'); ?></span>
                             <span><?php echo esc_html( ucfirst( $cg_car_transmission ) ); ?></span>
                         </div>
                         <?php
@@ -210,7 +210,7 @@ include CG_PATH . 'assets/css/single.php';
                     if ( '' !== $cg_engine_size ) {
                         ?>
                         <div class="cg-detail-row">
-                            <span><?php esc_html_e('Engine', 'wp-car-gallery'); ?></span>
+                            <span><?php esc_html_e('Engine', 'hm-car-listings'); ?></span>
                             <span><?php echo esc_html( ucfirst( $cg_engine_size ) ); ?>&nbsp;CC</span>
                         </div>
                         <?php
@@ -221,7 +221,7 @@ include CG_PATH . 'assets/css/single.php';
                         $car_body_arr = [];
                         ?>
                         <div class="cg-detail-row">
-                            <span><?php esc_html_e('Body Type', 'wp-car-gallery'); ?></span>
+                            <span><?php esc_html_e('Body Type', 'hm-car-listings'); ?></span>
                             <span>
                                 <?php
                                 foreach( $car_body as $body ) {
@@ -239,7 +239,7 @@ include CG_PATH . 'assets/css/single.php';
                     if ( '' !== $cg_car_color ) {
                         ?>
                         <div class="cg-detail-row">
-                            <span><?php esc_html_e('Exterior Color', 'wp-car-gallery'); ?></span>
+                            <span><?php esc_html_e('Exterior Color', 'hm-car-listings'); ?></span>
                             <span><?php echo esc_html( ucfirst( $cg_car_color ) ); ?></span>
                         </div>
                         <?php
@@ -249,7 +249,7 @@ include CG_PATH . 'assets/css/single.php';
                     if ( '' !== $cg_car_condition ) {
                         ?>
                         <div class="cg-detail-row">
-                            <span><?php esc_html_e('Condition', 'wp-car-gallery'); ?></span>
+                            <span><?php esc_html_e('Condition', 'hm-car-listings'); ?></span>
                             <span><?php echo esc_html( ucfirst( $cg_car_condition ) ); ?></span>
                         </div>
                         <?php
@@ -259,7 +259,7 @@ include CG_PATH . 'assets/css/single.php';
                     if ( '' !== $cg_car_drive_type ) {
                         ?>
                         <div class="cg-detail-row">
-                            <span><?php esc_html_e('Drive Type', 'wp-car-gallery'); ?></span>
+                            <span><?php esc_html_e('Drive Type', 'hm-car-listings'); ?></span>
                             <span><?php echo esc_html( ucfirst( $cg_car_drive_type ) ); ?></span>
                         </div>
                         <?php
@@ -289,7 +289,7 @@ include CG_PATH . 'assets/css/single.php';
                         ?>
                         <div class="cg-spec">
                             <strong><?php echo esc_html( $cg_year ); ?></strong>
-                            <span><?php esc_html_e('Year', 'wp-car-gallery'); ?></span>
+                            <span><?php esc_html_e('Year', 'hm-car-listings'); ?></span>
                         </div>
                         <?php
                     }
@@ -299,7 +299,7 @@ include CG_PATH . 'assets/css/single.php';
                         ?>
                         <div class="cg-spec">
                             <strong><?php echo number_format( esc_html( $cg_car_mileage ) ) . '&nbsp;km'; ?></strong>
-                            <span><?php esc_html_e('Mileage', 'wp-car-gallery'); ?></span>
+                            <span><?php esc_html_e('Mileage', 'hm-car-listings'); ?></span>
                         </div>
                         <?php
                     }
@@ -318,7 +318,7 @@ include CG_PATH . 'assets/css/single.php';
                                 echo esc_html( implode( ', ', $car_fuel_arr ) );
                                 ?>
                             </strong>
-                            <span><?php esc_html_e('Fuel Type', 'wp-car-gallery'); ?></span>
+                            <span><?php esc_html_e('Fuel Type', 'hm-car-listings'); ?></span>
                         </div>
                         <?php
                     }
@@ -328,7 +328,7 @@ include CG_PATH . 'assets/css/single.php';
                         ?>
                         <div class="cg-spec">
                             <strong><?php echo esc_html( ucfirst( $cg_car_transmission ) ); ?></strong>
-                            <span><?php esc_html_e('Transmission', 'wp-car-gallery'); ?></span>
+                            <span><?php esc_html_e('Transmission', 'hm-car-listings'); ?></span>
                         </div>
                         <?php
                     }
@@ -338,7 +338,7 @@ include CG_PATH . 'assets/css/single.php';
                         ?>
                         <div class="cg-spec">
                             <strong><?php echo esc_html( ucfirst( $cg_engine_size ) ); ?>&nbsp;CC</strong>
-                            <span><?php esc_html_e('Engine', 'wp-car-gallery'); ?></span>
+                            <span><?php esc_html_e('Engine', 'hm-car-listings'); ?></span>
                         </div>
                         <?php
                     }
@@ -357,7 +357,7 @@ include CG_PATH . 'assets/css/single.php';
                                 echo esc_html( implode( ', ', $car_body_arr ) );
                                 ?>
                             </strong>
-                            <span><?php esc_html_e('Body Type', 'wp-car-gallery'); ?></span>
+                            <span><?php esc_html_e('Body Type', 'hm-car-listings'); ?></span>
                         </div>
                         <?php
                     }
@@ -369,7 +369,7 @@ include CG_PATH . 'assets/css/single.php';
                     ?>
                     <a class="cg-button" href="<?php echo esc_url( 'mailto:' . sanitize_email( $cg_contact_seller_email ) ); ?>">
                         <i class="fa-regular fa-envelope"></i>&nbsp;
-                        <?php esc_html_e('Contact Seller', 'wp-car-gallery'); ?>
+                        <?php esc_html_e('Contact Seller', 'hm-car-listings'); ?>
                     </a>
                     <?php
                 }
@@ -378,7 +378,7 @@ include CG_PATH . 'assets/css/single.php';
                     ?>
                     <a class="cg-button cg-button-secondary" href="<?php echo esc_url( 'tel:' . $cg_tel_number ); ?>">
                         <i class="fa-solid fa-phone"></i>&nbsp;
-                        <?php esc_html_e('Call Seller', 'wp-car-gallery'); ?>
+                        <?php esc_html_e('Call Seller', 'hm-car-listings'); ?>
                     </a>
                     <?php
                 }
@@ -392,7 +392,7 @@ include CG_PATH . 'assets/css/single.php';
 
     <a class="cg-back-link bottom"
         href="javascript:history.back();">
-        &larr; <?php esc_html_e( 'Back to Listings', 'wp-car-gallery' ); ?>
+        &larr; <?php esc_html_e( 'Back to Listings', 'hm-car-listings' ); ?>
     </a>
 
 </div>

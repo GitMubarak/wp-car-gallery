@@ -1,4 +1,4 @@
-=== Car Gallery ===
+=== HM Car Listings ===
 Contributors: hmplugin, mhmrajib
 Tags: car listings, vehicle listings, car inventory, automobile, vehicle inventory
 Requires at least: 6.0
@@ -12,11 +12,11 @@ Create car listings with vehicle details, pricing, images, search filters, pagin
 
 == Description ==
 
-**WP Car Gallery – Car Listings & Vehicle Inventory for WordPress**
+**HM Car Listings – Car Listings & Vehicle Inventory for WordPress**
 
-Create a car listing website or showcase your vehicle inventory directly on your WordPress website with WP Car Gallery.
+Create a car listing website or showcase your vehicle inventory directly on your WordPress website with HM Car Listings.
 
-Whether you are building a car dealership website, a used car listing directory, or a website to showcase available vehicles, WP Car Gallery helps you organize and display your car listings with a clean, user-friendly interface.
+Whether you are building a car dealership website, a used car listing directory, or a website to showcase available vehicles, HM Car Listings helps you organize and display your car listings with a clean, user-friendly interface.
 
 Add vehicle information, display attractive listing cards, let visitors search and filter cars, and provide dedicated details pages with seller contact options.
 
@@ -50,7 +50,7 @@ Add vehicle information, display attractive listing cards, let visitors search a
 
 ➡️ Display Your Car Listings:⬅️
 
-<strong> Use the WP Car Gallery shortcode to display car listings on a page: </strong>
+<strong> Use the HM Car Listings shortcode to display car listings on a page: </strong>
 
 <pre> [wp_car_gallery] </pre>
 
@@ -64,29 +64,29 @@ The shortcode supports optional listing limit, sorting field, and sorting direct
 
 **👍 Built for Vehicle Listing Websites:**
 
-WP Car Gallery provides the essential tools to organize your vehicle inventory and help visitors discover cars through a straightforward browsing experience.
+HM Car Listings provides the essential tools to organize your vehicle inventory and help visitors discover cars through a straightforward browsing experience.
 
 
 
 == Installation ==
 
-Install WP Car Gallery as a regular WordPress plugin. Here are different ways to install plugin:
+Install HM Car Listings as a regular WordPress plugin. Here are different ways to install plugin:
 
 **Install by search plugin:**
 
 1. In your Admin, go to menu Plugins > Add New
-2. Search WP Car Gallery
+2. Search HM Car Listings
 3. Click to install
 4. Activate the plugin
 5. Setup the proper settings in WP Cars menu
 
 **Install by upload plugin:**
 
-1. Download the latest version of WP Car Gallery (wp-car-gallery.zip file)
+1. Download the latest version of HM Car Listings (hm-car-listings.zip file)
 2. In your Admin, go to menu Plugins > Add New
 3. Select "Upload Plugin"
 4. Click on "Choose File"
-5. Select downloaded wp-car-gallery.zip and click on "Install Now" button
+5. Select downloaded hm-car-listings.zip and click on "Install Now" button
 6. Activate the plugin
 
 
@@ -120,11 +120,11 @@ Yes. Listing Page Settings let you choose the sorting field and ascending or des
 
 Yes. Detail Page Settings let you control the display of the car title, overview, Contact Seller button, and Call Seller button.
 
-= Can I use WP Car Gallery with my WordPress theme? =
+= Can I use HM Car Listings with my WordPress theme? =
 
-WP Car Gallery is designed to work with WordPress themes. Styling and some page elements may vary depending on the active theme.
+HM Car Listings is designed to work with WordPress themes. Styling and some page elements may vary depending on the active theme.
 
-= Is WP Car Gallery translation ready? =
+= Is HM Car Listings translation ready? =
 
 Yes. The plugin uses WordPress translation functions so its interface text can be translated into other languages.
 

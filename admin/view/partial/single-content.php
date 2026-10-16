@@ -16,7 +16,7 @@ foreach ( $cgSingleContent as $option_name => $option_value ) {
     <table class="cg-single-settings-table">
         <tr>
             <th scope="row">
-                <label for="cg_single_show_car_title"><?php esc_html_e('Display Car Title', 'wp-car-gallery'); ?>?</label>
+                <label for="cg_single_show_car_title"><?php esc_html_e('Display Car Title', 'hm-car-listings'); ?>?</label>
             </th>
             <td>
                 <input type="checkbox" name="cg_single_show_car_title" class="cg_single_show_car_title" id="cg_single_show_car_title" value="1"
@@ -25,7 +25,7 @@ foreach ( $cgSingleContent as $option_name => $option_value ) {
         </tr>
         <tr>
             <th scope="row">
-                <label for="cg_single_hide_overview"><?php esc_html_e('Hide Overview', 'wp-car-gallery'); ?>?</label>
+                <label for="cg_single_hide_overview"><?php esc_html_e('Hide Overview', 'hm-car-listings'); ?>?</label>
             </th>
             <td>
                 <input type="checkbox" name="cg_single_hide_overview" class="cg_single_hide_overview" id="cg_single_hide_overview" value="1"
@@ -34,7 +34,7 @@ foreach ( $cgSingleContent as $option_name => $option_value ) {
         </tr>
         <tr>
             <th scope="row">
-                <label for="cg_single_hide_contact_seller"><?php esc_html_e('Hide Contact Seller', 'wp-car-gallery'); ?>?</label>
+                <label for="cg_single_hide_contact_seller"><?php esc_html_e('Hide Contact Seller', 'hm-car-listings'); ?>?</label>
             </th>
             <td>
                 <input type="checkbox" name="cg_single_hide_contact_seller" class="cg_single_hide_contact_seller" id="cg_single_hide_contact_seller" value="1"
@@ -43,7 +43,7 @@ foreach ( $cgSingleContent as $option_name => $option_value ) {
         </tr>
         <tr>
             <th scope="row">
-                <label for="cg_single_hide_call_seller"><?php esc_html_e('Hide Call Seller', 'wp-car-gallery'); ?>?</label>
+                <label for="cg_single_hide_call_seller"><?php esc_html_e('Hide Call Seller', 'hm-car-listings'); ?>?</label>
             </th>
             <td>
                 <input type="checkbox" name="cg_single_hide_call_seller" class="cg_single_hide_call_seller" id="cg_single_hide_call_seller" value="1"
@@ -54,7 +54,7 @@ foreach ( $cgSingleContent as $option_name => $option_value ) {
     <hr>
     <p class="submit">
         <button id="updateSingleContent" name="updateSingleContent" class="button button-primary cg-button">
-            <i class="fa fa-check-circle" aria-hidden="true"></i>&nbsp;<?php esc_html_e('Save Settings', 'wp-car-gallery'); ?>
+            <i class="fa fa-check-circle" aria-hidden="true"></i>&nbsp;<?php esc_html_e('Save Settings', 'hm-car-listings'); ?>
         </button>
     </p>
 

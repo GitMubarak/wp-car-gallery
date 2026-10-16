@@ -17,12 +17,12 @@ foreach ( $cgSingleStyles as $option_name => $option_value ) {
         <!-- Title -->
         <tr>
             <th scope="row" colspan="4">
-                <hr><span><?php esc_html_e('Car Title', 'wp-car-gallery'); ?></span><hr>
+                <hr><span><?php esc_html_e('Car Title', 'hm-car-listings'); ?></span><hr>
             </th>
         </tr>
         <tr>
             <th scope="row">
-                <label><?php esc_html_e('Font Color', 'wp-car-gallery'); ?>:</label>
+                <label><?php esc_html_e('Font Color', 'hm-car-listings'); ?>:</label>
             </th>
             <td>
                 <input class="cg-wp-color" type="text" name="cg_single_car_title_font_color" id="cg_single_car_title_font_color" 
@@ -30,7 +30,7 @@ foreach ( $cgSingleStyles as $option_name => $option_value ) {
                 <div id="colorpicker"></div>
             </td>
             <th scope="row">
-                <label><?php esc_html_e('Font Size', 'wp-car-gallery'); ?>:</label>
+                <label><?php esc_html_e('Font Size', 'hm-car-listings'); ?>:</label>
             </th>
             <td>
                 <input type="number" class="small-text" min="11" max="50" name="cg_single_title_font_size" id="cg_single_title_font_size" 
@@ -40,5 +40,5 @@ foreach ( $cgSingleStyles as $option_name => $option_value ) {
         </tr>
     </table>
     <hr>
-    <p class="submit"><button id="updateSingleStyles" name="updateSingleStyles" class="button button-primary cg-button"><?php esc_html_e('Save Settings', 'wp-car-gallery'); ?></button></p>
+    <p class="submit"><button id="updateSingleStyles" name="updateSingleStyles" class="button button-primary cg-button"><?php esc_html_e('Save Settings', 'hm-car-listings'); ?></button></p>
 </form>

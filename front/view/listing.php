@@ -112,7 +112,7 @@ include CG_PATH . 'assets/css/listing.php';
                 <div class="cg-grid-item">
 
                     <div class="cg-car-image">
-                        <img src="<?php echo esc_url( $cg_img ); ?>" alt="<?php esc_html_e( 'No Image Available', 'wp-car-gallery' ); ?>">
+                        <img src="<?php echo esc_url( $cg_img ); ?>" alt="<?php esc_html_e( 'No Image Available', 'hm-car-listings' ); ?>">
                     </div>
                     
                     <h3 class="cg-car-name">
@@ -127,7 +127,7 @@ include CG_PATH . 'assets/css/listing.php';
                             <li>
                                 <a href="#">
                                     <span class="cg-specification-icon"><i class="fas fa-car"></i></span>
-                                    <?php esc_html_e('Price', 'wp-car-gallery'); ?> – <?php echo esc_html( $cg_currency_symbol ); ?><?php echo number_format( esc_html( $cg_car_price ) ); ?>
+                                    <?php esc_html_e('Price', 'hm-car-listings'); ?> – <?php echo esc_html( $cg_currency_symbol ); ?><?php echo number_format( esc_html( $cg_car_price ) ); ?>
                                 </a>
                             </li>
                             <?php
@@ -138,7 +138,7 @@ include CG_PATH . 'assets/css/listing.php';
                             <li>
                                 <a href="#">
                                     <span class="cg-specification-icon"><i class="fa-solid fa-gauge-high"></i></span>
-                                    <?php esc_html_e('Mileage', 'wp-car-gallery'); ?> – <?php echo number_format( esc_html( $cg_car_mileage ) ); ?>&nbsp;<?php esc_html_e('km', 'wp-car-gallery'); ?>
+                                    <?php esc_html_e('Mileage', 'hm-car-listings'); ?> – <?php echo number_format( esc_html( $cg_car_mileage ) ); ?>&nbsp;<?php esc_html_e('km', 'hm-car-listings'); ?>
                                 </a>
                             </li>
                             <?php
@@ -150,7 +150,7 @@ include CG_PATH . 'assets/css/listing.php';
                             <li>
                                 <a href="#">
                                     <span class="cg-specification-icon"><i class="fas fa-gas-pump"></i></span>
-                                    <?php esc_html_e('Fuel', 'wp-car-gallery'); ?> – 
+                                    <?php esc_html_e('Fuel', 'hm-car-listings'); ?> – 
                                     <?php
                                     foreach( $car_fuel as $fuel ) {
                                         $car_fuel_arr[] = $fuel->name;
@@ -168,7 +168,7 @@ include CG_PATH . 'assets/css/listing.php';
                             <li>
                                 <a href="#">
                                     <span class="cg-specification-icon"><i class="fas fa-car"></i></span>
-                                    <?php esc_html_e('Transmission', 'wp-car-gallery'); ?> – <?php echo esc_html( $cg_car_transmission ); ?>
+                                    <?php esc_html_e('Transmission', 'hm-car-listings'); ?> – <?php echo esc_html( $cg_car_transmission ); ?>
                                 </a>
                             </li>
                             <?php
@@ -179,7 +179,7 @@ include CG_PATH . 'assets/css/listing.php';
                             <li>
                                 <a href="#">
                                     <span class="cg-specification-icon"><i class="fas fa-car"></i></span>
-                                    <?php esc_html_e('Engine', 'wp-car-gallery'); ?> – <?php echo esc_html( $cg_engine_size ); ?>&nbsp;<?php esc_html_e('CC', 'wp-car-gallery'); ?>
+                                    <?php esc_html_e('Engine', 'hm-car-listings'); ?> – <?php echo esc_html( $cg_engine_size ); ?>&nbsp;<?php esc_html_e('CC', 'hm-car-listings'); ?>
                                 </a>
                             </li>
                             <?php
@@ -190,7 +190,7 @@ include CG_PATH . 'assets/css/listing.php';
                             <li>
                                 <a href="#">
                                     <span class="cg-specification-icon"><i class="fas fa-paint-roller"></i></span>
-                                    <?php esc_html_e('Color', 'wp-car-gallery'); ?> – <?php echo esc_html( $cg_car_color ); ?>
+                                    <?php esc_html_e('Color', 'hm-car-listings'); ?> – <?php echo esc_html( $cg_car_color ); ?>
                                 </a>
                             </li>
                             <?php
@@ -200,7 +200,7 @@ include CG_PATH . 'assets/css/listing.php';
                     </ul>
 
                     <a href="<?php the_permalink(); ?>" class="cg-view-details-button">
-                        <?php esc_html_e('View Details', 'wp-car-gallery'); ?> →
+                        <?php esc_html_e('View Details', 'hm-car-listings'); ?> →
                     </a>
                 
                 </div>
@@ -232,7 +232,7 @@ include CG_PATH . 'assets/css/listing.php';
     }
     else {
         ?>
-        <p class="cg-no-jobs-found"><?php esc_html_e('No cars found', 'wp-car-gallery'); ?></p>
+        <p class="cg-no-jobs-found"><?php esc_html_e('No cars found', 'hm-car-listings'); ?></p>
         <?php
     }
     
