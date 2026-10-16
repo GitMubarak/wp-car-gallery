@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Master Class: Admin
 */
-class CG_Admin 
+class CG_Admin
 {
 	use CG_Core, CG_Currency,
 	CG_General_Settings, 

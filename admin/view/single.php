@@ -16,7 +16,7 @@ if ( isset( $_POST['updateSingleContent'] ) ) {
         wp_die( esc_html__( 'Sorry, your nonce did not verify.', 'hm-car-listings' ) );
     } 
     
-    $cgListingMessage = $this->cg_set_single_content_settings( $_POST );
+    $cgSingleMessage = $this->cg_set_single_content_settings( $_POST );
 }
 
 // Style
@@ -28,7 +28,7 @@ if ( isset( $_POST['updateSingleStyles'] ) ) {
         wp_die( esc_html__( 'Sorry, your nonce did not verify.', 'hm-car-listings' ) );
     } 
     
-    $cgListingMessage = $this->cg_set_single_styles_settings( $_POST );
+    $cgSingleMessage = $this->cg_set_single_styles_settings( $_POST );
 }
 ?>
 <div id="wph-wrap-all" class="wrap cg-single-settings-page">

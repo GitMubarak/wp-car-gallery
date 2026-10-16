@@ -16,7 +16,7 @@ trait CG_Listing_Content_Settings
 
         $this->options  = $this->cg_build_set_settings_options( $this->fields, $post );
 
-        $this->settings = apply_filters( 'cg_listing_content_settings', $this->options, $post );
+        $this->settings = apply_filters( 'cg_listing_content_settings', $this->options );
 
         return update_option( 'cg_listing_content_settings', $this->settings );
     }
