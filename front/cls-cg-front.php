@@ -44,6 +44,24 @@ class CG_Front
 			FALSE 
 		);
 
+		$cgListingStyles = $this->cg_get_listing_styles_settings();
+
+		foreach ( $cgListingStyles as $option_name => $option_value ) {
+			if ( isset( $cgListingStyles[$option_name] ) ) {
+				${"" . $option_name} = $option_value;
+			}
+		}
+
+		$cg_listing_custom_css = "
+			.cg-grid-item .cg-car-name a.cg-car-name-link {
+				color: {$cg_listing_title_font_color};
+				font-size: {$cg_listing_title_font_size}px;
+			}
+		";
+
+		wp_add_inline_style( 'cg-front', $cg_listing_custom_css );
+
+		// Styles for Search
 		wp_enqueue_style(	
 			'cg-front-search',
 			CG_ASSETS . 'css/cg-search.css',

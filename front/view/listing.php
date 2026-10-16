@@ -21,14 +21,6 @@ foreach ( $cgListingContent as $option_name => $option_value ) {
     }
 }
 
-$cgListingStyles = $this->cg_get_listing_styles_settings();
-
-foreach ( $cgListingStyles as $option_name => $option_value ) {
-    if ( isset( $cgListingStyles[$option_name] ) ) {
-        ${"" . $option_name} = $option_value;
-    }
-}
-
 $cg_currency_symbol = substr( $cg_car_currency, strrpos( $cg_car_currency, '-' ) + 1 );
 
 // For Pagination
@@ -73,9 +65,6 @@ $cgQueryArrParams = array(
 );
 
 $cgQueryArr = apply_filters( 'cg_listing_query_array', $cgQueryArrParams );
-
-// Load Styling
-include CG_PATH . 'assets/css/listing.php';
 ?>
 <div class="cg-listing-parent-container">
     <?php
