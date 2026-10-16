@@ -90,7 +90,7 @@ $cgQueryArr = apply_filters( 'cg_listing_query_array', $cgQueryArrParams );
                 $cg_car_transmission    = get_post_meta( $post->ID, 'cg_car_transmission', true );
                 $cg_car_drive_type  = get_post_meta( $post->ID, 'cg_car_drive_type', true );
 
-                $car_fuel          = wp_get_post_terms( $post->ID, 'car_fuel', array('fields' => 'all') );
+                $car_fuel          = wp_get_post_terms( $post->ID, 'hmcg_car_fuel', array('fields' => 'all') );
                 
                 $cg_img = CG_ASSETS . 'img/no-image.jpg';
 
