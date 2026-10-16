@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Master Class: Admin
 */
-class CG_Admin
+class HMCG_Admin
 {
 	use CG_Core, CG_Currency,
 	CG_General_Settings, 
@@ -15,25 +15,25 @@ class CG_Admin
 	CG_Single_Content_Settings, 
 	CG_Single_Styles_Settings;
 
-	private $cg_version;
-	private $cg_assets_prefix;
+	private $hmcg_version;
+	private $hmcg_assets_prefix;
 
 	function __construct( $version ) {
 
-		$this->cg_version = $version;
-		$this->cg_assets_prefix = substr( CG_PRFX, 0, -1 ) . '-';
+		$this->hmcg_version = $version;
+		$this->hmcg_assets_prefix = substr( CG_PRFX, 0, -1 ) . '-';
 	}
 
 	/**
 	 *	Function For Loading Admin Assets
 	 */
-	function cg_enqueue_assets() {
+	function hmcg_enqueue_assets() {
 
 		wp_enqueue_style(
-            $this->cg_assets_prefix . 'font-awesome',
+            $this->hmcg_assets_prefix . 'font-awesome',
             CG_ASSETS . 'css/fontawesome/css/all.min.css',
             array(),
-            $this->cg_version,
+            $this->hmcg_version,
             FALSE
         );
 
@@ -41,10 +41,10 @@ class CG_Admin
 		wp_enqueue_script( 'wp-color-picker');
 
 		wp_enqueue_style(
-			$this->cg_assets_prefix . 'admin',
-			CG_ASSETS . 'css/' . $this->cg_assets_prefix . 'admin.css',
+			$this->hmcg_assets_prefix . 'admin',
+			CG_ASSETS . 'css/' . $this->hmcg_assets_prefix . 'admin.css',
 			array(),
-			$this->cg_version,
+			$this->hmcg_version,
 			FALSE
 		);
 
@@ -52,7 +52,7 @@ class CG_Admin
 			'jquery-ui',
 			CG_ASSETS . 'css/jquery-ui.css',
 			array(),
-			$this->cg_version,
+			$this->hmcg_version,
 			FALSE
 		);
 
@@ -63,10 +63,10 @@ class CG_Admin
 		wp_enqueue_script('jquery-ui-datepicker');
 		
 		wp_enqueue_script(
-			$this->cg_assets_prefix . 'admin',
-			CG_ASSETS . 'js/' . $this->cg_assets_prefix . 'admin.js',
+			$this->hmcg_assets_prefix . 'admin',
+			CG_ASSETS . 'js/' . $this->hmcg_assets_prefix . 'admin.js',
 			array('jquery'),
-			$this->cg_version,
+			$this->hmcg_version,
 			TRUE
 		);
 	}
@@ -74,7 +74,7 @@ class CG_Admin
 	/**
 	 *	Function For Loading Admin Menu
 	 */
-	function cg_admin_menu() {
+	function hmcg_admin_menu() {
 
 		$cg_cpt_menu = 'edit.php?post_type=car';
 
@@ -84,7 +84,7 @@ class CG_Admin
 			__('General Settings', 'hm-car-listings'),
 			'manage_options',
 			'cg-general-settings',
-			array($this, CG_PRFX . 'general_settings'),
+			array( $this, 'hmcg_general_settings' ),
 		);
 
 		add_submenu_page(
@@ -93,7 +93,7 @@ class CG_Admin
 			__('Listing Page Settings', 'hm-car-listings'),
 			'manage_options',
 			'cg-listing-settings',
-			array($this, CG_PRFX . 'listing_settings'),
+			array( $this, 'hmcg_listing_settings' ),
 		);
 
 		add_submenu_page(
@@ -102,14 +102,14 @@ class CG_Admin
 			__('Detail Page Settings', 'hm-car-listings'),
 			'manage_options',
 			'cg-single-settings',
-			array($this, CG_PRFX . 'single_settings'),
+			array( $this, 'hmcg_single_settings' ),
 		);
 	}
 
 	/**
-	 *	Function For Loading Listing Settings Page
+	 *	Loading General Settings Page
 	 */
-	function cg_general_settings() {
+	function hmcg_general_settings() {
 
 		if ( ! current_user_can( 'manage_options' ) ) {
 			return;
@@ -119,9 +119,9 @@ class CG_Admin
 	}
 
 	/**
-	 *	Function For Loading Listing Settings Page
+	 *	Loading Listing Settings Page
 	 */
-	function cg_listing_settings() {
+	function hmcg_listing_settings() {
 
 		if ( ! current_user_can( 'manage_options' ) ) {
 			return;
@@ -130,7 +130,10 @@ class CG_Admin
 		require_once CG_PATH . 'admin/view/listing.php';
 	}
 
-	function cg_single_settings() {
+	/**
+	 *	Loading Single Settings Page
+	 */
+	function hmcg_single_settings() {
 
 		if ( ! current_user_can( 'manage_options' ) ) {
 			return;
@@ -140,9 +143,9 @@ class CG_Admin
 	}
 
 	/**
-	 *	Function For Loading Cars Custom Post Type
+	 *	Loading Custom Post Type: Cars
 	 */
-	function cg_custom_post_type() {
+	function hmcg_custom_post_type() {
 
 		$labels = array(
 			'name'                => __('All Cars', 'hm-car-listings'),
@@ -185,9 +188,9 @@ class CG_Admin
 	}
 
 	/**
-	 *	Function For Loading Cars Taxonomy
+	 *	Loading Cars Taxonomy
 	 */
-	function cg_taxonomy() {
+	function hmcg_taxonomy() {
 
 		// Taxonomy: Make
 		$make = array(
@@ -205,7 +208,7 @@ class CG_Admin
 		);
 
 		register_taxonomy(
-			'car_make',
+			'hmcg_car_make',
 			array( 'car' ),
 			array(
 				'hierarchical'       => true,
@@ -235,7 +238,7 @@ class CG_Admin
 		);
 
 		register_taxonomy(
-			'car_model',
+			'hmcg_car_model',
 			array( 'car' ),
 			array(
 				'hierarchical'       => true,
@@ -265,7 +268,7 @@ class CG_Admin
 		);
 
 		register_taxonomy(
-			'body_type',
+			'hmcg_body_type',
 			array( 'car' ),
 			array(
 				'hierarchical'       => true,
@@ -295,7 +298,7 @@ class CG_Admin
 		);
 
 		register_taxonomy(
-			'car_fuel',
+			'hmcg_car_fuel',
 			array( 'car' ),
 			array(
 				'hierarchical'       => true,
@@ -311,14 +314,14 @@ class CG_Admin
 	}
 
 	/**
-	 *	Function For Loading Cars Metaboxes
+	 *	Loading Cars Metaboxes
 	 */
-	function cg_metaboxes() {
+	function hmcg_metaboxes() {
 
 		add_meta_box(
 			'cg_metaboxe_specification',
 			__('Car Specifications', 'hm-car-listings'),
-			array( $this, 'cg_metabox_specification' ),
+			array( $this, 'hmcg_metabox_specification' ),
 			'car',
 			'normal',
 			'high'
@@ -326,17 +329,17 @@ class CG_Admin
 	}
 
 	/**
-	 *	Function For Loading Cars Meta Content
+	 *	Loading Cars Meta Content
 	 */
-	function cg_metabox_specification() {
+	function hmcg_metabox_specification() {
 		
 		include_once CG_PATH . 'admin/view/car-specification.php';
 	}
 
 	/**
-	 *	Function For Saving Cars Meta Data
+	 *	Saving Cars Meta Data
 	 */
-	function cg_save_meta_value( $post_id ) {
+	function hmcg_save_meta_value( $post_id ) {
 		
 		global $post;
 
@@ -387,7 +390,7 @@ class CG_Admin
 	/**
 	 *	Flush Rewrite on Plugin initialization
 	 */
-	function cg_flush_rewrite() {
+	function hmcg_flush_rewrite() {
 
 		if ( get_option('cg_plugin_settings_have_changed') == true ) {
 			flush_rewrite_rules();
@@ -398,7 +401,7 @@ class CG_Admin
 	/**
 	 *	Function for loading notification on save / update
 	 */
-	function cg_display_notification( $type, $msg ) {
+	function hmcg_display_notification( $type, $msg ) {
 
 		$allowed_types = array(
 			'success',

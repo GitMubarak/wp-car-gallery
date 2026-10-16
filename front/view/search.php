@@ -142,7 +142,7 @@ foreach ( $cg_search_tax_filters as $get_key => $meta_key ) {
             <select id="cg-make" name="car_make_s">
                 <option value=""><?php esc_html_e('All Makes', 'hm-car-listings'); ?></option>
 				<?php
-				$car_makes = get_terms( array( 'taxonomy' => 'car_make', 'hide_empty' => false, 'order' => 'ASC' ) );
+				$car_makes = get_terms( array( 'taxonomy' => 'hmcg_car_make', 'hide_empty' => false, 'order' => 'ASC' ) );
 				foreach( $car_makes as $make) {
 					?>
 					<option value="<?php echo esc_attr( $make->slug ); ?>" <?php selected( $cg_clean_search_params['car_make_s'], $make->slug ); ?>><?php echo esc_html( $make->name ); ?></option>
@@ -158,7 +158,7 @@ foreach ( $cg_search_tax_filters as $get_key => $meta_key ) {
             <select id="cg-model" name="car_model_s">
                 <option value=""><?php esc_html_e('All Models', 'hm-car-listings'); ?></option>
 				<?php
-				$car_models = get_terms( array( 'taxonomy' => 'car_model', 'hide_empty' => false, 'order' => 'ASC' ) );
+				$car_models = get_terms( array( 'taxonomy' => 'hmcg_car_model', 'hide_empty' => false, 'order' => 'ASC' ) );
 				foreach( $car_models as $model) {
 					?>
                 	<option value="<?php echo esc_attr( $model->slug ); ?>" <?php selected( $cg_clean_search_params['car_model_s'], $model->slug ); ?>><?php echo esc_html( $model->name ); ?></option>
@@ -226,7 +226,7 @@ foreach ( $cg_search_tax_filters as $get_key => $meta_key ) {
             <select id="cg-fuel" name="car_fuel_s">
                 <option value=""><?php esc_html_e('All Fuel Types', 'hm-car-listings'); ?></option>
 				<?php
-				$car_fuels = get_terms( array( 'taxonomy' => 'car_fuel', 'hide_empty' => false, 'order' => 'ASC' ) );
+				$car_fuels = get_terms( array( 'taxonomy' => 'hmcg_car_fuel', 'hide_empty' => false, 'order' => 'ASC' ) );
 				foreach( $car_fuels as $fuel) {
 					?>
                 	<option value="<?php echo esc_attr( $fuel->slug ); ?>" <?php selected( $cg_clean_search_params['car_fuel_s'], $fuel->slug ); ?>><?php echo esc_html( $fuel->name ); ?></option>
@@ -242,7 +242,7 @@ foreach ( $cg_search_tax_filters as $get_key => $meta_key ) {
             <select id="cg-body-type" name="car_body_type_s">
                 <option value=""><?php esc_html_e('All Body Types', 'hm-car-listings'); ?></option>
                 <?php
-				$body_type_s = get_terms( array( 'taxonomy' => 'body_type', 'hide_empty' => false, 'order' => 'ASC' ) );
+				$body_type_s = get_terms( array( 'taxonomy' => 'hmcg_body_type', 'hide_empty' => false, 'order' => 'ASC' ) );
 				foreach( $body_type_s as $body) {
 					?>
                 	<option value="<?php echo esc_attr( $body->slug ); ?>" <?php selected( $cg_clean_search_params['car_body_type_s'], $body->slug ); ?>><?php echo esc_html( $body->name ); ?></option>

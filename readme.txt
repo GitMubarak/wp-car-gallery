@@ -52,11 +52,11 @@ Add vehicle information, display attractive listing cards, let visitors search a
 
 <strong> Use the HM Car Listings shortcode to display car listings on a page: </strong>
 
-<pre> [wp_car_gallery] </pre>
+<pre> [hmcg_car_gallery] </pre>
 
 You can also specify the number of listings to display:
 
-<pre> [wp_car_gallery limit="9"]</pre>
+<pre> [hmcg_car_gallery limit="9"]</pre>
 
 The shortcode supports optional listing limit, sorting field, and sorting direction attributes.
 
@@ -94,7 +94,7 @@ Install HM Car Listings as a regular WordPress plugin. Here are different ways t
 
 = How do I display car listings? =
 
-Create a WordPress page and add the [wp_car_gallery] shortcode to display your vehicle listings.
+Create a WordPress page and add the [hmcg_car_gallery] shortcode to display your vehicle listings.
 
 = Can I control how many cars appear on a page? =
 
@@ -102,7 +102,7 @@ Yes. Use the shortcode's limit attribute or configure the listing limit in the p
 
 For example:
 
-[wp_car_gallery limit="9"]
+[hmcg_car_gallery limit="9"]
 
 = Can visitors search and filter cars? =
 

@@ -27,7 +27,7 @@ define('CG_TXT_DOMAIN', 'hm-car-listings');
 define('CG_VERSION', '1.0.0');
 
 require_once CG_PATH . 'inc/' . CG_CLS_PRFX . 'master.php';
-$cg = new CG_Master();
+$cg = new HMCG_Master();
 $cg->cg_run();
 
 // rewrite_rules upon plugin activation

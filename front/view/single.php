@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 require_once CG_PATH . 'front/cls-cg-front.php';
-$cg_front = new CG_Front(CG_VERSION);
+$cg_front = new HMCG_Front(CG_VERSION);
 
 $cgGeneralSettings = $cg_front->cg_get_general_settings();
 
@@ -37,10 +37,10 @@ $cg_car_condition   = get_post_meta( get_the_ID(), 'cg_car_condition', true );
 $cg_car_transmission    = get_post_meta( get_the_ID(), 'cg_car_transmission', true );
 $cg_car_drive_type  = get_post_meta( get_the_ID(), 'cg_car_drive_type', true );
 
-$car_make          = wp_get_post_terms( get_the_ID(), 'car_make', array('fields' => 'all') );
-$car_model         = wp_get_post_terms( get_the_ID(), 'car_model', array('fields' => 'all') );
-$car_fuel          = wp_get_post_terms( get_the_ID(), 'car_fuel', array('fields' => 'all') );
-$car_body          = wp_get_post_terms( get_the_ID(), 'body_type', array('fields' => 'all') );
+$car_make          = wp_get_post_terms( get_the_ID(), 'hmcg_car_make', array('fields' => 'all') );
+$car_model         = wp_get_post_terms( get_the_ID(), 'hmcg_car_model', array('fields' => 'all') );
+$car_fuel          = wp_get_post_terms( get_the_ID(), 'hmcg_car_fuel', array('fields' => 'all') );
+$car_body          = wp_get_post_terms( get_the_ID(), 'hmcg_body_type', array('fields' => 'all') );
 
 $cg_tel_number    = preg_replace( '/[^\d+]/', '', $cg_contact_seller_tel );
 $cg_currency_sym = substr( $cg_car_currency, strrpos( $cg_car_currency, '-' ) + 1 );
