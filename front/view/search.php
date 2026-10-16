@@ -97,10 +97,10 @@ foreach ( $cg_search_meta_filters as $get_key => $meta_key ) {
 
 // Array for tax query
 $cg_search_tax_filters = array(
-    'car_make_s'    => 'car_make',
-	'car_model_s'	=> 'car_model',
-	'car_fuel_s'	=> 'car_fuel',
-	'car_body_type_s'	=> 'body_type',
+    'car_make_s'      => 'hmcg_car_make',
+    'car_model_s'     => 'hmcg_car_model',
+    'car_fuel_s'      => 'hmcg_car_fuel',
+    'car_body_type_s' => 'hmcg_body_type',
 );
 
 foreach ( $cg_search_tax_filters as $get_key => $meta_key ) {
